@@ -1,0 +1,29 @@
+{% extends "layout.twig" %} {% block content %}
+<div class="flex-container">
+    <div class="flex-item company">
+        {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}} {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+    </div>
+    <div class="flex-item flex-nav">
+        {{widget('extendednavigation', 'navigationheader', {"align":"left"})|raw}}
+    </div>
+</div>
+
+
+<div class="homepage-background">
+    {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Go to Gallery","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
+
+<div class="main container clearfix">
+    {{zone('main')|raw}}
+</div>
+
+
+<footer class="bk-footer">
+    <div class="footerleft">
+        {{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+    </div>
+    <div class="footerright">
+        {{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+    </div>
+</footer>
+</div>
+{% endblock %}

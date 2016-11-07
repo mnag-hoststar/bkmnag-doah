@@ -1,0 +1,152 @@
+// --------------------------------
+// HOSTSTAR MNAG TEMPLATE (v2.0)
+// --------------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #LESS INCLUDES
+// 2. #PAGE SETTINGS
+// 3. #TEMPLATE STYLES
+// 4. #VARIABLES
+
+
+
+
+// -----------------------------
+// 1. #LESS Includes
+// -----------------------------
+
+@import "@{templateCommon}/bk-less-framework-v8.less";
+@import "@{templateLocal}/less/theme.less";
+@import "@{templateLocal}/less/widgets.less";
+@import "@{templateLocal}/less/plugins.less";
+
+
+
+// -----------------------------
+// TYPOGRAPHY
+// -----------------------------
+
+body {
+    font-smooth: always;
+    font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    letter-spacing: .04em;
+}
+
+ul,
+ol {
+    padding: 0 0 .5em 2em;
+}
+
+blockquote {
+    padding: 30px;
+    &:before: {
+        content: open-quote!important;
+        left: -10px!important;
+        position: relative!important;
+        font-family: georgia, serif!important;
+        font-size: 3.05em!important;
+        top: 20px!important;
+    }
+}
+
+pre {
+    padding-bottom: 1em;
+    margin: 0;
+    line-height: 1.8em;
+    overflow: auto;
+    border: 1px solid #413a31;
+    padding: 0.5em;
+    background-color: transparent;
+}
+
+code {
+    background-color: transparent;
+}
+
+legend {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.content .bk-content-text ol {
+    list-style-position: inherit;
+}
+
+a {
+    letter-spacing: 1px;
+    color: @color__link--text;
+    &:hover {
+        font-weight: 700;
+        letter-spacing: 0.615px;
+        .transition (all, 0.1s, ease);
+        text-decoration: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding-bottom: 7px;
+}
+
+h1 {
+    color: @color__h1--text;
+}
+
+h2 {
+    color: @color__h2--text;
+}
+
+h3 {
+    color: @color__h3--text;
+}
+
+h4 {
+    color: @color__h4--text;
+}
+
+p {
+    color: @color__p--text;
+    padding-bottom: 7px;
+    line-height: 20px;
+}
+
+// -----------------------------
+// 2. #Page Settings
+// -----------------------------
+
+// Page Container
+// --------------
+
+.container {
+	margin: 0 auto;
+    padding: 0 3%;
+    width:80%;
+    background-color: @color__container--background;
+}
+
+.main {
+	padding: 40px 0;
+}
+
+
+.iconfill {
+    fill: @color__socialicons--icon!important;
+}
+
+// -----------------------------
+// 3. #TEMPLATE STYLES
+// -----------------------------
+// -----------------------------
+// 4. #VARIABLES
+// -----------------------------
