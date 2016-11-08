@@ -88,7 +88,6 @@ a.companyname__company-link {
     display: inline-block;
     padding: 0.65em 0 0.8em;
     text-transform:uppercase;
-    letter-spacing: 1px;
     color: @color__companyname--text;
     @media @mobile {
         padding: 20px 0px;
@@ -96,7 +95,6 @@ a.companyname__company-link {
     }
     &:hover {
         color: darken(@color__companyname--text, 10%);
-        letter-spacing: 1px;
         font-weight: 300;
     }
 }
@@ -279,7 +277,6 @@ a.companyname__company-link {
 // Feature Content
 // ---------------
 h2.feature__headline {
-    letter-spacing: 0px;
     padding-bottom: 25px;
     text-transform:uppercase;
     @media @tablet {
@@ -317,12 +314,14 @@ h3.feature__strapline {
 // ---------------
 .feature__button {
     padding: 15px 25px;
-    background-color: @color__feature-background-color;
+    background-color: @color__feature-button--background;
     text-transform: uppercase;
     line-height: 21px;
+    margin-top:25px;
     color: @color__feature-button--text;
     &:hover {
-        color: @color__feature-color-hover;
+        background-color: @color__feature-button--background--hover;
+        color: @color__feature-button--text-hover;
         transition: all 0.1s ease-out;
         @media @mobile {
             font-size: 1.025em!important;
@@ -341,6 +340,7 @@ h3.feature__strapline {
     .image-title {
         margin: 10px 0 0;
         color: @color__image-title--text;
+        font-family: @font__image-title--font-family;
         text-align: left;
         text-transform: uppercase;
         font-weight: 700;
@@ -716,6 +716,9 @@ h3.feature__strapline {
             .caption {
                 padding: 3px 20px;
             }
+            .image-title {
+                font-family: @font__slideshow-title--font-family;
+            }
             .image-title,
             .image-description {
                 font-size: 12px;
@@ -788,6 +791,7 @@ h3.feature__strapline {
     font-weight: 600;
     text-transform: uppercase;
     color: @color__slideshow-title--text;
+    font-family: @font__slideshow-title--font-family;
 }
 
 .responsiveslideshow__image-description {
@@ -999,10 +1003,9 @@ button.ecombasket-remove-button.js-remove,
     &:focus {
         outline: none;
     }
-    &:hover:before,
-    &:hover:after {
-        width: 100%;
-        height: 100%;
+    &:hover {
+        background-color: @color__button--background--hover;
+        color: @color__button--text--hover;
     }
 }
 
@@ -1015,6 +1018,7 @@ button.ecombasket-remove-button.js-remove,
     .phone-number-link {
         background-color: @color__button--background;
         color: @color__button--text;
+        font-family: @font__button--font-family;
         padding: 12px 30px;
         text-transform: uppercase;
         font-weight: 700;
@@ -1029,6 +1033,8 @@ button.ecombasket-remove-button.js-remove,
             -o-transition: all 0.2s ease;
             transition: all 0.2s ease;
             letter-spacing: 1px;
+            background-color: @color__button--background--hover;
+            color: @color__button--text--hover;
         }
     }
 }
@@ -1071,15 +1077,11 @@ button.ecombasket-remove-button.js-remove,
     }
 }
 
-.contactform__label,
+/*.contactform__label,
 .signupform__label,
 .blogsearch__label {
-    font-family: @font__p--font-family;
-    font-size: @font__p--font-size;
-    font-weight: @font__p--font-weight;
-    line-height: @font__p--line-height;
+    font-family: @font__form-label--font-family;
     color: @color__form-label--text;
-    letter-spacing: @font__p--letter-spacing;
     margin-bottom: .4em;
     padding: 0;
     @media @tablet {
@@ -1088,20 +1090,16 @@ button.ecombasket-remove-button.js-remove,
     @media @mobile {
         font-size: 0.8em!important;
     }
-}
+}*/
 
 .contactform__button,
 .signupform__button,
 .blogsearch__button {
     float: left;
-    background-color: transparent!important;
+    background-color: @color__button--background;
     &:focus {
         outline: none;
     }
-}
-
-.signupform__button {
-    margin: 10px 0px 20px;
 }
 
 .contactform__form-group {

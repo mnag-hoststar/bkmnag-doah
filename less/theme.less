@@ -84,6 +84,7 @@ body.edit .widget.extendednavigation {
 .bk-footer {
     border-top: 1px solid @color__footer--border;
     background-color: @color__footer--background;
+    padding: 0px 3%;
     @media @mobile {
         padding: 0px;
     }
@@ -152,7 +153,6 @@ span.expand.button.button--expand {
     margin: 10px 0;
     cursor: pointer;
     display: inline-block;
-    letter-spacing: .1em;
     text-transform: uppercase;
     background-color: transparent!important;
 }
@@ -166,9 +166,7 @@ span.expand.button.button--expand {
     text-decoration: none;
     padding: 12px;
     border-bottom: 1px solid @color__link--text;
-    letter-spacing: 1px;
     &:hover {
-        letter-spacing: 1px!important;
         border-bottom: 2px solid @color__link--text;
         cursor: pointer;
         background-color: transparent;
@@ -179,18 +177,46 @@ span.expand.button.button--expand {
 // -----------------------------
 // 6. #GENERAL FORMS
 // -----------------------------
-.form-group,
-.form-group .advancedcontactform {
-    box-sizing: border-box;
-    padding: 0 0.75rem;
-    width: 100%;
-    position: relative;
-    margin-top: 1rem;
+legend {
+    display:none!important;
+}
+.form-group {
+    display: flex;
+    height: 55px;
 }
 
 label {
-    font-size: 13px!important;
-    letter-spacing: 0px!important;
+    font-size: 16px;
+    font-family: @font__form-label--font-family;
+    font-weight: 400;
+    opacity: 0.4;
+    pointer-events: none;
+    position: absolute;
+    transform: translate3d(0, 22px, 0) scale(1);
+    transform-origin: left top;
+    transition: 240ms;
+}
+
+.form-group.focused label {
+    opacity: 1;
+    transform: scale(0.75);
+}
+
+input, select {
+    align-self: flex-end;
+}
+
+input::-webkit-input-placeholder {
+    color: transparent;
+    transition: 240ms;
+}
+
+input:focus::-webkit-input-placeholder {
+    transition: none;
+}
+
+.form-group.focused input::-webkit-input-placeholder {
+    color: #bbb;
 }
 
 input[type=search],
@@ -204,13 +230,11 @@ select,
 input#search-term {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid @color__body--background;
+    border-bottom: 1px solid @color__form--border;
     height: 3rem;
     font-size: 1rem;
     padding: 0;
     box-shadow: none;
-    transition: all 0.3s;
-    font-size: 0.9em;
     &:focus {
         border-bottom: 1px solid @color__form--border;
         box-shadow: 0 1px 0 0 @color__form--border;
@@ -255,7 +279,6 @@ input.js-email.email {
 .advancedcontactform {
     input[type=email] {
         width: 100%;
-        margin-bottom: 20px;
     }
     label {
         margin-bottom: 10px;
@@ -334,6 +357,10 @@ select span {
     font-size: 10px;
 }
 
+label {
+    font-family: @font__form-label--font-family;
+}*/
+
 // Advanced Contact Form
 // ---------------------
 .advancedcontactform {
@@ -364,6 +391,7 @@ select span {
 .advancedcontactform__option-list {
     padding: 0px;
 }
+
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -412,9 +440,7 @@ input[type="checkbox"]:checked {
 
 // Signup Form
 // ------------
-.signupform__label {
-    padding: 30px 0 10px;
-}
+
 
 .signupform__input {
     display: inline-block;

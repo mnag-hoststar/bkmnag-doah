@@ -27,6 +27,7 @@
 <body class="{{ page.backgroundClass }}">
 
     {% block content %} {% endblock %} {% include basekit.bodyScript %}
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <script type="text/javascript">
         ! function () {
@@ -36,8 +37,7 @@
             if (supportsSVG()) document.documentElement.className += ' svg'
         }()
     </script>
-  
-
+    <script src="{{asset('js/floating-label.js')}}"></script>
 </body>
 
 </html>

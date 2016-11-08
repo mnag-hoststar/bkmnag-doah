@@ -47,10 +47,8 @@
 
 //Post Content
 .blogpostlist__title-link {
-    letter-spacing: 0px;
     &:hover {
         font-weight: 400;
-        letter-spacing: 0px;
     }
 }
 
@@ -62,7 +60,6 @@
     padding: 12px;
     border-bottom: 1px solid @color__link--text;
     &:hover {
-        letter-spacing: 1px!important;
         box-shadow: 0 1.5px 0 @color__link--text;
         cursor: pointer;
         .transition (all, 0.2s, ease);
@@ -78,7 +75,6 @@
     font-style: italic;
     float: right;
     padding: 14px 0px;
-    letter-spacing: 0px;
     font-size: 0.9em;
 }
 
@@ -88,7 +84,6 @@ footer.post-list-footer {
 }
 
 footer.post-list-footer nav.post-pagination {
-    letter-spacing: 1px;
     text-align: center;
 }
 
@@ -115,7 +110,6 @@ a.button.button--pagination.button--next {
     }
     &:hover {
         box-shadow: 0 1.5px 0 @color__link--text;
-        letter-spacing: 1px;
         font-weight: 700;
     }
 }
@@ -175,7 +169,6 @@ a.button.button--pagination.button--next {
         font-weight: 700;
         text-decoration: none;
         color: darken(@color__link--text, 15%);
-        letter-spacing: 1px;
     }
 }
 
@@ -268,9 +261,9 @@ a.button.button--pagination.button--next {
     margin: 10px 0px 20px;
 }
 
-.blogsearch__label {
+/*.blogsearch__label {
     display: none;
-}
+}*/
 
 // -----------------------------
 // 2. #MENU
@@ -284,6 +277,7 @@ a.button.button--pagination.button--next {
 a.menu-item-name {
     margin: 0 1em;
     border-bottom: 1px solid @color__link--text;
+    font-family: @font__button--font-family;
     padding: 10px 20px;
     text-transform: uppercase;
     color: @color__primary;
@@ -297,7 +291,6 @@ a.menu-item-name {
     }
     &:hover {
         box-shadow: 0 1.5px 0 @color__link--text;
-        letter-spacing: 1px;
         font-weight: 700;
         text-decoration: none;
         color: darken(@color__link--text, 15%);
@@ -398,14 +391,12 @@ header.section.header {
         margin: 0px 5px;
         font-weight: 400;
         color: @color__link--text;
-        letter-spacing: 1px;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         &:hover {
             font-weight: 700;
             text-decoration: none;
-            letter-spacing: 1px;
         }
     }
 }
@@ -425,6 +416,9 @@ header.section.header {
 .ecomproductslist__product-filters {
     margin-left: 0;
     margin-bottom: 40px;
+}
+.product-filters .input--search {
+    height: 50px;
 }
 
 .fieldset--filters {
@@ -446,10 +440,6 @@ header.section.header {
             }
         }
     }
-}
-
-.label--search.ecomproductslist__label {
-    display: none;
 }
 
 .ecomproductlist__product-list,
@@ -483,7 +473,6 @@ header.section.header {
         line-height: 22px;
     }
     a {
-        letter-spacing: 0px;
         @media @tablet {
             font-size: 0.9em!important;
         }
@@ -491,7 +480,6 @@ header.section.header {
             font-size: 0.8em!important;
         }
         &:hover {
-            letter-spacing: 0px;
             font-weight: 300;
         }
     }
@@ -533,7 +521,7 @@ header.section.header {
 }
 
 .ecomproductslist__button--clear {
-    background-color: transparent;
+    background-color: @color__button--background;
     color: @color__button--text;
     text-transform: uppercase;
     border-bottom: 1px solid @color__button--text;
@@ -558,7 +546,7 @@ header.section.header {
         border: 1px solid @color__button--text--hover;
     }
     a.button {
-        background-color: transparent;
+        background-color: @color__button--background;
         color: @color__button--text;
     }
 }
@@ -624,42 +612,45 @@ header.section.header {
     a.button.icon.icon--basket {
         padding: 12px 35px;
         margin: 0 0 10px;
-        border-bottom: 1px solid @color__button--text;
         font-family: @font__button--font-family;
         font-size: @font__button--font-size;
         font-weight: @font__button--font-weight;
-        background-color: transparent!important;
-        color: @color__button--text!important;
+        background-color: @color__button--background;
+        color: @color__button--text;
         text-decoration: none;
         text-transform: uppercase;
         display: inline-block;
         &:hover {
-            background-color: transparent!important;
+            background-color: @color__button--background--hover;
+            color: @color__button--text--hover;
             cursor: pointer;
-            box-shadow: 0 1.5px 0 @color__button--text;
-        }
-        &:before,
-        &:after {
-            display: none;
         }
     }
 }
 
-.ecomproduct__product-attributes {
-    a.tag-link,
-    a.category-link {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        font-size: 0.9em!important;
-        margin: 0px 5px;
-        text-transform: uppercase;
-        &:hover {
-            font-weight: 700;
-            text-decoration: none;
-            color: darken(@color__link--text, 15%);
-            letter-spacing: 1px;
-        }
+a.tag-link,
+a.category-link {
+    margin: 0 1em;
+    border-bottom: 1px solid @color__link--text;
+    font-family: @font__button--font-family;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: @color__primary;
+    background-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    &:before,
+    &:after {
+        display: none;
+    }
+    &:hover {
+        box-shadow: 0 1.5px 0 @color__link--text;
+        font-weight: 700;
+        text-decoration: none;
+        color: darken(@color__link--text, 15%);
+        background-color: transparent;
+        .transition (all, 0.2s, ease);
     }
 }
 
@@ -673,6 +664,9 @@ header.section.header {
     }
 }
 
+.ecomcategorieslist__category-list {
+    list-style:none;
+}
 
 /* ===============================
 ECOM - BASKET BUTTON
@@ -682,19 +676,18 @@ ECOM - BASKET BUTTON
     button.basket-toggle {
         padding: 12px 35px;
         margin: 0 0 10px;
-        border-bottom: 1px solid @color__button--text;
         font-family: @font__button--font-family;
         font-size: @font__button--font-size;
         font-weight: @font__button--font-weight;
-        background-color: transparent!important;
-        color: @color__button--text!important;
+        background-color: @color__button--background;
+        color: @color__button--text;
         text-decoration: none;
         text-transform: uppercase;
         display: inline-block;
         &:hover {
-            background-color: transparent!important;
+            background-color: @color__button--background--hover;
+            color: @color__button--text--hover;
             cursor: pointer;
-            box-shadow: 0 1.5px 0 @color__button--text;
         }
         &:before,
         &:after {
@@ -802,14 +795,12 @@ ECOM - BASKET BUTTON
 
 .ecombasketsummary__summary-item-link {
     text-transform: uppercase;
+    font-family: @font__ecomproduct-title--font-family;
     font-weight: 600;
     font-size: 16px;
     @media @mobile {
         text-align: center;
         font-size: 18px;
-    }
-    &:hover {
-        letter-spacing: 1px;
     }
 }
 
@@ -862,6 +853,7 @@ ECOM - BASKET BUTTON
 .ecombasketsummary__quantity-wrap {
     display: block!important;
     background-color: transparent;
+    color: @color__button--text;
     width: 100%;
     @media @tablet {
         min-width: 100%!important;
@@ -876,11 +868,9 @@ button.ecombasketsummary__quantity-minus,
 button.ecombasketsummary__quantity-plus {
     font-weight: 300;
     font-size: 22px!important;
-    border-bottom: 1px solid @color__button--text;
     &:hover {
-        background-color: transparent;
+        background-color: @color__button--background;
         font-weight: 700;
-        box-shadow: 0 1px 0 @color__button--text;
     }
 }
 
