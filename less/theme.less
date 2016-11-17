@@ -182,13 +182,13 @@ legend {
 }
 .form-group {
     display: flex;
-    height: 55px;
 }
 
 label {
     font-size: 16px;
-    font-family: @font__form-label--font-family;
-    font-weight: 400;
+    font-family: @font__h1--font-family;
+    color: @color__form-label--text;
+    text-transform: uppercase;
     opacity: 0.4;
     pointer-events: none;
     position: absolute;
@@ -197,7 +197,9 @@ label {
     transition: 240ms;
 }
 
-.form-group.focused label {
+.form-group.focused label,
+.form-group:focus > select label,
+label.active {
     opacity: 1;
     transform: scale(0.75);
 }
@@ -280,9 +282,6 @@ input.js-email.email {
     input[type=email] {
         width: 100%;
     }
-    label {
-        margin-bottom: 10px;
-    }
 }
 
 select {
@@ -306,17 +305,29 @@ select {
     margin: 0 0 15px 0;
     padding: 0;
     display: block;
+    color:transparent;
     background: image('/images/arrow-small-down.svg') no-repeat center right;
     background-size: 2.5%;
+}
+
+select.selected {
+    color: @color__form-label--text;
 }
 
 select:hover {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     background-color: transparent!important;
 }
-
+select:selected {
+    color: @color__form-label--text;
+}
 select:focus {
     background-color: transparent!important;
+    color: @color__form-label--text;
+}
+select:focus > label {
+    background-color: transparent!important;
+    color: @color__form-label--text;
 }
 
 option {
@@ -330,7 +341,7 @@ option {
     width: 520px;
     top: 0px;
     left: 0px;
-    opacity: 1;
+    opacity: 0!important;
     background-color: #fff;
     margin: 0;
     min-width: 100px;
@@ -356,10 +367,6 @@ select span {
     top: 16px;
     font-size: 10px;
 }
-
-label {
-    font-family: @font__form-label--font-family;
-}*/
 
 // Advanced Contact Form
 // ---------------------
@@ -417,11 +424,6 @@ input[type="checkbox"]:checked {
     background: @color__primary;
     border: 2.5px solid #ffffff!important;
     box-shadow: 0px 0px 0px 2px @color__primary;
-}
-
-.form-group > .label {
-    text-transform: uppercase;
-    font-weight: 700;
 }
 
 .option-item > .label--checkbox,

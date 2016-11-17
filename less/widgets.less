@@ -305,7 +305,6 @@ h3.feature__strapline {
         font-size: 12px;
         font-weight: 600;
         line-height: 22px;
-        letter-spacing: 1.5px;
         word-break: break-word;
     }
 }
@@ -320,8 +319,8 @@ h3.feature__strapline {
     margin-top:25px;
     color: @color__feature-button--text;
     &:hover {
-        background-color: @color__feature-button--background--hover;
-        color: @color__feature-button--text-hover;
+        background-color: darken(@color__feature-button--background, 5%);
+        color: darken(@color__feature-button--text, 5%);
         transition: all 0.1s ease-out;
         @media @mobile {
             font-size: 1.025em!important;
@@ -335,33 +334,42 @@ h3.feature__strapline {
 // -----------------------------
 // 5. #IMAGE WIDGET
 // -----------------------------
-.widget__imagewidget {
-    margin-bottom: 40px;
-    .image-title {
-        margin: 10px 0 0;
-        color: @color__image-title--text;
-        font-family: @font__image-title--font-family;
-        text-align: left;
-        text-transform: uppercase;
-        font-weight: 700;
-        &:hover {
-            color: lighten(@color__image-title--text, 10%);
-        }
+
+.imagewidget__image-title {
+    margin: 10px 0 0;
+    color: @color__image-title--text;
+    font-family: @font__h1--font-family;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover {
+        color: lighten(@color__image-title--text, 10%);
     }
-    .image-description {
-        margin: 0 0 10px;
-        color: @color__image-description--text;
-        text-align: left;
-        letter-spacing: 0px;
-        &:hover {
-            color: lighten(@color__image-description--text, 10%);
-            letter-spacing: 0px;
-        }
+}
+
+.imagewidget__image-description {
+    margin: 0 0 10px;
+    color: @color__image-description--text;
+    text-align: left;
+    &:hover {
+        color: lighten(@color__image-description--text, 10%);
     }
 }
     
 // 5.  #Gallery
 // -----------------------------
+// Gallery Item
+// For screen size larger than 920px. Media queries below.
+.gallery {
+    @media @tablet {
+        font-size: 13px;
+        line-height: 21px;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+        font-size: 10px;
+        font-weight: 600;
+    }
+}
 
 // Gallery Layout
 // --------------
@@ -382,91 +390,52 @@ h3.feature__strapline {
     justify-content: space-between;
     padding: 15px 0;
 }
-    
-// Gallery Item
-// For screen size larger than 920px. Media queries below.
-.gallery {
-    .gallery-item {
-        position: relative;
+
+.gallery__gallery-item {
+    position: relative;
+    width: 32.5%;
+    margin-bottom: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    @media @tablet {
         width: 32.5%;
-        margin-bottom: 15px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        @media @tablet {
-            width: 32.5%;
-        }
-        @media @mobile {
-            width: 100%
-        }
-        .image-title {
-            font-family: @font-swatch2-font-family;
-            font-size: @font-swatch2-font-size;
-            font-weight: @font-swatch2-font-weight;
-            line-height: @font-swatch2-line-height;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            word-break: break-word;
-            color: @color__gallery-title-text;
-            &:hover {
-                letter-spacing: 1px;
-            }
-            &:before {
-                content: '';
-                display: block;
-                width: 80%;
-                border-top: 2px solid @color__gallery-title--text;
-                position: absolute;
-                margin: 5%;
-                top: 5%;
-                @media @tablet {
-                    margin-left: 0px;
-                }
-            }
-            @media @tablet {
-                font-size: 26px;
-                line-height: 33px;
-                margin-bottom: 13px;
-            }
-            @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-                font-size: 18px;
-                margin-bottom: 7px;
-                line-height: 20px;
-            }
-        }
-        .image-description {
-            font-family: @font-swatch5-font-family;
-            font-size: @font-swatch5-font-size;
-            font-weight: @font-swatch5-font-weight;
-            line-height: @font-swatch5-line-height;
-            letter-spacing: @font-swatch5-letter-spacing;
-            word-break: break-word;
-            text-transform: uppercase;
-            color: @color__gallery-description--text;
-            &:after {
-                content: '';
-                display: block;
-                width: 80%;
-                border-bottom: 2px solid @color__gallery-title--text;
-                position: absolute;
-                margin: 5%;
-                bottom: 5%;
-                @media @tablet {
-                    margin-left: 0px;
-                }
-            }
-            @media @tablet {
-                font-size: 13px;
-                line-height: 21px;
-            }
-            @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-                font-size: 10px;
-                font-weight: 600;
-            }
-        }
+    }
+    @media @mobile {
+        width: 100%
+    }
+    @media @tablet {
+        font-size: 26px;
+        line-height: 33px;
+        margin-bottom: 13px;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+        font-size: 18px;
+        margin-bottom: 7px;
+        line-height: 20px;
     }
 }
-    
+.gallery__image-title {
+    font-family: @font-swatch2-font-family;
+    font-size: @font-swatch2-font-size;
+    font-weight: @font-swatch2-font-weight;
+    line-height: @font-swatch2-line-height;
+    margin-bottom: 15px;
+    word-break: break-word;
+    color: @color__gallery-title--text;
+    &:hover {
+    }
+}
+.gallery__image-description {
+    font-family: @font-swatch5-font-family;
+    font-size: @font-swatch5-font-size;
+    font-weight: @font-swatch5-font-weight;
+    line-height: @font-swatch5-line-height;
+    word-break: break-word;
+    text-transform: uppercase;
+    color: @color__gallery-description--text;
+}
+
 // Gallery Images
 // --------------
 // Use Background-image Method
@@ -496,68 +465,23 @@ h3.feature__strapline {
 }
 // Show Caption
 .gallery__figure:hover .gallery__caption {
-    text-align: center;
+    text-align: left;
     position: absolute;
     top: 0;
     display: block;
     width: 100%;
     height: 100%;
     padding: 25px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
     opacity: 0;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     overflow: scroll;
-    z-index: 9999;
     &:hover {
         opacity: 1;
     }
 }
-    
-// Line below title
-.gallery__image-title:after {
-    display: block;
-    content: '';
-    width: 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-.gallery__figure:hover .gallery__caption .image-title:after {
-    width: 70px;
-    }
-    
 // Media queries for Image Gallery
 // -------------------------------
 // Screen size between 769px and 920px
@@ -717,7 +641,7 @@ h3.feature__strapline {
                 padding: 3px 20px;
             }
             .image-title {
-                font-family: @font__slideshow-title--font-family;
+                font-family: @font__h1--font-family;
             }
             .image-title,
             .image-description {
@@ -791,7 +715,7 @@ h3.feature__strapline {
     font-weight: 600;
     text-transform: uppercase;
     color: @color__slideshow-title--text;
-    font-family: @font__slideshow-title--font-family;
+    font-family: @font__h1--font-family;
 }
 
 .responsiveslideshow__image-description {
@@ -1022,7 +946,6 @@ button.ecombasket-remove-button.js-remove,
         padding: 12px 30px;
         text-transform: uppercase;
         font-weight: 700;
-        letter-spacing: 1.15px!important;
         &:before {
             font-size: 1.25em;
         }
@@ -1032,7 +955,6 @@ button.ecombasket-remove-button.js-remove,
             -ms-transition: all 0.2s ease;
             -o-transition: all 0.2s ease;
             transition: all 0.2s ease;
-            letter-spacing: 1px;
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
         }
@@ -1076,21 +998,6 @@ button.ecombasket-remove-button.js-remove,
         font-size: 0.8em!important;
     }
 }
-
-/*.contactform__label,
-.signupform__label,
-.blogsearch__label {
-    font-family: @font__form-label--font-family;
-    color: @color__form-label--text;
-    margin-bottom: .4em;
-    padding: 0;
-    @media @tablet {
-        font-size: 0.9em!important;
-    }
-    @media @mobile {
-        font-size: 0.8em!important;
-    }
-}*/
 
 .contactform__button,
 .signupform__button,
@@ -1153,11 +1060,9 @@ a.socialicons__social-link {
 .widget__companyphone {
     .phone-number-link {
         padding-bottom: 10px;
-        letter-spacing: 1.15px!important;
         color: @color__link--text;
         &:hover {
             box-shadow: 0 1.5px 0 @color__link--text;
-            letter-spacing: 1px;
         }
     }
 }
@@ -1216,7 +1121,6 @@ a.socialicons__social-link {
     font-family: @font__p--font-family;
     font-size: @font__p--font-size;
     font-weight: 700;
-    letter-spacing: 1px;
     &:hover {
         font-weight: 700;
         text-decoration: none!important;
@@ -1285,9 +1189,7 @@ a.yelpreview__review-link {
     text-decoration: none;
     padding: 12px 0px;
     border-bottom: 1px solid @color__link--text;
-    letter-spacing: 1px;
     &:hover {
-        letter-spacing: 1px!important;
         box-shadow: 0 1.5px 0 @color__link--text;
         cursor: pointer;
         .transition (all, 0.2s, ease);
