@@ -30,7 +30,6 @@
 // font8:  Feature Headline
 // font9:  Feature Strapline
 // font10: Company Name (Logo)
-
 // -----------------------------
 // 2. #CUSTOM PAGE
 // -----------------------------
@@ -76,8 +75,9 @@ body.edit .widget.extendednavigation {
 .homepage-background {
     position: absolute;
     top: 0px;
-    z-index:0;
+    z-index: 0;
 }
+
 // -----------------------------
 // 4. #FOOTER
 // -----------------------------
@@ -92,23 +92,30 @@ body.edit .widget.extendednavigation {
 
 .socialicons__social-item {
     display: inline-block;
-    &:hover {
-        box-shadow: 0 2px 0 @color__socialicons--icon;
-    }
+    width: 35px;
+    height: 35px;
+    &:hover {}
 }
 
 .social-social-link {
     color: @color__socialicons--icon;
     margin: 0 5px;
+    background-color: transparent;
+    position: relative;
+    top: 8px;
+    left: 4px;
     &:hover {
-        background-color: transparent;
+        color: @color__socialicons--icon--hover;
         font-weight: 300;
+        .transition (all, 0.1s, ease);
     }
     @media @mobile {
         margin: 0 2px;
     }
 }
-
+.icon--facebook {
+    left: 6px!important;
+}
 .social-item .icon:before {
     font-size: 18px!important;
 }
@@ -178,15 +185,16 @@ span.expand.button.button--expand {
 // 6. #GENERAL FORMS
 // -----------------------------
 legend {
-    display:none!important;
+    display: none!important;
 }
+
 .form-group {
     display: flex;
 }
 
 label {
     font-size: 16px;
-    font-weight:500;
+    font-weight: 500;
     font-family: @font__h1--font-family;
     color: @color__form-label--text;
     text-transform: uppercase;
@@ -205,8 +213,10 @@ label.active {
     transform: scale(0.75);
 }
 
-input, select {
+input,
+select {
     align-self: flex-end;
+    margin-top: 4px!important
 }
 
 input::-webkit-input-placeholder {
@@ -249,6 +259,7 @@ textarea {
     resize: vertical;
     min-height: 150px;
     margin-bottom: 20px;
+    margin-top: 18px!important;
     width: 100%;
 }
 
@@ -306,26 +317,29 @@ select {
     margin: 0 0 15px 0;
     padding: 0;
     display: block;
-    color:transparent;
+    color: transparent;
     background: image('/images/arrow-small-down.svg') no-repeat center right;
     background-size: 2.5%;
 }
 
 select.selected {
-    color: @color__form-label--text;
+    color: @color__p--text;
 }
 
 select:hover {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     background-color: transparent!important;
 }
+
 select:selected {
     color: @color__form-label--text;
 }
+
 select:focus {
     background-color: transparent!important;
     color: @color__form-label--text;
 }
+
 select:focus > label {
     background-color: transparent!important;
     color: @color__form-label--text;
@@ -400,7 +414,6 @@ select span {
     padding: 0px;
 }
 
-
 input[type="radio"],
 input[type="checkbox"] {
     -webkit-appearance: none!important;
@@ -443,8 +456,6 @@ input[type="checkbox"]:checked {
 
 // Signup Form
 // ------------
-
-
 .signupform__input {
     display: inline-block;
     float: left;
