@@ -211,11 +211,15 @@ input:focus {
   outline: 0;
 }
 label{
+    font-family: @font__h1--font-family;
+    font-weight: 500;
+    color: @color__form-label--text;
+    text-transform: uppercase;
   position:absolute;
   pointer-events:none;
   top: 5px;
   left:10px;
-  font-size: 10px;
+  font-size: 16px;
   opacity:0;
   background-color: white;
   padding: 0 2px;
@@ -229,6 +233,7 @@ input:valid + label{
 }
 input:focus + label{
   color: #03a9f4;
+    opacity: 1;
 }
 
 
