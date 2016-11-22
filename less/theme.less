@@ -254,6 +254,19 @@ input:focus:[placeholder] {
     color: #bbb;
 }
 
+.form-group.focused input[placeholder] {
+    color: #bbb;
+}
+.form-group.focused input::-moz-placeholder {
+    color: #bbb;
+}
+.form-group.focused ::-moz-placeholder {
+    color: #bbb;
+}
+.form-group.focused input:-moz-placeholder {
+    color: #bbb;
+}
+
 input[type=search],
 input[type=text],
 input[type=email],
@@ -270,6 +283,7 @@ input#search-term {
     font-size: 1rem;
     padding: 0;
     box-shadow: none;
+    color: @color__p--text!important;
     &:focus {
         border-bottom: 1px solid @color__form--border;
         box-shadow: 0 1px 0 0 @color__form--border;
@@ -283,6 +297,7 @@ textarea {
     margin-bottom: 20px;
     margin-top: 18px!important;
     width: 100%;
+    color: @color__p--text!important;
 }
 
 input[type=search],
@@ -294,6 +309,7 @@ input[type=email],
     width: 100%;
     min-height: 38px;
     font-size: 0.9em;
+    color: @color__p--text!important;
 }
 
 input.js-email.email {
@@ -313,12 +329,14 @@ input.js-email.email {
     border: 0;
     display: inline-block;
     vertical-align: top;
+    color: @color__p--text!important;
 }
 
 .contactform,
 .advancedcontactform {
     input[type=email] {
         width: 100%;
+        color: @color__p--text!important;
     }
 }
 
