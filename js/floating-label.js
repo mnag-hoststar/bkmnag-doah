@@ -3,7 +3,7 @@ $('input, textarea').on('focus blur', function (e) {
 }).trigger('blur');
 
 $(document).on('focus active visited', 'select', function () {
-    $('.label--filter, .label--variation, .label--select, .advancedcontactform__label').addClass('active');
+    $('.label--filter, .label--variation, .label--select').addClass('active');
     $('select').addClass('selected');
 });
 $(document).on('blur', 'select', function (e) {

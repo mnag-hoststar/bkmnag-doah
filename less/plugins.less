@@ -258,6 +258,10 @@ a.button.button--pagination.button--next {
 // -----------------------------
 // 2. #MENU
 // -----------------------------
+
+.menu__section-header {
+    margin-bottom:25px;
+}
 //Menusection Toggle (Categories)
 .menusections-body {
     text-align: center;
@@ -766,6 +770,7 @@ ECOM - BASKET BUTTON
 
 .ecombasketsummary__quantity-field {
     margin: 20px;
+    color: @color__p--text;
     @media @tablet {
         margin: 12px;
     }
@@ -824,10 +829,12 @@ a.ecombasketsummary__summary-item-link {
     font-family: @font__h1--font-family;
     font-weight: @font__h1--font-weight;
     font-size: @font-swatch6-font-size;
-    color: @color__secondary;
+    color: @color__p--text;
+    letter-spacing: 0px;
     &:hover {
         font-weight: @font__h1--font-weight;
-        color: darken(@color__primary, 5%);
+        color: darken(@color__p--text, 5%);
+        letter-spacing:0px;
     }
     @media @mobile {
         text-align: center;
@@ -875,6 +882,7 @@ a.ecombasketsummary__summary-item-link {
     padding-left: 1px;
     width: 30px;
     height: 30px;
+    font-weight:700;
     @media @mobile {
         width: 25px;
         height: 25px;

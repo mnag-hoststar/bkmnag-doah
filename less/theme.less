@@ -283,7 +283,7 @@ input#search-term {
     font-size: 1rem;
     padding: 0;
     box-shadow: none;
-    color: @color__p--text!important;
+    color: transparent;
     &:focus {
         border-bottom: 1px solid @color__form--border;
         box-shadow: 0 1px 0 0 @color__form--border;
@@ -364,10 +364,16 @@ select {
     color: transparent;
     background: image('/images/arrow-small-down.svg') no-repeat center right;
     background-size: 2.5%;
+    @media @tablet {
+        background-size: 5.5%;
+    }
+    @media @mobile {
+        background-size: 8.5%;
+    }
 }
 
 select.selected {
-    color: @color__p--text;
+    color: @color__p--text!important;
 }
 
 select:hover {

@@ -78,7 +78,6 @@
 .widget__companyname {
     width: 100%;
     text-align: left;
-    margin-bottom: 20px;
     @media @mobile {
         text-align:center;
         margin: 0px 0px 10px 0px!important;
@@ -268,6 +267,11 @@ a.companyname__company-link {
     padding-left: 70px;
     left: 12%;
     position: relative;
+    @media @mobile {
+        margin: 0 auto;
+        left:0%;
+        padding-left:30px;
+    }
 }
     
 .feature__content-inner-wrap {
@@ -298,13 +302,13 @@ h3.feature__strapline {
     word-break: break-word;
     @media @tablet {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 30px;
         word-break: break-word;
     }
     @media @mobile {
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 22px;
         word-break: break-word;
     }
@@ -916,7 +920,9 @@ button.ecombasket-remove-button.js-remove,
 .form-group,
 .form-group .advancedcontactform {
     padding: 0px;
+    margin-top:20px;
 }
+
 
 .fieldset--search,
 .signupform__fieldset,
@@ -1077,7 +1083,7 @@ a.socialicons__social-link {
     font-family: @font__h1--font-family;
     font-size: @font__p--font-size;
     font-weight: @font__h1--font-weight;
-    color: @color__h1--text;
+    color: @color__p--text;
     &:hover {
         color: darken(@color__h1--text, 5%);
         text-decoration: none!important;
