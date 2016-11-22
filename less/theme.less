@@ -188,11 +188,51 @@ legend {
     display: none!important;
 }
 
-.form-group {
+/*.form-group {
     display: flex;
+}*/
+
+.form-group {
+  position: relative;
+  width: 200px;
+  margin-top:20px;
+  font-family: 'Roboto', sans-serif;
+}
+input{
+  display:block;
+  width:100%;
+  padding:15px 10px 0;
+  border-bottom: 1px solid blue!important;
+    border:none;
+  font-size:14px;
+    
+}
+input:focus {
+  outline: 0;
+}
+label{
+  position:absolute;
+  pointer-events:none;
+  top: 5px;
+  left:10px;
+  font-size: 10px;
+  opacity:0;
+  background-color: white;
+  padding: 0 2px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+input:valid + label{
+  opacity:1;
+  top:-5px;
+  color: #9e9e9e;
+}
+input:focus + label{
+  color: #03a9f4;
 }
 
-label {
+
+/*label {
     font-size: 16px;
     font-weight: 500;
     font-family: @font__h1--font-family;
@@ -230,7 +270,7 @@ input:focus::-webkit-input-placeholder {
 
 .form-group.focused input::-webkit-input-placeholder {
     color: #bbb;
-}
+}*/
 
 input[type=search],
 input[type=text],

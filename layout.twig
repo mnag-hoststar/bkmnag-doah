@@ -27,7 +27,7 @@
 <body class="{{ page.backgroundClass }}">
 
     {% block content %} {% endblock %} {% include basekit.bodyScript %}
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
     <script type="text/javascript">
         ! function () {
@@ -37,23 +37,7 @@
             if (supportsSVG()) document.documentElement.className += ' svg'
         }()
     </script>
-    <script src="{{asset('js/floating-label.js')}}"></script>
-    <script type="text/javascript">
-    $('input, textarea').on('focus blur', function (e) {
-    $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
-}).trigger('blur');
 
-$(document).on('focus active visited', 'select', function () {
-    $('.label--filter, .label--variation').addClass('active');
-    $('select').addClass('selected');
-});
-$(document).on('blur', 'select', function (e) {
-
-    if (!$(e.currentTarget).val())
-        $('label').removeClass('active');
-
-});
-    </script>
 </body>
 
 </html>
