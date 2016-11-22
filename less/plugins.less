@@ -225,18 +225,17 @@ a.button.button--pagination.button--next {
             margin: 0 auto;
             height: 35px;
             text-transform: uppercase;
-            background-color: transparent;
+            background-color: @color__button--background;
             color: @color__socialicons--icon;
             &:before {
                 font-size: 16px!important;
             }
             &:hover {
-                box-shadow: 0 1.5px 0 @color__socialicons--icon;
                 .transition (all, 0.1s, ease);
+                background-color: @color__button--background--hover;
                 outline: none;
             }
             &:active {
-                box-shadow: 0 1.5px 0 @color__socialicons--icon;
                 .transition (all, 0.1s, ease);
                 outline: none;
             }
@@ -264,10 +263,9 @@ a.button.button--pagination.button--next {
 }
 
 a.menu-item-name {
-    margin: 0 1em;
     border-bottom: 1px solid @color__link--text;
     font-family: @font__button--font-family;
-    padding: 10px 20px;
+    padding: 10px;
     text-transform: uppercase;
     color: @color__primary;
     font-weight: 400;
@@ -297,9 +295,15 @@ a.menu-item-name {
 .menu-section .menu-items {
     text-align: center;
 }
-
+.menusetions__menusections-item,
+.menusections-item {
+    line-height:50px;
+}
 .menu-item {
     padding: 30px;
+    @media @mobile {
+        padding: 0px;
+    }
 }
 h3.menu__item-title {
     color: @color__blogpost-title--text;
@@ -310,10 +314,6 @@ h3.menu__section-subtitle {
 }
 h4.menu__item-subtitle {
     color: @color__blogpost-title--text;
-}
-
-.item-image {
-    height: 350px;
 }
 
 .menu .item-image .image-link {
@@ -338,6 +338,9 @@ h4.menu__item-subtitle {
     background-color: transparent;
     text-align: center;
     margin: 1.5em 0;
+    @media @mobile {
+        padding: 0px;
+    }
 }
 
 footer.section-footer {
@@ -814,13 +817,15 @@ ECOM - BASKET BUTTON
     }
 }
 
-.ecombasketsummary__summary-item-link a {
+a.ecombasketsummary__summary-item-link {
     text-transform: uppercase;
     font-family: @font__h1--font-family;
     font-weight: @font__h1--font-weight;
     font-size: @font-swatch6-font-size;
+    color: @color__primary;
     &:hover {
         font-weight: @font__h1--font-weight;
+        color: darken(@color__primary, 5%);
     }
     @media @mobile {
         text-align: center;

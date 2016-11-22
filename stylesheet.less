@@ -48,8 +48,8 @@ ul {
 blockquote {
     padding: 50px;
     border: 15px solid @color__button--background;
-    color: @color__primary;
-    font-family: @font__button--text;
+    color: @color__button--text;
+    font-family: @font__button--font-family;
     font-size: 28px;
     width: 50%;
     line-height: 43px;
@@ -102,7 +102,7 @@ p > a {
 a {
     color: @color__link--text;
     &:hover {
-        color: darken(@color__link--text), 5%;
+        color: darken(@color__link--text, 5%);
         .transition (all, 0.1s, ease);
         text-decoration: none;
     }
