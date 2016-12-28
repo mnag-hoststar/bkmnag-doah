@@ -133,9 +133,47 @@ a.companyname__company-link {
     margin: 0;
 }
 
+
+.extendednavigation .navigation-item .item-name {
+	padding: 0 0.6em;
+	line-height: 2.5em;
+	@media @tablet {
+		padding: 0;
+	}
+}
+
+// Arrow beside folder and folder menu
+
+.extendednavigation ul li.folder,
+.navigation ul li.folder {
+	.item-name--parent {
+		padding-right: 1.5em;
+		&:after {
+			display: block;
+			content: "";
+			position: absolute;
+			right: 0.5em;
+			top: 1.2em;
+			border: 0.3em solid transparent;
+			border-top-color: @color__navigation--text;
+			@media @tablet {
+				right: 30px;
+			}
+			@media @mobile {
+				right: 0;
+			}
+		}
+	}
+}
+
+// Submenu
+
 .navigation-list--children {
+	border: 1px solid @color__primary;
 	@media @tablet {
     	position: static;
+		border-left: none;
+		border-right: none;
 	}
 }
     
@@ -232,7 +270,7 @@ a.companyname__company-link {
         }
     }
 	
-// Toggle Button Open State
+	// Toggle Button Open State
 	
     .extendednavigation__navigation-list {
         display: none;
@@ -255,7 +293,6 @@ a.companyname__company-link {
     }
     .navigation-item.folder .navigation-item--child a {
         color: @color__navigation--text;
-		line-height: 1em;
     }
 	
     .extendednavigation__navigation-list.open {
