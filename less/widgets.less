@@ -81,8 +81,10 @@
 .widget__companyname {
     width: 100%;
     text-align: left;
-    @media @mobile {
+    @media @tablet {
         text-align:center;
+    }
+    @media @mobile {
         margin: 0px 0px 10px 0px!important;
     }
 }
@@ -90,7 +92,8 @@
 a.companyname__company-link {
     display: inline-block;
     padding: 0.65em 0 0.8em;
-    text-transform:uppercase;
+    text-transform: uppercase;
+	line-height: 1.25em;
     color: @color__companyname--text;
     @media @mobile {
         padding: 20px 0px;
@@ -228,22 +231,13 @@ a.companyname__company-link {
             background-color: transparent;
         }
     }
+	
 // Toggle Button Open State
 	
-    .extendednavigation__navigation-list.open {
-        display: block;
-        background-color: @color__navigation-list--background;
-        &:before {
-            margin-top: 21px;
-            background: @color__navigation-list--background;
-            box-shadow: none;
-            .transition( all, 0.5s, ease);
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            box-shadow: 0 6px 0 @color__navigation--text;
-        }
+    .extendednavigation__navigation-list {
+        display: none;
+		background-color: @color__feature-content--background;
+		
         .navigation-body {
             display: none;
             .open & {
@@ -252,6 +246,7 @@ a.companyname__company-link {
         }
         .navigation-item {
             width: 100%;
+			padding: 0 30px;
         }
     }
     .extendednavigation li.selected > a {
@@ -260,8 +255,36 @@ a.companyname__company-link {
     }
     .navigation-item.folder .navigation-item--child a {
         color: @color__navigation--text;
+		line-height: 1em;
     }
+	
+    .extendednavigation__navigation-list.open {
+        display: block;
+	}
 }
+
+@media @mobile {
+	.flex-item.flex-nav {
+		width: 100%;
+		padding: 0 10%;
+	}
+	
+	.navigation-item .item-name {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.extendednavigation__navigation-list {
+        .navigation-item {
+			padding: 0;
+        }
+	
+		.navigation-item.navigation-item--child {
+				padding: 0 30px;
+		}
+	}
+}
+
 // -----------------------------
 // 4.  #FEATURE
 // -----------------------------
@@ -287,9 +310,11 @@ a.companyname__company-link {
     padding-left: 70px;
     position: relative;
     margin: 0 10%;
+    @media @tablet {
+        padding: 0 10% 30px;
+    }
     @media @mobile {
         margin: 0 auto;
-        padding-left: 30px;
     }
 }
     
