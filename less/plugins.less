@@ -1,15 +1,18 @@
 // --------------------------------------
 // BaseKit Standard Theme: LESS > Plugins
 // --------------------------------------
+
 // -----------------------------
 // #Table of Contents
 // -----------------------------
 //  1.   #BLOG
 //  2.   #MENU
 //  3.   #E-COMMERCE
+
 // -----------------------------
 // 1. Blog Post List
 // -----------------------------
+
 .widget__blogpostlist {
     width: 104%;
     margin-bottom: 40px;
@@ -46,6 +49,7 @@
 }
 
 //Post Content
+
 .blogpostlist__post-excerpt p {
     padding-bottom: 25px;
 }
@@ -68,6 +72,7 @@
 }
 
 //Blog List Footer
+
 .blogpostlist__post-footer {
     font-size: 0.9em!important;
 }
@@ -89,6 +94,7 @@ footer.post-list-footer nav.post-pagination {
 }
 
 //Post List Footer older/newer Toggle
+
 .blogpostlist__pagination-item {
     display: inline-block;
 }
@@ -119,6 +125,7 @@ a.button.button--pagination.button--next {
 }
 
 //Blog Post Single
+
 .blogpost__post-image {
     height: 450px;
 }
@@ -176,6 +183,7 @@ a.button.button--pagination.button--next {
 }
 
 //Social Sharing Icon Group
+
 .blogpost__sharing-links {
     float: right;
     position: relative;
@@ -183,6 +191,7 @@ a.button.button--pagination.button--next {
 }
 
 //Social Sharing Blog Post Icons
+
 .blogpost__network-item {
     margin-top:8px!important;
     button.button.icon.icon--facebook,
@@ -216,7 +225,9 @@ a.button.button--pagination.button--next {
         width: 100%;
         padding: 0px;
     }
+	
     //Social Sharing Blog Post Icons
+	
     .blogpost__network-item {
         button.button.icon.icon--facebook,
         button.button.icon.icon--twitter,
@@ -248,6 +259,7 @@ a.button.button--pagination.button--next {
 // -----------------------------
 // 1. #BLOG SEARCH
 // -----------------------------
+
 .blogsearch__fieldset {
     margin: 0px auto 10px;
     display: table;
@@ -260,7 +272,7 @@ a.button.button--pagination.button--next {
 // -----------------------------
 
 .menu__section-header {
-    margin-bottom:25px;
+    margin-bottom: 25px;
 }
 //Menusection Toggle (Categories)
 .menusections-body {
@@ -294,6 +306,7 @@ a.menu-item-name {
 }
 
 //Menu Widget
+
 .widget__menu {
     margin-bottom: 40px;
 }
@@ -303,7 +316,7 @@ a.menu-item-name {
 }
 .menusetions__menusections-item,
 .menusections-item {
-    line-height:50px;
+    line-height: 50px;
 }
 .menu-item {
     padding: 30px;
@@ -354,6 +367,7 @@ footer.section-footer {
 }
 
 //Featured Menu- Sections
+
 section.menu-section--featured {
     border: 15px solid @color__button--background;
 
@@ -368,6 +382,7 @@ section.menu-section--featured {
 }
 
 //Section Header
+
 header.section.header {
     text-align: center;
     padding-bottom: 2em;
@@ -378,7 +393,8 @@ header.section.header {
     font-size: @font-swatch5-font-size;
 }
 
-//Item Footer 
+//Item Footer
+
 .item-footer {
     .item-price p {
         color: @color__p--text;
@@ -421,6 +437,7 @@ header.section.header {
 // -----------------------------
 // Products List
 // -------------
+
 .widget__ecomproductslist,
 .widget__ecomfeaturedproducts {
     max-width: none;
@@ -575,6 +592,7 @@ a.ecomproductslist__title {
 
 // ECOM PRODUCT ITEM
 // -----------------
+
 .ecomproduct__product-images {
     width: 50%;
     float: left;
@@ -655,7 +673,6 @@ a.ecomproductslist__title {
 }
 
 select.ecomproduct__select {
-    width:250%;
     background-size:10.5%;
 }
 a.tag-link,
@@ -729,17 +746,32 @@ ECOM - BASKET BUTTON
 // -------------------------------
 // 4. #Basket Summary
 // -------------------------------
+
+// Basket Summary Heading
+
+.summary-table .table-row--heading {
+    @media @tablet {
+        display: none;
+    }
+}
+
 // Basket Summary Content
+
 .summary-table .cell--header {
     margin-bottom: 20px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 13px;
+    background-color: transparent;
 }
 
 .summary-table .cell {
-    vertical-align: middle!important;
+    vertical-align: middle !important;
+    @media @tablet {
+		flex-direction: column;
+		display: block;
+    }
 }
 
 .basket-summary__summary-section {
@@ -772,13 +804,16 @@ ECOM - BASKET BUTTON
     margin: 20px;
     color: @color__p--text;
     @media @tablet {
-        margin: 12px;
+        margin: 0 12px;
     }
 }
 
 .summary-table .table-row {
     border-left: none;
     border-right: none;
+    @media @tablet {
+        flex-direction: column;
+    }
 }
 
 .ecombasketsummary__cell {
@@ -798,11 +833,67 @@ ECOM - BASKET BUTTON
     }
 }
 
+.summary-table .cell--image,
+.summary-table .cell--title,
+.summary-table .cell--quantity,
+.summary-table .cell--price,
+.summary-table .cell--total {
+    @media @tablet {
+        width: auto !important;
+		border-bottom: none;
+    }
+}
+
+.summary-table .cell--image,
+.summary-table .cell--title {
+    @media @tablet {
+		padding-bottom: 0;
+    }
+}
+
+.summary-table .cell--image {
+    @media @tablet {
+    }
+}
+
+.summary-table .cell--title {
+    text-align: left!important;
+    @media @tablet {
+		border-top: none;
+		padding: 10px 30px 0;
+		p.summary-item-title {
+			border-bottom: 1px solid @color__secondary;
+			text-align: center;
+		}
+    }
+    @media @mobile {
+        text-align: center !important;
+    }
+}
+
+.quantity-wrap .button--quantity {
+    @media @tablet {
+		line-height: 25px;
+    }
+}
+
+.summary-table .cell--quantity {
+    @media @tablet {
+		border-top: none;
+		padding: 20px 0 10px;
+    }
+    @media @mobile {
+		border-top: none !important;
+    }
+}
+
 .summary-table .cell--price,
 .summary-table .cell--total {
     text-transform: uppercase;
     font-weight: 600;
+	border-top: 0;
     @media @tablet {
+		padding: 5px 12px;
         width: 100%;
         text-align: center;
     }
@@ -813,14 +904,9 @@ ECOM - BASKET BUTTON
     }
 }
 
-.summary-table .cell--header {
-    background-color: transparent;
-}
-
-.summary-table .cell--title {
-    text-align: left!important;
-    @media @mobile {
-        text-align: center!important;
+.summary-table .cell--total {
+    @media @tablet {
+		padding: 5px 12px 25px;
     }
 }
 
@@ -860,7 +946,19 @@ a.ecombasketsummary__summary-item-link {
     }
 }
 
+.summary-table .cell--order-total {
+    @media @tablet {
+		padding: 8px 12px;
+    }
+	.ecombasketsummary__order-total {
+		@media @tablet {
+			text-align: center;
+		}
+	}
+}
+
 //Proceed to checkout Button
+
 .ecombasketsummary__summary-form {
     text-align: right;
     @media @tablet {

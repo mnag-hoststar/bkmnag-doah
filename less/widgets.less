@@ -30,6 +30,7 @@
 
 
 // Global style for flex items
+
 .flex-item {
     -webkit-align-self: auto;
     -moz-align-self: auto;
@@ -53,6 +54,7 @@
 // -----------------------------
 // 1.  #LOGO
 // -----------------------------
+
 .widget__logo {
     width: 100%;
     text-align: left;
@@ -75,6 +77,7 @@
 // -----------------------------
 // 2.  #COMPANY NAME
 // -----------------------------
+
 .widget__companyname {
     width: 100%;
     text-align: left;
@@ -98,13 +101,19 @@ a.companyname__company-link {
         font-weight: 300;
     }
 }
+
 // -----------------------------
 // 3.  #NAVIGATION
 // -----------------------------
+
+// --------------------------
 // Widget Extended Navigation
 // --------------------------
+
+// ---------------
 // Navigation List
 // ---------------
+
 // Navigation widget
 
 .flex-nav {
@@ -120,14 +129,22 @@ a.companyname__company-link {
     min-width: 220px;
     margin: 0;
 }
+
+.navigation-list--children {
+	@media @tablet {
+    	position: static;
+	}
+}
     
 // Default Page
+
 .default-page .navigation-list--children {
     background-color: @color__primary;
 }
     
 // Navigation Item
 // ---------------
+
 .extendednavigation__navigation-item {
     @media @tablet {
         width: 100%;
@@ -135,6 +152,7 @@ a.companyname__company-link {
 }
     
 // Navigation Link
+
 .extendednavigation__item-name {
     padding: 14px;
     &:hover {
@@ -144,6 +162,7 @@ a.companyname__company-link {
 }
 
 // Selected Class
+
 .extendednavigation li.selected > a {
     text-decoration: none;
     color: @color__navigation--text;
@@ -160,6 +179,7 @@ a.companyname__company-link {
     
 // Burger Icon
 // -------------
+
 .extendednavigation__navigation-toggle {
     margin: 0 auto;
     display: none;
@@ -209,6 +229,7 @@ a.companyname__company-link {
         }
     }
 // Toggle Button Open State
+	
     .extendednavigation__navigation-list.open {
         display: block;
         background-color: @color__navigation-list--background;
@@ -244,6 +265,7 @@ a.companyname__company-link {
 // -----------------------------
 // 4.  #FEATURE
 // -----------------------------
+
 .feature__background-image {
     background-repeat: no-repeat;
     background-position: center top;
@@ -258,19 +280,16 @@ a.companyname__company-link {
     
 // Feature Content Wrap
 // --------------------
+
 .feature__content-wrap {
-    width: 80%;
-    z-index: 100;
-    text-align: left;
     background-color: @color__feature-content--background;
     height: 95vh;
     padding-left: 70px;
-    left: 12%;
     position: relative;
+    margin: 0 10%;
     @media @mobile {
         margin: 0 auto;
-        left:0%;
-        padding-left:30px;
+        padding-left: 30px;
     }
 }
     
@@ -281,6 +300,7 @@ a.companyname__company-link {
 
 // Feature Content
 // ---------------
+
 h2.feature__headline {
     padding-bottom: 25px;
     text-transform:uppercase;
@@ -316,6 +336,7 @@ h3.feature__strapline {
     
 // Feature Button
 // ---------------
+
 .feature__button {
     padding: 15px 25px;
     background-color: @color__feature-button--background;
@@ -378,7 +399,9 @@ h3.feature__strapline {
 
 // Gallery Layout
 // --------------
+
 // Gallery List
+
 .gallery-list {
     display: -webkit-box;
     display: -moz-box;
@@ -443,8 +466,10 @@ h3.feature__strapline {
 
 // Gallery Images
 // --------------
+
 // Use Background-image Method
 // For screen size larger than 920px. Media queries below.
+
 .gallery {
     .image-link {
         display: block;
@@ -458,9 +483,12 @@ h3.feature__strapline {
         display: none;
     }
 }
+
 // Gallery Image Captions
 // ----------------------
+
 // Hide Caption
+
 .gallery__caption {
     display: none;
     margin: 0;
@@ -532,6 +560,7 @@ h3.feature__strapline {
 // -----------------------------
 // 7.  #SLIDESHOW
 // -----------------------------
+
 .widget__responsiveslideshow {
     margin-bottom: 40px;
 }
@@ -541,6 +570,7 @@ h3.feature__strapline {
 
 // Slideshow Images
 // ------------------------
+
 .responsiveslideshow .contain .figure {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -575,6 +605,7 @@ h3.feature__strapline {
 }
 
 //2 Columns Layout Responsive
+
 .columns-two-left .responsiveslideshow .figure,
 .columns-two-right .responsiveslideshow .figure {
     @media @tablet {
@@ -583,6 +614,7 @@ h3.feature__strapline {
 }
 
 //Tablet Portrait
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .responsivecolumns .columns-two-left,
     .responsivecolumns .columns-two-right {
@@ -607,6 +639,7 @@ h3.feature__strapline {
 }
 
 //Tablet Landscape
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .responsivecolumns .columns-two-left,
     .responsivecolumns .columns-two-right {
@@ -619,6 +652,7 @@ h3.feature__strapline {
     }
 }
 //Mobile Landscape
+
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
     .responsivecolumns .columns-two-left,
     .responsivecolumns .columns-two-right {
@@ -628,6 +662,7 @@ h3.feature__strapline {
     }
 }
 //Mobile Portrait
+
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
     .responsivecolumns .columns-two-left,
     .responsivecolumns .columns-two-right {
@@ -650,8 +685,10 @@ h3.feature__strapline {
 .responsiveslideshow .image {
     display: none!important;
 }
+
 // Slideshow Image Captions
 // ------------------------
+
 .responsiveslideshow__caption {
     position: absolute;
     bottom: 0;
@@ -683,8 +720,10 @@ h3.feature__strapline {
         }
     }
 }
+
 // Slideshow Control Navigation Icons
 // ----------------------------------
+
 .responsiveslideshow__slide-navigation {
     position: absolute;
     top: 39%;
@@ -747,6 +786,7 @@ h3.feature__strapline {
     }
 }
 //Slide Navigation 2 Responsive Columns
+
 .responsivecolumns .columns-two-left,
 .responsivecolums .columns-two-right {
     .responsiveslideshow__slide-navigation {
@@ -815,8 +855,10 @@ h3.feature__strapline {
         font-size: 12px!important;
     }
 }
+
 // Slideshow Pagination Bullets
 // ----------------------------
+
 .responsiveslideshow__slide-pagination,
 .responsiveslideshow__pagination-list {
     text-align: center;
@@ -847,7 +889,9 @@ h3.feature__strapline {
 // -----------------------------
 // 8. #BUTTONS
 // -----------------------------
+
 // 8.1 Standard //
+
 .buttonwidget__button,
 .button.contactform__button,
 .button.signupform__button,
@@ -914,9 +958,11 @@ button.ecombasket-remove-button.js-remove,
         }
     }
 }
+
 // --------------------------------------------
 // 9.-11.  #CONTACT & #SIGNUP & BLOGSEARCH FORM
 // --------------------------------------------
+
 .form-group,
 .form-group .advancedcontactform {
     padding: 0px;
@@ -973,6 +1019,7 @@ button.ecombasket-remove-button.js-remove,
 // -----------------------------
 // 12.  #SOCIAL ICONS
 // -----------------------------
+
 .widget__socialicons,
 .widget__profile .profile__socialicons {
     margin: 40px 0px;
@@ -1028,9 +1075,11 @@ a.socialicons__social-link {
         }
     }
 }
+
 // -----------------------------
 // 13. #TWITER FEED
 // -----------------------------
+
 .widget__twitter,
 .profile__twitter {
     margin-bottom: 40px;
@@ -1089,9 +1138,11 @@ a.socialicons__social-link {
         text-decoration: none!important;
     }
 }
+
 // -----------------------------
 // 14. #DIVIDER - LINE WIDGET
 // -----------------------------
+
 .widget__line {
     padding: 0;
     margin-bottom: 40px;
@@ -1122,6 +1173,7 @@ h3.description.companydescription__description {
 // -----------------------------
 // 17. #YOUTUBE
 // -----------------------------
+
 .widget.youtube {
     margin-bottom: 40px;
 }
@@ -1129,6 +1181,7 @@ h3.description.companydescription__description {
 // -----------------------------
 // 18. #YELP, SOUNDCLOUD ...
 // -----------------------------
+
 .widget.soundcloud,
 .widget.facebookcomments,
 .widget.donation,
