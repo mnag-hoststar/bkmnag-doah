@@ -477,23 +477,23 @@ h2.ecomfeaturedproducts__listing-title {
     }
 }
 
-.ecomproductlist__product-list,
+.ecomproductslist__product-list,
 .ecomfeaturedproducts__product-list {
+	position: static;
+	margin: 0;
     padding: 0px;
 }
 
 .ecomproductslist__product-item,
 .ecomfeaturedproducts__product-item {
     display: inline-block;
-    width: 30.36%;
-    padding: 0 40px 0 0;
+    width: 26.9%;
+    padding: 0;
     vertical-align: top;
     overflow: hidden;
-    margin-left: 3%;
-    margin-right: -0.25em;
-    margin-bottom: 15px;
+	margin: 10px 3% 15px;
     @media @tablet {
-        width: 45%;
+        width: 43%;
     }
     @media @mobile {
         width: 100%;
@@ -525,8 +525,6 @@ a.ecomproductslist__title {
     }
 }
 
-.product-item-price {}
-
 .product-item-image {
     display: block;
     height: 100%;
@@ -547,13 +545,15 @@ a.ecomproductslist__title {
     padding-bottom: 25px;
 }
 
+.ecomproductslist__listing-footer {
+	clear: both;
+}
+
 .ecomproductslist__pagination-list {
     text-align: center;
-    margin-left: 3%;
     border-top: 1px solid darken(@color__body--background, 7%);
-    padding-top: 1em;
-    margin-top: 3em;
-    margin-bottom: 5em;
+	padding: 10px 0;
+	margin: 0;
     .current {
         color: @color__primary;
         border: 1px solid @color__primary;
@@ -591,8 +591,18 @@ a.ecomproductslist__title {
     }
 }
 
-// ECOM PRODUCT ITEM
-// -----------------
+// ECOM PRODUCT
+// ------------
+
+.ecomproduct__button {
+	@media @mobile {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+// ECOM PRODUCT ITEMS
+// ------------------
 
 .ecomproduct__product-images {
     width: 50%;
@@ -803,8 +813,9 @@ ECOM - BASKET BUTTON
 }
 
 .ecombasketsummary__quantity-field {
-    margin: 20px;
     color: @color__p--text;
+	display: table-cell;
+	vertical-align: middle;
     @media @tablet {
         margin: 0 12px;
     }
@@ -859,7 +870,7 @@ ECOM - BASKET BUTTON
 }
 
 .summary-table .cell--title {
-    text-align: left!important;
+    text-align: left !important;
     @media @tablet {
 		border-top: none;
 		padding: 10px 30px 0;
@@ -889,6 +900,7 @@ ECOM - BASKET BUTTON
     }
 }
 
+
 .summary-table .cell--price,
 .summary-table .cell--total {
     text-transform: uppercase;
@@ -911,6 +923,7 @@ ECOM - BASKET BUTTON
 		padding: 5px 12px 25px;
     }
 }
+
 
 a.ecombasketsummary__summary-item-link {
     text-transform: uppercase;
@@ -936,6 +949,7 @@ a.ecombasketsummary__summary-item-link {
 
 .summary-table .cell--quantity {
     width: 17%;
+	min-width: 150px;
     @media @tablet {
         width: 25%;
     }
@@ -975,14 +989,19 @@ a.ecombasketsummary__summary-item-link {
 }
 
 .ecombasketsummary__summary-item-link {
-    background-image: none!important;
+    background-image: none !important;
 }
 
 .quantity-wrap .button--quantity {
-    padding-left: 1px;
     width: 30px;
     height: 30px;
-    font-weight:700;
+    font-weight: 700;
+	line-height: 0;
+	display: table-cell;
+	vertical-align: middle;
+    @media @tablet {
+		line-height: 25px;
+    }
     @media @mobile {
         width: 25px;
         height: 25px;
@@ -990,7 +1009,7 @@ a.ecombasketsummary__summary-item-link {
 }
 
 .ecombasketsummary__quantity-wrap {
-    display: block!important;
+    display: table;
     background-color: transparent;
     color: @color__button--text;
     width: 100%;
@@ -1018,4 +1037,11 @@ button.ecombasketsummary__quantity-plus {
     @media @mobile {
         text-align: center;
     }
+}
+
+// Categories links
+
+.category-list.ecomcategorieslist__category-list {
+	margin-left: 0;
+	padding-left: 0;
 }
