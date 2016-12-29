@@ -1104,6 +1104,7 @@ button.ecombasket-remove-button.js-remove,
     padding-bottom: 10px;
     width: 35px;
     height: 35px;
+	margin: 7px 5px;
     &:hover {
         .transition (all, 0.2s, ease);
         color: @color__socialicons--icon--hover;
@@ -1111,22 +1112,34 @@ button.ecombasket-remove-button.js-remove,
     }
 }
 
-a.socialicons__social-link {
+a.socialicons__social-link,
+a.social-link {
     color: @color__socialicons--icon;
-    background-size: 32px;
     margin: 0 5px;
+    background-size: 32px;
+    background-color: transparent;
     position: relative;
-    top: 8px;
-    left: 4px;
+    top: 9px;
+	left: 5px;
     &:before {
         font-size: 20px;
     }
     &:hover {
+        color: @color__socialicons--icon--hover;
         font-weight: 300;
+        .transition (all, 0.1s, ease);
     }
     @media @mobile {
         margin: 0 2px;
     }
+	
+	&.icon--facebook {
+		left: 7px !important;
+	}
+}
+
+.social-item .icon:before {
+    font-size: 18px!important;
 }
 
 .socialicons__social-name {
