@@ -208,6 +208,7 @@
             "font__navigation--font-family": "@font-swatch6-font-family",
             "font__navigation--font-size": "@font-swatch6-font-size",
             "font__navigation--font-weight": "@font-swatch6-font-weight",
+			"font__navigation--line-height": "@font-swatch6-line-height",
             "font__navigation--letter-spacing": "@font-swatch6-letter-spacing",
             "color__navigation--text": "@font-swatch6-color",
             "color__navigation--text--hover": "@font-swatch6-color-hover",
