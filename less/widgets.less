@@ -130,9 +130,16 @@ a.companyname__company-link {
     flex: 1 1 auto;
 }
 
+.navigation-body,
+.extendednavigation__navigation-body {
+	margin-right: -0.6em;
+	@media @tablet {
+		margin-right: 0;
+	}
+}
+
 .extendednavigation__navigation-list {
     text-transform: uppercase;
-    min-width: 220px;
     margin: 0;
 }
 
@@ -161,9 +168,6 @@ a.companyname__company-link {
 			border-top-color: @color__navigation--text;
 			@media @tablet {
 				right: 30px;
-			}
-			@media @mobile {
-				right: 0;
 			}
 		}
 	}
@@ -315,7 +319,7 @@ a.companyname__company-link {
 @media @mobile {
 	.flex-item.flex-nav {
 		width: 100%;
-		padding: 0 10%;
+		padding: 5px 10%;
 	}
 	
 	.navigation-item .item-name {
@@ -324,10 +328,6 @@ a.companyname__company-link {
 	}
 	
 	.extendednavigation__navigation-list {
-        .navigation-item {
-			padding: 0;
-        }
-	
 		.navigation-item.navigation-item--child {
 				padding: 0 30px;
 		}
@@ -354,7 +354,6 @@ a.companyname__company-link {
 	padding-bottom: 5%;
 	padding-bottom: 5vh;
     @media @mobile {
-		padding: 0;
 		padding-bottom: 5%;
 		padding-bottom: 5vh;
     }
@@ -369,7 +368,7 @@ a.companyname__company-link {
 	height: 95vh;
 	width: 100%;
     background-color: @color__feature-content--background;
-	padding: 130px 10% 30px 70px;
+	padding: 130px 50px 30px;
     @media @tablet {
         padding: 180px 10% 30px;
     }
@@ -775,37 +774,39 @@ h3.feature__strapline {
 // Slideshow Image Captions
 // ------------------------
 
-.responsiveslideshow__caption {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin: 0;
-    padding: 10px 20px;
-    background-color: @color__slideshow-background-color;
-    overflow: hidden;
-}
+.responsiveslideshow {
+	.responsiveslideshow__caption {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		margin: 0;
+		padding: 14px 20px 10px;
+		background-color: @color__slideshow-background-color;
+		overflow: hidden;
+		@media @mobile {
+			padding: 3px 20px;
+		}
+	}
+	
+	.image-title,
+	.image-description {
+		@media @mobile {
+			font-size: 12px;
+			line-height: 18px;
+		}
+	}
 
-.responsiveslideshow__image-title {
-    font-weight: 600;
-    text-transform: uppercase;
-    color: @color__slideshow-title--text;
-    font-family: @font__h1--font-family;
-}
+	.responsiveslideshow__image-title {
+		font-weight: 600;
+		text-transform: uppercase;
+		color: @color__slideshow-title--text;
+		font-family: @font__h1--font-family;
+	}
 
-.responsiveslideshow__image-description {
-	padding: 10px 0 6px;
-    color: @color__slideshow-description--text;
-}
-
-@media @mobile {
-    .responsiveslideshow__caption {
-        padding: 3px 20px;
-        .image-title,
-        .image-description {
-            font-size: 12px;
-            line-height: 18px;
-        }
-    }
+	.responsiveslideshow__image-description {
+		padding: 6px 0 6px;
+		color: @color__slideshow-description--text;
+	}
 }
 
 // Slideshow Control Navigation Icons
@@ -832,6 +833,8 @@ h3.feature__strapline {
     background-color: @color__slideshow-caption--background;
     position: absolute;
     color: @color__slideshow-title--text;
+	margin-top: -32px;
+	padding: 0;
     &:hover {
         opacity: 0.7;
     }
@@ -859,6 +862,7 @@ h3.feature__strapline {
     left: 50%;
     transform: translate(-50%, 0%);
     position: relative;
+	padding: 0px 7px 0px 12px;
     .icon:before {
         margin-right: 0px;
     }
@@ -1205,6 +1209,10 @@ a.social-link {
     }
 }
 
+.tweet-wrap {
+	margin-left: 100px;
+}
+
 .tweet-wrap a:hover {
     text-decoration: none;
 }
@@ -1222,6 +1230,8 @@ a.social-link {
     font-family: @font-swatch4-font-family;
     color: @color__p--text;
     font-size: @font__p--font-size;
+	line-height: @font-swatch4-line-height;
+	margin-bottom: 5px;
     text-transform: uppercase;
     &:hover {
         text-decoration: none;

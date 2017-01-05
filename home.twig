@@ -10,7 +10,14 @@
 
 
 <div class="homepage-background">
-    {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Go to Gallery","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
+    {{widget('feature', 'featurehome', {
+		'header': 'DOHA's tasty brunches',
+		'strapline': 'For the best start into your day!',
+		'buttonText': 'Find out more',
+		'defaultBgImg': asset('images/feature-bg.jpg'),
+		'positionTopPercentage': '50',
+		'showBtn': true
+	})|raw}}
 
 <div class="main container clearfix">
     {{zone('main')|raw}}

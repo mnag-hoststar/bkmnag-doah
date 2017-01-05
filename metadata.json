@@ -1,7 +1,7 @@
 {
 	"name":"Doah",
-	"thumbnail":"thumbnail.png",
-	"screenshot":"screenshot.png",
+	"thumbnail":"doha-thumbnail.png",
+	"screenshot":"doah-screenshot.jpg",
 	"templateType":"standard",
 	"pageTypes":["home"],
     "widgetVersion": 2,
@@ -10,7 +10,10 @@
 	},
 	"images": [
 		"images/feature-bg.jpg",
-        "images/logo.png"
+        "images/logo.png",
+        "images/gallery/gallery-image--1.jpg",
+        "images/gallery/gallery-image--2.jpg",
+        "images/gallery/gallery-image--3.jpg"
 	],
 	"colorSwatches":
 	{

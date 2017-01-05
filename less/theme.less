@@ -4,14 +4,19 @@
 // -----------------------------
 // #Table of Contents
 // -----------------------------
-// 1. #HEADER, PROFILE HEADER & FOOTER
-// 2. #TYPOGRAPHY
-// 3. #FORMS
-// 4. #BUTTONS
-// 5. #IMAGES
+// 1. #TYPOGRAPHY
+// 2. #CUSTOM PAGE
+// 3. #HEADER & #BK-NAV
+// 4. #FOOTER
+// 5. #CONTENT
+// 6. #GENERAL FORMS
+
+
+
 // -----------------------------
 // 1. #TYPOGRAPHY
 // -----------------------------
+
 // Colour Variables
 // ----------------
 
@@ -32,6 +37,7 @@
 // font8:  Feature Headline
 // font9:  Feature Strapline
 // font10: Company Name (Logo)
+
 // -----------------------------
 // 2. #CUSTOM PAGE
 // -----------------------------
@@ -73,7 +79,8 @@ body.edit .widget.extendednavigation {
     }
     @media @mobile {
         flex-direction: column;
-		margin: 0;
+		margin-left: 0;
+		margin-right: 0;
     }
 }
 
@@ -377,10 +384,8 @@ option {
     overflow-y: auto;
     position: absolute;
     z-index: 999;
-    width: 520px;
     top: 0px;
     left: 0px;
-    opacity: 0!important;
     background-color: #fff;
     margin: 0;
     min-width: 100px;
@@ -409,6 +414,7 @@ select span {
 
 // Advanced Contact Form
 // ---------------------
+
 .advancedcontactform {
     text-align: left;
     width: 100%;
@@ -447,15 +453,16 @@ select span {
 .option-item {
 	&.option-item--radio,
 	&.option-item--checkbox {
-		width: 100%;
 		position: relative;
+		width: 100%;
+		margin-bottom: 18px;
 		label {
 			position: relative;
 			margin-left: 40px;
 			text-transform: none;
 			font-weight: 300;
 			transform: unset;
-			line-height: 2em;
+			line-height: 1.4em;
 			&:before {
 				content: '';
 				position: absolute;
