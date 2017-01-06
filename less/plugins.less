@@ -460,9 +460,6 @@ h2.ecomfeaturedproducts__listing-title {
 .fieldset--filters {
     .form-group {
         width: 31.333%;
-        select {
-            background-size: 5.5%!important;
-        }
     }
 }
 
@@ -471,9 +468,6 @@ h2.ecomfeaturedproducts__listing-title {
     .fieldset--filters {
         .form-group {
             width: 46.333%;
-            select {
-                background-size: 5.5%!important;
-            }
         }
     }
 }
@@ -682,11 +676,17 @@ a.ecomproductslist__title {
         text-decoration: none;
         text-transform: uppercase;
         display: inline-block;
+		text-align: center;
+		min-width: 200px;
         &:hover {
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
             cursor: pointer;
         }
+		&:before {
+			margin-right: 10px;
+			font-size: 1.2em;
+		}
     }
 }
 
@@ -694,12 +694,32 @@ a.ecomproductslist__title {
  margin-top:10px;   
 }
 
-select.ecomproduct__select {
-    background-size:10.5%;
+.product__product-category {
+	
 }
-a.tag-link,
-a.category-link {
-    margin: 0 1em;
+
+.product___product-attribute-title {
+	
+}
+
+.product__category-link {
+	
+}
+
+.ecomproduct__tags-title {
+	display: inline-block;
+	margin: 0 1em 0.6em 0;
+}
+
+.ecomproduct__tag-list {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a.ecomproduct__tag-link {
+    margin: 0 1em 0 0;
     font-family: @font__button--font-family;
     text-transform: uppercase;
     color: @color__link--text;
@@ -723,7 +743,11 @@ a.category-link {
 .bk-zone column columns-two-right {
     .product-content {
         width: 100%;
-        @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+        @media only screen
+		and (min-width: 768px)
+		and (max-width: 1024px)
+		and (orientation: landscape)
+		and (-webkit-min-device-pixel-ratio: 1) {
             width: 100%!important;
         }
     }

@@ -10,6 +10,7 @@
 // 4. #FOOTER
 // 5. #CONTENT
 // 6. #GENERAL FORMS
+// 7. #MESSAGES
 
 
 
@@ -88,6 +89,8 @@ body.edit .widget.extendednavigation {
     position: absolute;
     top: 0px;
     z-index: 0;
+	width: 100%;
+	width: 100vw;
 }
 
 // -----------------------------
@@ -187,6 +190,20 @@ label {
     transition: 240ms;
 }
 
+label.label--message {
+    padding: 10px;
+	
+	.focused & {
+    	padding: 0;
+	}
+}
+
+label.label--select,
+label.label--variation,
+label.label--filter {
+	transform: unset;
+}
+
 .form-group.focused label,
 .form-group:focus > select label,
 label.active {
@@ -277,8 +294,15 @@ textarea {
     min-height: 150px;
     margin-bottom: 20px;
     margin-top: 18px!important;
+    padding: 10px;
     width: 100%;
     color: @color__p--text!important;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid @color__form--border;
+    &:focus {
+        border: 1px solid #ddd;
+        border-bottom: 1px solid @color__form--border;
+    }
 }
 
 input[type=search],
@@ -321,6 +345,14 @@ input.js-email.email {
     }
 }
 
+.select-wrap {
+	width: 100%;
+	margin-top: 32px;
+	@media @mobile {
+		max-width: 100%;
+	}
+}
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -334,23 +366,17 @@ select {
     cursor: pointer;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border: 1px solid @color__form--border;
     outline: none;
     height: 3rem;
     line-height: 3rem;
     font-size: 1rem;
     margin: 0 0 15px 0;
-    padding: 0;
+    padding: 0 0 0 5px;
     display: block;
     color: transparent;
     background: image('/images/arrow-small-down.svg') no-repeat center right;
-    background-size: 2.5%;
-    @media @tablet {
-        background-size: 5.5%;
-    }
-    @media @mobile {
-        background-size: 8.5%;
-    }
+    background-size: 30px;
 }
 
 select.selected {
@@ -425,19 +451,6 @@ select span {
         text-align: left;
         width: 100%;
     }
-    .select-wrap {
-        width: 100%;
-        margin: 0px auto;
-        &:hover {
-            background-color: transparent;
-        }
-        @media @mobile {
-            max-width: 100%;
-        }
-        select:focus {
-            background-color: transparent;
-        }
-    }
 }
 
 .option-list,
@@ -447,6 +460,7 @@ select span {
 	width: 100%;
 }
 .advancedcontactform__form-group {
+	position: relative;
     margin-top: 20px;
 }
 
@@ -551,4 +565,190 @@ select span {
 
 .clearfix {
     *zoom: 1;
+}
+
+
+// -----------------------------
+// 7. #MESSAGES
+// -----------------------------
+
+@message-color--standard: 		#6e6e6e;
+@message-color--error: 			#d20000;
+@message-color--warning: 		#ffbc0b;
+@message-color--information: 	#AAE6E8;
+@message-color--success: 		#BAE914;
+@message-color--not-found: 		#6E6E6E;
+
+
+// Message
+// -------
+
+.message {
+    position: relative;
+    clear: both;
+    padding: 1em;
+	padding-left: 3.5em;
+    margin: 1em auto;
+    max-width: 1000px;
+    background-color: #fff;
+	border: 1px solid;
+	border-color: @message-color--standard;
+
+    // Icon
+
+    &:before {
+        font-family: 'FontAwesome', sans-serif;
+        display: block;
+        width: 2.7em;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        padding-top: 0.7em;
+		font-size: 1.4em;
+    }
+
+    // Heading 3, Paragraph
+
+    h3, p {
+        margin: 0;
+        padding: 0;
+    }
+	
+	h3 {
+		margin-bottom: 10px;
+	}
+
+    // Stronmg
+
+    strong {
+        font-weight: bold;
+    }
+
+    // Consequetive Paragraps
+
+    p+p {
+        margin-top: 0.35em;
+    }
+}
+
+// Error
+// -----
+
+.message--error {
+	border-color: @message-color--error;
+
+    // Icon
+
+    &:before {
+        content: "\f071"; // triangle
+    }
+
+    // Heading 3, Paragraph, Icon
+
+    h3, p, &:before {
+		color: darken(@message-color--error, 20%);
+    }
+}
+
+// Warning
+// -------
+
+.message--warning {
+	border-color: @message-color--warning;
+
+    // Icon
+
+    &:before {
+        content: "\f071"; // triangle
+		color: darken(@message-color--warning, 10%);
+    }
+
+    // Heading 3, Paragraph
+
+    h3, p {
+		color: darken(@message-color--warning, 30%);
+    }
+}
+
+// Information
+// -----------
+
+.message--information {
+	border-color: @message-color--information;
+	color: @message-color--information;
+
+    // Icon
+
+    &:before {
+        content: "\f05a"; // circled i
+		color: darken(@message-color--information, 30%);
+    }
+
+    // Heading 3, Paragraph
+
+    h3, p {
+		color: darken(@message-color--information, 50%);
+    }
+}
+
+// Success
+// -------
+
+.message--success {
+	border-color: @message-color--success;
+
+    // Icon
+
+    &:before {
+        content: "\f00c"; // check
+		color: darken(@message-color--success, 20%);
+    }
+
+    // Heading 3, Paragraph
+
+    h3, p {
+		color: darken(@message-color--success, 30%);
+    }
+}
+
+// Not Found
+// ---------
+
+.message--not-found {
+	border-color: @message-color--not-found;
+
+    // Icon
+
+    &:before {
+        content: "\f002"; // magnifying glass
+    }
+
+    // Heading 3, Paragraph, Icon
+
+    h3, p, &:before {
+		color: darken(@message-color--not-found, 20%);
+    }
+}
+
+// Message in Template's Footer
+// ----------------------------
+
+.template-footer .message {
+    margin: 0;
+}
+
+// Contact Form and Signup Form Messages
+// -------------------------------------
+
+.overlay.success .message-box {
+    .message;
+    .message--success;
+}
+
+
+.overlay.fail .message-box {
+    .message;
+    .message--warning;
 }
