@@ -3,11 +3,58 @@
 // --------------------------------------
 
 // -----------------------------
-// #Table of Contents
+// #TABLE OF CONTENTS
 // -----------------------------
 //  1.   #BLOG
 //  2.   #MENU
 //  3.   #E-COMMERCE
+
+// -----------------------------
+// #MIXINS
+// -----------------------------
+
+.mixin__tag-item {
+    margin: 0 1em 0 0;
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.mixin__category-tags-link {
+    margin: 0;
+    font-family: @font__button--font-family;
+    text-transform: uppercase;
+    color: @color__link--text;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 400;
+    &:before,
+    &:after {
+        display: none;
+    }
+    &:hover {
+        font-weight: 400;
+        text-decoration: none;
+        color: darken(@color__link--text, 15%);
+        .transition (all, 0.2s, ease);
+    }
+}
+
+.mixin__product-attribute-title {
+	display: inline-block;
+	margin: 0 1em 0.4em 0;
+	&:after {
+	    content: ":";
+	}
+}
+
+.mixin__tag-list {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 
 // -----------------------------
 // 1. Blog Post List
@@ -71,7 +118,7 @@
     }
 }
 
-//Blog List Footer
+// Blog List Footer
 
 .blogpostlist__post-footer {
     font-size: 0.9em!important;
@@ -147,39 +194,83 @@ a.button.button--pagination.button--next {
 }
 
 .blogpost__post-footer {
+    position: relative;
+    border-right: 1px solid @color__primary;
+    @media @mobile {
+        border-right: none;
+    }
+}
+
+.blogpost__post-footer {
     time.timestamp {
-        float: left;
         font-size: 0.9em !important;
+        border-left: 1px solid @color__primary;
         border-right: 1px solid @color__primary;
-        padding-right: 20px;
-        margin: 5px 0;
+        padding: 5px 20px 0 20px;
+        margin: 0 20px 0 0;
+        top: 0;
+        bottom: 0;
+        display: inline;
+        position: absolute;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 120px;
+        @media @mobile {
+            display: block;
+            width: 100%;
+            position: relative;
+            min-height: 34px;
+            padding: 0 20px;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid @color__primary;
+        }
     }
 }
 
 .blogpost__post-attributes {
-    display: inline;
+    display: table;
+    margin-left: 120px;
+    @media @mobile {
+        width: 100%;
+        margin: 20px 0 20px;
+        border-left: 1px solid @color__primary;
+    }
+    div {
+        &:last-child {
+            border-right: none;
+            @media @mobile {
+                border-right: 1px solid @color__primary;
+            }
+        }
+    }
 }
 
 .blogpost__post-category,
 .blogpost__post-tags {
-    display: inline;
+    display: table-cell;
     border-right: 1px solid @color__primary;
-    padding: 0px 20px;
-    text-transform: uppercase;
+    padding: 0 20px;
+}
+
+.blogpost__category-title,
+.blogpost__tags-title {
+    .mixin__product-attribute-title ();
+	width: 100%;
+}
+
+.blogpost__tag-list {
+    .mixin__tag-list ();
+}
+
+.blogpost__tag-item {
+    .mixin__tag-item ();
 }
 
 .blogpost__tag-link,
 .blogpost__category-link {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-size: 0.9em!important;
-    margin: 0px 5px;
-    color: @color__link--text;
-    &:hover {
-        text-decoration: none;
-        color: darken(@color__link--text, 15%);
-    }
+    .mixin__category-tags-link ();
 }
 
 //Social Sharing Icon Group
@@ -187,12 +278,18 @@ a.button.button--pagination.button--next {
 .blogpost__sharing-links {
     float: right;
     position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 25px 0 0 0;
+    text-align: center;
+    margin-top: 10px;
+    border-top: 1px solid @color__primary;
 }
 
 //Social Sharing Blog Post Icons
 
 .blogpost__network-item {
-    margin: 0 0 0 10px;
+    margin: 5px;
     button.button.icon.icon--facebook,
     button.button.icon.icon--twitter,
     button.button.icon.icon--googleplus {
@@ -210,48 +307,6 @@ a.button.button--pagination.button--next {
             color: @color__button--text--hover;
             .transition (all, 0.1s, ease);
             outline: none;
-        }
-    }
-}
-
-
-@media @tablet {
-    .blogpost__sharing-links {
-        float: left;
-        position: relative;
-        text-align: center;
-        top: 0px;
-        width: 100%;
-        padding: 0px;
-    }
-	
-    //Social Sharing Blog Post Icons
-	
-    .blogpost__network-item {
-		margin: 0 5px;
-        button.button.icon.icon--facebook,
-        button.button.icon.icon--twitter,
-        button.button.icon.icon--googleplus {
-            width: auto;
-            display: block;
-            text-align: center;
-            margin: 0 auto;
-            height: 35px;
-            text-transform: uppercase;
-            background-color: @color__button--background;
-            color: @color__socialicons--icon;
-            &:before {
-                font-size: 16px!important;
-            }
-            &:hover {
-                .transition (all, 0.1s, ease);
-                background-color: @color__button--background--hover;
-                outline: none;
-            }
-            &:active {
-                .transition (all, 0.1s, ease);
-                outline: none;
-            }
         }
     }
 }
@@ -700,11 +755,7 @@ a.ecomproductslist__title {
 }
 
 .ecomproduct__product-attribute-title {
-	display: inline-block;
-	margin: 0 1em 0.4em 0;
-	&:after {
-	    content: ":";
-	}
+    .mixin__product-attribute-title ();
 }
 
 .ecomproduct__product-attribute-title,
@@ -712,34 +763,17 @@ a.ecomproductslist__title {
 	width: 100%;
 }
 
-
 .ecomproduct__tag-list {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    .mixin__tag-list ();
+}
+
+.ecomproduct__tag-item {
+    .mixin__tag-item ();
 }
 
 a.ecomproduct__category-link,
 a.ecomproduct__tag-link {
-    margin: 0 1em 0 0;
-    font-family: @font__button--font-family;
-    text-transform: uppercase;
-    color: @color__link--text;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-weight: 400;
-    &:before,
-    &:after {
-        display: none;
-    }
-    &:hover {
-        font-weight: 400;
-        text-decoration: none;
-        color: darken(@color__link--text, 15%);
-        .transition (all, 0.2s, ease);
-    }
+    .mixin__category-tags-link ();
 }
 
 .bk-zone column columns-two-left,
