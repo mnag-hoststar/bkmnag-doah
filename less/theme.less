@@ -101,6 +101,7 @@ body.edit .widget.extendednavigation {
     top: 0px;
     z-index: 0;
 	width: 100%;
+	width: 100vw;
 }
 
 // -----------------------------
@@ -108,18 +109,18 @@ body.edit .widget.extendednavigation {
 // -----------------------------
 
 .bk-footer {
-    overflow: auto;
     border-top: 1px solid @color__footer--border;
     background-color: @color__footer--background;
-    padding: 20px 13% 50px;
-    .widget__socialicons,
-    .widget__profile .profile__socialicons {
-        margin: 0 0 20px;
+    padding: 20px 3% 10px;
+    @media @mobile {
+        padding: 0px;
     }
 }
 
 .footerright,
 .footerleft {
+    display: inline-block;
+    vertical-align: middle;
     width: 49.5%;
     @media @mobile {
         width: 100%;
@@ -127,11 +128,7 @@ body.edit .widget.extendednavigation {
     }
 }
 
-.footerleft {
-    float: left;
-}
 .footerright {
-    float: right;
     text-align: right;
 }
 
