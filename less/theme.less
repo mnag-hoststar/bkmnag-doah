@@ -13,6 +13,17 @@
 // 7. #MESSAGES
 
 
+// -----------------------------
+// #Variables
+// -----------------------------
+
+@message-color--standard: 		#6e6e6e;
+@message-color--error: 			#d20000;
+@message-color--warning: 		#ffbc0b;
+@message-color--information: 	#AAE6E8;
+@message-color--success: 		#BAE914;
+@message-color--not-found: 		#6E6E6E;
+
 
 // -----------------------------
 // 1. #TYPOGRAPHY
@@ -90,7 +101,6 @@ body.edit .widget.extendednavigation {
     top: 0px;
     z-index: 0;
 	width: 100%;
-	width: 100vw;
 }
 
 // -----------------------------
@@ -98,18 +108,18 @@ body.edit .widget.extendednavigation {
 // -----------------------------
 
 .bk-footer {
+    overflow: auto;
     border-top: 1px solid @color__footer--border;
     background-color: @color__footer--background;
-    padding: 20px 3% 10px;
-    @media @mobile {
-        padding: 0px;
+    padding: 20px 13% 50px;
+    .widget__socialicons,
+    .widget__profile .profile__socialicons {
+        margin: 0 0 20px;
     }
 }
 
 .footerright,
 .footerleft {
-    display: inline-block;
-    vertical-align: middle;
     width: 49.5%;
     @media @mobile {
         width: 100%;
@@ -117,7 +127,11 @@ body.edit .widget.extendednavigation {
     }
 }
 
+.footerleft {
+    float: left;
+}
 .footerright {
+    float: right;
     text-align: right;
 }
 
@@ -201,7 +215,8 @@ label.label--message {
 label.label--select,
 label.label--variation,
 label.label--filter {
-	transform: unset;
+	opacity: 1;
+    transform: scale(0.75);
 }
 
 .form-group.focused label,
@@ -216,6 +231,7 @@ select {
     align-self: flex-end;
     margin-top: 4px!important
 }
+
 input[placeholder] {
     color: transparent;
     transition: 240ms;
@@ -290,6 +306,7 @@ input#search-term {
 }
 
 textarea {
+    background-color: rgba(255,255,255, 0.8) !important;
     resize: vertical;
     min-height: 150px;
     margin-bottom: 20px;
@@ -305,6 +322,10 @@ textarea {
     }
 }
 
+textarea:focus {
+    background-color: rgba(255,255,255, 0.8) !important;
+}
+
 input[type=search],
 input[type=text],
 input[type=email],
@@ -314,7 +335,7 @@ input[type=email],
     width: 100%;
     min-height: 38px;
     font-size: 0.9em;
-    color: @color__p--text!important;
+    color: @color__p--text !important;
 }
 
 input.js-email.email {
@@ -334,15 +355,7 @@ input.js-email.email {
     border: 0;
     display: inline-block;
     vertical-align: top;
-    color: @color__p--text!important;
-}
-
-.contactform,
-.advancedcontactform {
-    input[type=email] {
-        width: 100%;
-        color: @color__p--text!important;
-    }
+    color: @color__p--text !important;
 }
 
 .select-wrap {
@@ -364,7 +377,7 @@ select {
     width: 100%;
     position: relative;
     cursor: pointer;
-    background-color: transparent;
+    background-color: rgba(255,255,255, 0.6) !important;;
     border: none;
     border: 1px solid @color__form--border;
     outline: none;
@@ -385,7 +398,7 @@ select.selected {
 
 select:hover {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    background-color: transparent!important;
+    background-color: rgba(255,255,255, 0.8) !important;
 }
 
 select:selected {
@@ -393,12 +406,12 @@ select:selected {
 }
 
 select:focus {
-    background-color: transparent!important;
+    background-color: rgba(255,255,255, 0.8) !important;
     color: @color__form-label--text;
 }
 
 select:focus > label {
-    background-color: transparent!important;
+    background-color: rgba(255,255,255, 0.8) !important;
     color: @color__form-label--text;
 }
 
@@ -532,6 +545,22 @@ select span {
 	}
 }
 
+.advancedcontactform {
+    input.error {
+        border: none !important;
+    }
+    textarea.error {
+        border: 1px solid @message-color--error !important;
+    }
+    .form-group {
+        .error {
+            border-bottom: 2px solid @message-color--error !important;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}
 
 
 // Signup Form
@@ -572,13 +601,6 @@ select span {
 // 7. #MESSAGES
 // -----------------------------
 
-@message-color--standard: 		#6e6e6e;
-@message-color--error: 			#d20000;
-@message-color--warning: 		#ffbc0b;
-@message-color--information: 	#AAE6E8;
-@message-color--success: 		#BAE914;
-@message-color--not-found: 		#6E6E6E;
-
 
 // Message
 // -------
@@ -593,21 +615,6 @@ select span {
     background-color: #fff;
 	border: 1px solid;
 	border-color: @message-color--standard;
-
-    // Icon
-
-    &:before {
-        font-family: 'FontAwesome', sans-serif;
-        display: block;
-        width: 2.7em;
-        position: absolute;
-        top: -2px;
-        left: 0;
-        bottom: 0;
-        text-align: center;
-        padding-top: 0.7em;
-		font-size: 1.4em;
-    }
 
     // Heading 3, Paragraph
 
@@ -628,109 +635,126 @@ select span {
 
     // Consequetive Paragraps
 
-    p+p {
+    p + p {
         margin-top: 0.35em;
+    }
+
+    // Icon
+
+    &:before {
+        font-family: 'FontAwesome', sans-serif;
+        display: block;
+        width: 2.7em;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        padding-top: 0.7em;
+		font-size: 1.4em;
     }
 }
 
 // Error
 // -----
-
-.message--error {
-	border-color: @message-color--error;
-
-    // Icon
-
-    &:before {
-        content: "\f071"; // triangle
+.message {
+    &.message--error {
+    	border-color: @message-color--error;
+    
+        // Heading 3, Paragraph, Icon
+    
+        *, &:before {
+    		color: darken(@message-color--error, 20%);
+        }
+    
+        // Icon
+    
+        &:before {
+            content: "\f06a"; // exclamation circle
+        }
     }
-
-    // Heading 3, Paragraph, Icon
-
-    h3, p, &:before {
-		color: darken(@message-color--error, 20%);
+    
+    // Warning
+    // -------
+    
+    &.message--warning {
+    	border-color: @message-color--warning;
+    
+        // Heading 3, Paragraph
+    
+        * {
+    		color: darken(@message-color--warning, 30%);
+        }
+    
+        // Icon
+    
+        &:before {
+            content: "\f071"; // triangle
+    		color: darken(@message-color--warning, 10%);
+        }
+    }
+    
+    // Information
+    // -----------
+    
+    &.message--information {
+    	border-color: @message-color--information;
+    	color: @message-color--information;
+    
+        // Heading 3, Paragraph
+    
+        * {
+    		color: darken(@message-color--information, 50%);
+        }
+    
+        // Icon
+    
+        &:before {
+            content: "\f05a"; // circled i
+    		color: darken(@message-color--information, 30%);
+        }
+    }
+    
+    // Success
+    // -------
+    
+    &.message--success {
+    	border-color: @message-color--success;
+    
+        // Heading 3, Paragraph
+    
+        * {
+    		color: darken(@message-color--success, 30%);
+        }
+    
+        // Icon
+    
+        &:before {
+            content: "\f00c"; // check
+    		color: darken(@message-color--success, 20%);
+        }
+    }
+    
+    // Not Found
+    // ---------
+    
+    &.message--not-found {
+    	border-color: @message-color--not-found;
+    
+        // Heading 3, Paragraph, Icon
+    
+        *, &:before {
+    		color: darken(@message-color--not-found, 20%);
+        }
+    
+        // Icon
+    
+        &:before {
+            content: "\f002"; // magnifying glass
+        }
     }
 }
 
-// Warning
-// -------
-
-.message--warning {
-	border-color: @message-color--warning;
-
-    // Icon
-
-    &:before {
-        content: "\f071"; // triangle
-		color: darken(@message-color--warning, 10%);
-    }
-
-    // Heading 3, Paragraph
-
-    h3, p {
-		color: darken(@message-color--warning, 30%);
-    }
-}
-
-// Information
-// -----------
-
-.message--information {
-	border-color: @message-color--information;
-	color: @message-color--information;
-
-    // Icon
-
-    &:before {
-        content: "\f05a"; // circled i
-		color: darken(@message-color--information, 30%);
-    }
-
-    // Heading 3, Paragraph
-
-    h3, p {
-		color: darken(@message-color--information, 50%);
-    }
-}
-
-// Success
-// -------
-
-.message--success {
-	border-color: @message-color--success;
-
-    // Icon
-
-    &:before {
-        content: "\f00c"; // check
-		color: darken(@message-color--success, 20%);
-    }
-
-    // Heading 3, Paragraph
-
-    h3, p {
-		color: darken(@message-color--success, 30%);
-    }
-}
-
-// Not Found
-// ---------
-
-.message--not-found {
-	border-color: @message-color--not-found;
-
-    // Icon
-
-    &:before {
-        content: "\f002"; // magnifying glass
-    }
-
-    // Heading 3, Paragraph, Icon
-
-    h3, p, &:before {
-		color: darken(@message-color--not-found, 20%);
-    }
-}
 
 // Message in Template's Footer
 // ----------------------------
