@@ -56,6 +56,33 @@
 	list-style: none;
 }
 
+.mixin__menu-item {
+	display: inline-block;
+	margin: 5px;
+    border-bottom: 1px solid @color__link--text;
+    font-family: @font__button--font-family;
+    padding: 10px;
+    text-transform: uppercase;
+    color: @color__primary;
+    font-weight: 400;
+    background-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    &:before,
+    &:after {
+        display: none;
+    }
+    &:hover {
+        box-shadow: 0 1px 0 darken(@color__link--text, 15%);
+        font-weight: 400;
+        text-decoration: none;
+        color: darken(@color__link--text, 15%);
+        background-color: transparent;
+        .transition (all, 0.2s, ease);
+    }
+}
+
 // -----------------------------
 // 1. Blog Post List
 // -----------------------------
@@ -283,7 +310,6 @@ a.button.button--pagination.button--next {
     padding: 25px 0 0 0;
     text-align: center;
     margin-top: 10px;
-    border-top: 1px solid @color__primary;
 }
 
 //Social Sharing Blog Post Icons
@@ -336,28 +362,7 @@ a.button.button--pagination.button--next {
 }
 
 a.menu-item-name {
-    border-bottom: 1px solid @color__link--text;
-    font-family: @font__button--font-family;
-    padding: 10px;
-    text-transform: uppercase;
-    color: @color__primary;
-    font-weight: 400;
-    background-color: transparent;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    &:before,
-    &:after {
-        display: none;
-    }
-    &:hover {
-        box-shadow: 0 1.5px 0 @color__link--text;
-        font-weight: 400;
-        text-decoration: none;
-        color: darken(@color__link--text, 15%);
-        background-color: transparent;
-        .transition (all, 0.2s, ease);
-    }
+	.mixin__menu-item();
 }
 
 //Menu Widget
@@ -515,6 +520,11 @@ h2.ecomfeaturedproducts__listing-title {
 .fieldset--filters {
     .form-group {
         width: 31.333%;
+		margin-right: 1%;
+        @media @mobile {
+            width: 100%;
+    		margin-right: 0;
+        }
     }
 }
 
@@ -547,7 +557,7 @@ h2.ecomfeaturedproducts__listing-title {
 .ecomproductslist__product-item,
 .ecomfeaturedproducts__product-item {
     display: inline-block;
-    width: 26.9%;
+    width: 25.9%;
     padding: 0;
     vertical-align: top;
     overflow: hidden;
@@ -713,9 +723,6 @@ a.ecomproductslist__title {
         width: 100%!important;
     }
 }
-.ecomproduct__product-header {}
-
-.ecomproduct__product-body {}
 
 .ecomproduct__product-actions {
     display: inline;
@@ -1116,4 +1123,10 @@ button.ecombasketsummary__quantity-plus {
 .category-list.ecomcategorieslist__category-list {
 	margin-left: 0;
 	padding-left: 0;
+	margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+a.ecomcategorieslist__category-link {
+	.mixin__menu-item();
 }
