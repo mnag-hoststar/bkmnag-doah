@@ -10,7 +10,7 @@
 //  3.   #E-COMMERCE
 
 // -----------------------------
-// #MIXINS
+// #GENERAL MIXINS
 // -----------------------------
 
 .mixin__tag-item {
@@ -44,9 +44,6 @@
 .mixin__product-attribute-title {
 	display: inline-block;
 	margin: 0 1em 0.4em 0;
-	&:after {
-	    content: ":";
-	}
 }
 
 .mixin__tag-list {
@@ -838,46 +835,79 @@ ECOM - BASKET BUTTON
 // 4. #Basket Summary
 // -------------------------------
 
-// Basket Summary Heading
+// Mixins
 
-.summary-table .table-row--heading {
-    @media @tablet {
-        display: none;
-    }
+.mixin__summary-table-cell-1 {
+	width: 53%;
+	@media @tablet {
+		width: 38%;
+	}
+	@media @mobile {
+		width: 100%;
+	}
 }
 
-// Basket Summary Content
-
-.summary-table .cell--header {
-    margin-bottom: 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
-    background-color: transparent;
+.mixin__summary-table-cells-without-first {
+	position: absolute;
+	top: 0;
+	@media @mobile {
+		position: static;
+	}
 }
 
-.summary-table .cell {
-    vertical-align: middle !important;
-    @media @tablet {
-		flex-direction: column;
-		display: block;
-    }
+.mixin__summary-table-cell-2 {
+	width: 160px;
+	right: 340px;
+	@media only screen and (max-width: 1200px) {
+		width: auto;
+		width: inherit;
+		right: auto;
+		right: inherit;
+		left: 43%;
+	}
+	@media @tablet {
+		left: 18%;
+	}
 }
 
-.basket-summary__summary-section {
+.mixin__summary-table-cell-3 {
+	width: 160px;
+	right: 165px;
+	@media only screen and (max-width: 1200px) {
+		width: auto;
+		width: inherit;
+		right: auto;
+		right: inherit;
+		left: 63%;
+	}
+	@media @tablet {
+		left: 50%;
+	}
+}
+
+.mixin__summary-table-cell-4 {
+	width: 160px;
+	right: 0;
+	@media only screen and (max-width: 1200px) {
+		width: auto;
+		width: inherit;
+		right: auto;
+		right: inherit;
+		left: 81%;
+	}
+	@media @tablet {
+		left: 76%;
+	}
+}
+
+// Basket Table
+
+.ecombasketsummary__summary-section {
     text-align: left;
-}
-
-.basket-summary__summary-form {
-    border: 0;
-    padding: 0;
 }
 
 .ecombasketsummary__summary-table,
 .ecombasketsummary__summary-form {
-    position: relative;
-    width: 100%;
     &:before {
         display: none;
     }
@@ -889,231 +919,343 @@ ECOM - BASKET BUTTON
 .ecombasketsummary__summary-table {
     margin: 20px 0;
     border: none;
-}
+	border-bottom: 1px solid @color__primary;
 
-.ecombasketsummary__quantity-field {
-    color: @color__p--text;
-	display: table-cell;
-	vertical-align: middle;
-    @media @tablet {
-        margin: 0 12px;
-    }
-}
+	&,
+	.summary-body,
+	.table-row {
+		display: block;
+	}
+	
+	// Table Cells
 
-.summary-table .table-row {
-    border-left: none;
-    border-right: none;
-    @media @tablet {
-        flex-direction: column;
-    }
-}
+	.table-row {
+		position: relative;
+		border: none;
+		border-top: 1px solid @color__primary;
+		@media @mobile {
+			padding: 5px 0 15px;
+		}
+	}
+	
+	.table-row--heading {
+		@media @mobile {
+			display: none;
+		}
+	}
 
-.ecombasketsummary__cell {
-    @media @tablet {
-        text-align: center;
-    }
-}
-
-.summary-table .cell {
-    padding: 25px 12px;
-    text-align: center;
-    border-left: none;
-    border-right: none;
-    @media @mobile {
-        padding: 8px 12px;
-        display: block;
-    }
-}
-
-.summary-table .cell--image,
-.summary-table .cell--title,
-.summary-table .cell--quantity,
-.summary-table .cell--price,
-.summary-table .cell--total {
-    @media @tablet {
-        width: auto !important;
-		border-bottom: none;
-    }
-}
-
-.summary-table .cell--image,
-.summary-table .cell--title {
-    @media @tablet {
-		padding-bottom: 0;
-    }
-}
-
-.summary-table .cell--image {
-    @media @tablet {
-    }
-}
-
-.summary-table .cell--title {
-    text-align: left !important;
-    @media @tablet {
-		border-top: none;
-		padding: 10px 30px 0;
-		p.summary-item-title {
-			border-bottom: 1px solid @color__secondary;
+	.cell {
+		vertical-align: middle;
+		display: inline-block;
+		padding: 20px 0;
+		text-align: center;
+		border: none;
+		@media @mobile {
+			padding: 8px 12px;
+			display: block;
+		}
+	}
+	
+	.cell--header {
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 13px;
+		text-align: left;
+		background-color: transparent;
+	    width: 14%;
+		@media @tablet {
+			width: 19%;
+		}
+		
+		// Item 
+		&:first-child {
+			.mixin__summary-table-cell-1();
+		}
+		
+		// Quantity, Price, Subtotal
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(4) {
+			.mixin__summary-table-cells-without-first();
+		}
+		
+		// Quantity
+		&:nth-child(2) {
+			.mixin__summary-table-cell-2();
+		}
+		
+		// Price
+		&:nth-child(3) {
+			.mixin__summary-table-cell-3();
+		}
+		
+		// Subtotal
+		&:nth-child(4) {
+			.mixin__summary-table-cell-4();
+		}
+	}
+	
+	// Cell Image
+	
+	.cell--image {
+		width: 12%;
+		margin-right: 2%;
+		min-height: 65px;
+		@media @tablet {
+			display: block;
+			width: 14%;
+			margin-right: 0;
+    		padding-bottom: 0;
+		}
+		@media @mobile {
+			margin-right: 0;
+			padding: 8px 12px;
+			width: 100%;
 			text-align: center;
 		}
-    }
-    @media @mobile {
-        text-align: center !important;
-    }
-}
-
-.quantity-wrap .button--quantity {
-    @media @tablet {
-		line-height: 25px;
-    }
-}
-
-.summary-table .cell--quantity {
-    @media @tablet {
-		border-top: none;
-		padding: 20px 0 10px;
-    }
-    @media @mobile {
-		border-top: none !important;
-    }
-}
-
-
-.summary-table .cell--price,
-.summary-table .cell--total {
-    text-transform: uppercase;
-    font-weight: 600;
-	border-top: 0;
-    @media @tablet {
-		padding: 5px 12px;
-        width: 100%;
-        text-align: center;
-    }
-    @media @mobile {
-        width: 100%;
-        height: 70px;
-        text-align: center;
-    }
-}
-
-.summary-table .cell--total {
-    @media @tablet {
-		padding: 5px 12px 25px;
-    }
-}
-
-
-a.ecombasketsummary__summary-item-link {
-    text-transform: uppercase;
-    font-family: @font__h1--font-family;
-    font-weight: @font__h1--font-weight;
-    font-size: @font-swatch6-font-size;
-    color: @color__p--text;
-    letter-spacing: 0px;
-    &:hover {
-        font-weight: @font__h1--font-weight;
-        color: darken(@color__p--text, 5%);
-        letter-spacing:0px;
-    }
-    @media @mobile {
-        text-align: center;
-        font-size: 18px;
-    }
-}
-
-.summary-table .cell--header:first-child {
-    text-align: left!important;
-}
-
-.summary-table .cell--quantity {
-    width: 17%;
-	min-width: 150px;
-    @media @tablet {
-        width: 25%;
-    }
-    @media @mobile {
-        width: 100%!important;
-        text-align: center;
-        font-weight: 600;
-        text-transform: uppercase;
-        border-top: 1px solid @color__link--text;
-    }
-}
-
-.summary-table .cell--order-total {
-    @media @tablet {
-		padding: 8px 12px;
-    }
-	.ecombasketsummary__order-total {
+		
+		a.summary-item-link {
+			display: block;
+			background: transparent;
+			text-align: left;
+			background-image: none !important;
+			
+			@media @mobile {
+				width: 60%;
+				margin: 0 auto;
+			}
+		}
+	
+		img.image--thumb {
+			width: 100%;
+			margin: 0px auto;
+		}
+	}
+	
+	// Cell Title
+	
+	.cell--title {
+		text-align: left;
+		width: 85%;
+		padding-right: 520px;
+		@media only screen and (max-width: 1200px) {
+			width: 26%;
+			padding-right: 0;
+		}
 		@media @tablet {
+			width: 100%;
+			padding-top: 10px;
+		}
+		@media @mobile {
+			display: inline-block;
+			padding: 0px 12px 15px;
 			text-align: center;
+			&:after {
+				content: " ";
+				border-bottom: 1px solid @color__primary;
+				width: 80px;
+				display: block;
+				margin: 5px auto;
+			}
+		}
+
+		a.summary-item-link {
+			text-transform: uppercase;
+			font-family: @font__h1--font-family;
+			font-weight: @font__h1--font-weight;
+			font-size: @font-swatch6-font-size;
+			color: @color__p--text;
+			letter-spacing: 0px;
+			background-image: none !important;
+			&:hover {
+				font-weight: @font__h1--font-weight;
+				color: darken(@color__p--text, 5%);
+				letter-spacing:0px;
+			}
+			@media @tablet {
+				font-size: calc(@font-swatch6-font-size - 2px);
+			}
+			@media @mobile {
+				text-align: center;
+				font-size: 18px;
+			}
+		}
+	}
+	
+	.cell--quantity,
+	.cell--price,
+	.cell--total {
+    	display: inline-block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: auto;
+		@media @tablet {
+			bottom: auto;
+			bottom: initial;
+    		min-height: 70px;
+		}
+		@media @mobile {
+    		position: static;
+    		min-height: 0;
+		}
+	}
+	
+	// Center alignment in the table
+	
+	.quantity-wrap,
+	.summary-item-price,
+	.summary-item-total {
+	    top: 50%;
+		position: absolute;
+		height: 20px;
+		@media @tablet {
+			top: 0;
+		}
+		@media @mobile {
+    		position: static;
+		}
+	}
+	.quantity-wrap {
+		margin-top: -15px;
+		@media @tablet {
+			margin-top: 20px;
+		}
+	}
+	.summary-item-price,
+	.summary-item-total {
+	    margin-top: -10px;
+		@media @tablet {
+			margin-top: 20px;
+		}
+		@media @mobile {
+			margin-top: 0;
+		}
+	}
+	
+	// Plus and minus buttons
+
+	.cell--quantity {
+		.mixin__summary-table-cell-2();
+		min-width: 100px;
+		text-align: left;
+		
+		@media @mobile {
+			border-top: none !important;
+			width: 100% !important;
+			text-align: center;
+			font-weight: 600;
+			text-transform: uppercase;
+			border-top: 1px solid @color__link--text;
+		}
+
+		.quantity-wrap {
+			display: table;
+			background-color: transparent;
+			width: 100%;
+			@media @mobile {
+				min-width: 100%!important;
+				margin: 2px auto 10px;
+			}
+
+			.quantity-field {
+				display: inline-block;
+				width: 30px;
+				text-align: center;
+				color: @font-swatch5-color;
+				font-weight: 300;
+			}
+
+			.button--quantity {
+				position: relative;
+				width: 30px;
+				height: 30px;
+				font-weight: 300;
+				line-height: 0;
+				display: table-cell;
+				vertical-align: middle;
+				color: transparent;
+				
+				&:after {
+					font-family: 'FontAwesome', sans-serif;
+					color: @color__primary;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					line-height: 30px;
+					width: 30px;
+					text-align: center;
+					margin-top: -14px;
+					font-size: 14px !important;
+					&:hover {
+						color: @color__link--text;
+					}
+				}
+				
+
+				&.quantity-minus {
+					&:after {
+						content: "\f068";
+					}
+				}
+				&.quantity-plus {
+					&:after {
+						content: "\f067";
+					}
+				}
+			}
+		}
+	}
+	
+	// Price fields
+	
+	.cell--price {
+		.mixin__summary-table-cell-3();
+	}
+	
+	.cell--total {
+		.mixin__summary-table-cell-4();
+	}
+
+	.cell--price,
+	.cell--total {
+		text-transform: uppercase;
+		font-weight: 600;
+		border-top: 0;
+		@media @mobile {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	// Basket Summary Total Price
+
+	.table-row--order-total {
+		text-align: right;
+		@media @mobile {
+			text-align: center;
+			padding: 0;
+		}
+	}
+	
+	.cell--order-total {
+		padding: 8px 12px;
+		.ecombasketsummary__order-total {
+			@media @mobile {
+				text-align: center;
+			}
 		}
 	}
 }
 
-//Proceed to checkout Button
+// Proceed to checkout Button
 
 .ecombasketsummary__summary-form {
+    border: 0;
+    padding: 0;
     text-align: right;
     @media @tablet {
-        text-align: center;
-    }
-}
-
-.ecombasketsummary__image {
-    max-width: 140px;
-    margin: 0px auto;
-    display: table;
-}
-
-.ecombasketsummary__summary-item-link {
-    background-image: none !important;
-}
-
-.quantity-wrap .button--quantity {
-    width: 30px;
-    height: 30px;
-    font-weight: 700;
-	line-height: 0;
-	display: table-cell;
-	vertical-align: middle;
-    @media @tablet {
-		line-height: 25px;
-    }
-    @media @mobile {
-        width: 25px;
-        height: 25px;
-    }
-}
-
-.ecombasketsummary__quantity-wrap {
-    display: table;
-    background-color: transparent;
-    color: @color__button--text;
-    width: 100%;
-    @media @tablet {
-        min-width: 100%!important;
-    }
-    @media @mobile {
-        min-width: 100%!important;
-        margin: 10px auto;
-    }
-}
-
-button.ecombasketsummary__quantity-minus,
-button.ecombasketsummary__quantity-plus {
-    font-weight: 300;
-    font-size: 22px!important;
-    &:hover {
-        background-color: @color__button--background;
-        font-weight: 700;
-    }
-}
-
-.ecombasketsummary__order-total {
-    text-align: right;
-    @media @mobile {
         text-align: center;
     }
 }
