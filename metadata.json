@@ -1,9 +1,9 @@
 {
 	"name":"Doah",
-	"thumbnail":"doha-thumbnail.png",
+	"thumbnail":"doah-thumbnail.png",
 	"screenshot":"doah-screenshot.jpg",
 	"templateType":"standard",
-	"pageTypes":["home"],
+	"pageTypes":["home", "gallery"],
     "widgetVersion": 2,
 	"tags": {
 	"en": ["minimal", "clean", "blog", "photography", "modern", "unique", "flexible", "open", "simple", "news", "sans-serif"]
@@ -193,7 +193,6 @@
             "font__navigation--font-family": "@font-swatch6-font-family",
             "font__navigation--font-size": "@font-swatch6-font-size",
             "font__navigation--font-weight": "@font-swatch6-font-weight",
-			"font__navigation--line-height": "@font-swatch6-line-height",
             "font__navigation--letter-spacing": "@font-swatch6-letter-spacing",
             "color__navigation--text": "@font-swatch6-color",
             "color__navigation--text--hover": "@font-swatch6-color-hover",

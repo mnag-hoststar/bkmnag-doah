@@ -1,0 +1,65 @@
+{% extends "layout.twig" %} {% block content %}
+<div class="bk-pt-default">
+    <div class="flex-container">
+            <div class="flex-item company">
+                {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}} {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+            </div>
+            <div class="flex-item flex-nav">
+                {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+            </div>
+    </div>
+
+
+    <div class="main container clearfix">
+        {{zone('main')|raw}}
+        {{widget('content', 'home-gallery-text', {
+            content: '<p>These are our newest foods. From sweet to savory, 
+            you can be sure to find the most scrumptious meal for you. We offer 
+            fresh bread, straight from the bakers. Our ingredients for our salads 
+            and cereals come from local farmers. We do everything to make sure 
+            you have the healthiest ingredients to get you started early and be 
+            productive.</p>'
+        })|raw}}
+	
+		{{widget('gallery', 'home-gallery', {
+    		'showTitle': true,
+    		'showDescription': true,
+    		'images':[
+    		{
+				'url':asset('/images/gallery/gallery-image--1.jpg'),
+				'title':'Tasty egg salad',
+				'description': 'Egg salad is part of a tradition of salads involving 
+				protein mixed with seasonings in the form of herbs, spices, and other 
+				foods, and bound with mayonnaise. Its siblings include chicken 
+				salad, crab salad, ham salad, lobster salad, and tuna salad.'
+    		},
+    		{
+				'url':asset('/images/gallery/gallery-image--2.jpg'),
+				'title':'Fresh, warm bread',
+				'description': 'Bread is a staple food prepared from a dough of 
+				flour and water, usually by baking. Throughout recorded history it 
+				has been popular around the world and is one of the oldest artificial 
+				foods, having been of importance since the dawn of agriculture.'
+    		},
+    		{
+				'url':asset('/images/gallery/gallery-image--3.jpg'),
+				'title':'Delicious bruschette',
+				'description': 'Bruschetta is an antipasto from Italy consisting 
+				of grilled bread rubbed with garlic and topped with olive oil and 
+				salt. Variations may include toppings of tomato, vegetables, beans, 
+				cured meat, or cheese.'
+    		}
+    	  ]
+    	})|raw}}
+    </div>
+
+    <footer class="bk-footer">
+        <div class="footerleft">
+            {{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+        </div>
+        <div class="footerright">
+            {{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+        </div>
+    </footer>
+</div>
+{% endblock %}
