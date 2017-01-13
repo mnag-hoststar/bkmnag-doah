@@ -290,11 +290,14 @@ a.button.button--pagination.button--next {
 
 .blogpost__tag-item {
     .mixin__tag-item ();
+	margin: 0;
 }
 
 .blogpost__tag-link,
 .blogpost__category-link {
     .mixin__category-tags-link ();
+	display: inline-block;
+	margin: 0 1em 0 0;
 }
 
 //Social Sharing Icon Group
@@ -518,7 +521,7 @@ h2.ecomfeaturedproducts__listing-title {
     .form-group {
         width: 31.333%;
 		margin-right: 1%;
-        @media @mobile {
+        @media only screen and (max-width: 650px) {
             width: 100%;
     		margin-right: 0;
         }
@@ -678,8 +681,9 @@ a.ecomproductslist__title {
     @media @tablet {
         width: 40%!important;
     }
-    @media @mobile {
+    @media only screen and (max-width: 600px) {
         width: 100%!important;
+		margin-bottom: 30px;
     }
 }
 
@@ -709,7 +713,7 @@ a.ecomproductslist__title {
     @media @tablet {
         width: 44%!important;
     }
-    @media @mobile {
+    @media only screen and (max-width: 600px) {
         width: 100%!important;
     }
 }
@@ -717,7 +721,7 @@ a.ecomproductslist__title {
 .columns-two-left,
 .columns-two-right {
     .ecomproduct__product-content {
-        width: 100%!important;
+        width: 100% !important;
     }
 }
 
@@ -1169,11 +1173,11 @@ ECOM - BASKET BUTTON
 
 			.button--quantity {
 				position: relative;
+				display: inline;
 				width: 30px;
 				height: 30px;
 				font-weight: 300;
 				line-height: 0;
-				display: table-cell;
 				vertical-align: middle;
 				color: transparent;
 				
@@ -1181,12 +1185,11 @@ ECOM - BASKET BUTTON
 					font-family: 'FontAwesome', sans-serif;
 					color: @color__primary;
 					position: absolute;
-					top: 50%;
 					left: 0;
+					top: 0;
 					line-height: 30px;
 					width: 30px;
 					text-align: center;
-					margin-top: -14px;
 					font-size: 14px !important;
 					&:hover {
 						color: @color__link--text;

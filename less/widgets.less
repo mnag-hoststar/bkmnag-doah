@@ -44,12 +44,31 @@
     z-index: 1000;
     margin-right: 50px;
     @media @tablet {
-        margin-right: 0px;
-    }
-    @media @mobile {
-        margin-right: 0px;
+        margin: 0;
+		width: 100%;
+		padding: 0 2%;
     }
 }
+
+// -----------------------------
+// #GENERAL STYLES
+// -----------------------------
+
+.widget--zone-widget,
+.widget--template-widget {
+	margin: 0 0 20px;
+}
+
+.flex-item.company,
+.flex-item.flex-nav {
+	.widget--zone-widget,
+	.widget--template-widget {
+		margin: 0;
+	}
+}
+
+
+
 
 // -----------------------------
 // 1.  #LOGO
@@ -65,8 +84,12 @@
     
 .logo__logo-link {
     @media @tablet {
-        margin: 0px auto;
         display: table;
+        margin: 0 auto;
+		padding-left: 8%;
+    	padding-right: 8%;
+		max-width: 160px;
+		background-color: @color__feature-content--background;
     }
 }
     
@@ -84,9 +107,6 @@
     @media @tablet {
         text-align:center;
     }
-    @media @mobile {
-        margin: 0px 0px 10px 0px!important;
-    }
 }
     
 a.companyname__company-link {
@@ -96,12 +116,9 @@ a.companyname__company-link {
 	line-height: 1.25em;
     color: @color__companyname--text;
 	@media @tablet {
-    	padding: 0.65em 20px 0.8em;
+    	padding: 0.65em 8% 0.8em;
+		background-color: @color__feature-content--background;
 	}
-    @media @mobile {
-        padding: 20px 0px;
-        font-size: 24px;
-    }
     &:hover {
         color: darken(@color__companyname--text, 10%);
         font-weight: 300;
@@ -128,6 +145,7 @@ a.companyname__company-link {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
+	
 }
 
 .navigation-body,
@@ -243,6 +261,14 @@ a.companyname__company-link {
 }
 
 @media @tablet {
+	.flex-item.flex-nav {
+		width: 100%;
+		padding: 0 2%;
+		.widget--template-widget {
+    		background-color: @color__feature-content--background;
+		}
+	}
+	
     .extendednavigation__navigation-list {
         display: none;
     }
@@ -300,7 +326,7 @@ a.companyname__company-link {
         }
         .navigation-item {
             width: 100%;
-			padding: 0 30px;
+			padding: 0 8%;
         }
     }
     .extendednavigation li.selected > a {
@@ -313,15 +339,12 @@ a.companyname__company-link {
 	
     .extendednavigation__navigation-list.open {
         display: block;
+		margin-bottom: 5px;
+		padding-bottom: 10px;
 	}
 }
 
 @media @mobile {
-	.flex-item.flex-nav {
-		width: 100%;
-		padding: 5px 10%;
-	}
-	
 	.navigation-item .item-name {
 		padding-left: 0;
 		padding-right: 0;
@@ -370,11 +393,10 @@ a.companyname__company-link {
     background-color: @color__feature-content--background;
 	padding: 130px 50px 30px;
     @media @tablet {
-        padding: 180px 10% 30px;
+        padding: 240px 10% 30px;
     }
     @media @mobile {
         margin: 0 auto 30px;
-        padding: 200px 10% 30px;
     }
 }
     
@@ -843,12 +865,13 @@ h3.feature__strapline {
     span.control-text {
         display: none;
     }
-    .icon--previous:before {
+    &.icon--previous:before {
         left: 10px;
         @media @mobile {
             left: 10px;
             bottom: -1px;
             font-size: 12px!important;
+			margin-right: 0;
         }
     }
 }
@@ -858,11 +881,12 @@ h3.feature__strapline {
     span.control-text {
         display: none;
     }
-    .icon--next:after {
+    &.icon--next:after {
         @media @mobile {
             left: 8px;
             bottom: -1px;
             font-size: 12px!important;
+			margin-left: 0;
         }
     }
 }
@@ -886,8 +910,8 @@ h3.feature__strapline {
         opacity: 0.7;
     }
     @media @mobile {
-        .icon--play:before,
-        .icon--pause.pause:before {
+        &.icon--play:before,
+        &.icon--pause.pause:before {
             left: 12px;
             bottom: 0px;
             font-size: 12px!important;
@@ -1057,8 +1081,8 @@ button.ecombasket-remove-button.js-remove,
 
 .form-group,
 .form-group .advancedcontactform {
-    padding: 0px;
-    margin-top:20px;
+    padding: 0;
+    margin-top: 0;
 }
 
 
@@ -1073,11 +1097,6 @@ button.ecombasket-remove-button.js-remove,
 .widget__profile .signupform,
 .widget__blogsearch {
     margin-bottom: 40px;
-}
-
-.contactform__textarea {
-    margin-bottom: 5px!important;
-    margin-top:18px!important;
 }
 
 .contactform__legend,
@@ -1119,6 +1138,8 @@ button.ecombasket-remove-button.js-remove,
 
 .socialicons__social-list {
     padding: 0px;
+	margin-left: -5px;
+	margin-right: -5px;
 }
 
 .socialicons__social-item {
@@ -1152,9 +1173,6 @@ a.social-link {
         color: @color__socialicons--icon--hover;
         font-weight: 300;
         .transition (all, 0.1s, ease);
-    }
-    @media @mobile {
-        margin: 0 2px;
     }
 	
 	&.icon--facebook {

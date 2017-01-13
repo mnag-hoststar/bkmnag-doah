@@ -89,11 +89,6 @@ body.edit .widget.extendednavigation {
         flex-direction: column;
     	padding: 30px 0 0;
     }
-    @media @mobile {
-        flex-direction: column;
-		margin-left: 0;
-		margin-right: 0;
-    }
 }
 
 .homepage-background {
@@ -111,7 +106,7 @@ body.edit .widget.extendednavigation {
     overflow: auto;
     border-top: 1px solid @color__footer--border;
     background-color: @color__footer--background;
-    padding: 20px 13% 50px;
+    padding: 20px 10% 50px;
     .widget__socialicons,
     .widget__profile .profile__socialicons {
         margin: 0 0 20px;
@@ -229,7 +224,8 @@ label.active {
 input,
 select {
     align-self: flex-end;
-    margin-top: 4px!important
+    margin-top: 4px !important;
+    color: @color__p--text;
 }
 
 input[placeholder] {
@@ -237,7 +233,7 @@ input[placeholder] {
     transition: 240ms;
 }
 
-::-moz-placeholder {
+input::-moz-placeholder {
     color: transparent;
     transition: 240ms;
 }
@@ -265,20 +261,20 @@ input:focus:[placeholder] {
     transition: none;
 }
 .form-group.focused input::-webkit-input-placeholder {
-    color: #bbb;
+    color: @color__p--text;
 }
 
 .form-group.focused input[placeholder] {
-    color: #bbb;
+    color: @color__p--text;
 }
 .form-group.focused input::-moz-placeholder {
-    color: #bbb;
+    color: @color__p--text;
 }
 .form-group.focused ::-moz-placeholder {
-    color: #bbb;
+    color: @color__p--text;
 }
 .form-group.focused input:-moz-placeholder {
-    color: #bbb;
+    color: @color__p--text;
 }
 
 input[type=search],
@@ -334,7 +330,6 @@ input[type=email],
     width: 100%;
     min-height: 38px;
     font-size: 0.9em;
-    color: @color__p--text !important;
 }
 
 input.js-email.email {
@@ -354,7 +349,7 @@ input.js-email.email {
     border: 0;
     display: inline-block;
     vertical-align: top;
-    color: @color__p--text !important;
+    color: @color__p--text;
 }
 
 .select-wrap {
@@ -384,7 +379,7 @@ select {
     line-height: 3rem;
     font-size: 1rem;
     margin: 0 0 15px 0;
-    padding: 0 30px 0 5px;
+    padding: 0 0 0 5px;
     display: block;
     background: image('/images/arrow-small-down.svg') no-repeat center right;
     background-size: 30px;
@@ -470,9 +465,10 @@ select span {
     padding-top: 20px;
 	width: 100%;
 }
+
+.form-group,
 .advancedcontactform__form-group {
 	position: relative;
-    margin-top: 20px;
 }
 
 .option-item {
@@ -486,7 +482,7 @@ select span {
 			margin-left: 40px;
 			text-transform: none;
 			font-weight: 300;
-			transform: unset;
+			transform: scale(1);
 			line-height: 1.4em;
 			&:before {
 				content: '';
@@ -644,7 +640,7 @@ select span {
         display: block;
         width: 2.7em;
         position: absolute;
-        top: -2px;
+        top: -0.15em;
         left: 0;
         bottom: 0;
         text-align: center;
@@ -655,102 +651,100 @@ select span {
 
 // Error
 // -----
-.message {
-    &.message--error {
-    	border-color: @message-color--error;
-    
-        // Heading 3, Paragraph, Icon
-    
-        *, &:before {
-    		color: darken(@message-color--error, 20%);
-        }
-    
-        // Icon
-    
-        &:before {
-            content: "\f06a"; // exclamation circle
-        }
-    }
-    
-    // Warning
-    // -------
-    
-    &.message--warning {
-    	border-color: @message-color--warning;
-    
-        // Heading 3, Paragraph
-    
-        * {
-    		color: darken(@message-color--warning, 30%);
-        }
-    
-        // Icon
-    
-        &:before {
-            content: "\f071"; // triangle
-    		color: darken(@message-color--warning, 10%);
-        }
-    }
-    
-    // Information
-    // -----------
-    
-    &.message--information {
-    	border-color: @message-color--information;
-    	color: @message-color--information;
-    
-        // Heading 3, Paragraph
-    
-        * {
-    		color: darken(@message-color--information, 50%);
-        }
-    
-        // Icon
-    
-        &:before {
-            content: "\f05a"; // circled i
-    		color: darken(@message-color--information, 30%);
-        }
-    }
-    
-    // Success
-    // -------
-    
-    &.message--success {
-    	border-color: @message-color--success;
-    
-        // Heading 3, Paragraph
-    
-        * {
-    		color: darken(@message-color--success, 30%);
-        }
-    
-        // Icon
-    
-        &:before {
-            content: "\f00c"; // check
-    		color: darken(@message-color--success, 20%);
-        }
-    }
-    
-    // Not Found
-    // ---------
-    
-    &.message--not-found {
-    	border-color: @message-color--not-found;
-    
-        // Heading 3, Paragraph, Icon
-    
-        *, &:before {
-    		color: darken(@message-color--not-found, 20%);
-        }
-    
-        // Icon
-    
-        &:before {
-            content: "\f002"; // magnifying glass
-        }
-    }
+.message--error {
+	border-color: @message-color--error;
+
+	// Heading 3, Paragraph, Icon
+
+	*, &:before {
+		color: darken(@message-color--error, 20%);
+	}
+
+	// Icon
+
+	&:before {
+		content: "\f06a"; // exclamation circle
+	}
+}
+
+// Warning
+// -------
+
+.message--warning {
+	border-color: @message-color--warning;
+
+	// Heading 3, Paragraph
+
+	* {
+		color: darken(@message-color--warning, 30%);
+	}
+
+	// Icon
+
+	&:before {
+		content: "\f071"; // triangle
+		color: darken(@message-color--warning, 10%);
+	}
+}
+
+// Information
+// -----------
+
+.message--information {
+	border-color: @message-color--information;
+	color: @message-color--information;
+
+	// Heading 3, Paragraph
+
+	* {
+		color: darken(@message-color--information, 50%);
+	}
+
+	// Icon
+
+	&:before {
+		content: "\f05a"; // circled i
+		color: darken(@message-color--information, 30%);
+	}
+}
+
+// Success
+// -------
+
+.message--success {
+	border-color: @message-color--success;
+
+	// Heading 3, Paragraph
+
+	* {
+		color: darken(@message-color--success, 30%);
+	}
+
+	// Icon
+
+	&:before {
+		content: "\f00c"; // check
+		color: darken(@message-color--success, 20%);
+	}
+}
+
+// Not Found
+// ---------
+
+.message--not-found {
+	border-color: @message-color--not-found;
+
+	// Heading 3, Paragraph, Icon
+
+	*, &:before {
+		color: darken(@message-color--not-found, 20%);
+	}
+
+	// Icon
+
+	&:before {
+		content: "\f002"; // magnifying glass
+	}
 }
 
 

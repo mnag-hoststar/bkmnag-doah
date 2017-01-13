@@ -54,8 +54,9 @@ blockquote {
     line-height: 1.6em;
     margin: 25px 0px;
     @media @mobile {
-    	padding: 15px 30px;
+    	padding: 8px 30px 15px;
         font-size: 20px;
+    	border: 10px solid @color__button--background;
     }
 }
 
@@ -90,7 +91,6 @@ legend {
     list-style-position: inherit;
 }
 p > a {
-    letter-spacing: 0.25px;
     &:hover {
         font-weight: 700;
         .transition (all, 0.1s, ease);
@@ -156,14 +156,8 @@ p {
     min-height: 40px;
 }
 
-.widget--zone-widget,
-.widget--template-widget {
-	margin: 0 0 20px;
-}
-
 .container {
 	margin: 0 auto;
-    padding: 3%;
     width:80%;
     background-color: @color__container--background;
 }
