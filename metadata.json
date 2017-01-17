@@ -225,8 +225,9 @@
             "color__slideshow-caption--background" : "fade(#000000, 40%)",
             "color__slideshow-title--text" : "@color-swatch7",
             "color__slideshow-description--text" : "@color-swatch7",
+            "color__slideshow-background-color" : "@color-swatch7",
             "color__slideshow-pagination-item--background" : "@color-swatch7",
-            "color__slideshow-pagination-item--background--selected" : "#8f8272"        
+            "color__slideshow-pagination-item--background--selected" : "@color-swatch4"
         },
         "twitter": {
             "color__twitter-item--background" : "@color-swatch7",
@@ -246,7 +247,6 @@
             "font__feature-headline--line-height" : "@font-swatch8-line-height",
             "color__feature-headline--text" : "@font-swatch8-color",
             "font__feature-headline--letter-spacing": "@font-swatch8-letter-spacing",
-
             "font__feature-strapline--font-family" : "@font-swatch9-font-family",
             "font__feature-strapline--font-size" : "@font-swatch9-font-size",
             "font__feature-strapline--font-weight" : "@font-swatch9-font-weight",
@@ -270,7 +270,6 @@
         "blog": {
             "color__blogsearch-legend--text" : "@color__form-legend--text",
             "color__blogpost-title--background" : "@color__secondary",
-            "color__blogpost-title--text" : "@color-swatch2",
             "color__blogpost-title--text" : "@color-swatch2",
             "color__blogpostlist-article--background" : "@color-swatch7",
             "color__blogpostlist-title--text" : "@color__primary"

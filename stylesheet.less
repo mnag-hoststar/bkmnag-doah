@@ -6,16 +6,24 @@
 // #Table of Contents
 // -----------------------------
 
-// 1. #LESS INCLUDES
-// 2. #PAGE SETTINGS
-// 3. #TEMPLATE STYLES
-// 4. #VARIABLES
-
-
-
+// 1. #GLOBAL MIXINS
+// 2. #LESS INCLUDES
+// 4. #TEMPLATE STYLES
 
 // -----------------------------
-// 1. #LESS Includes
+// 1. #GLOBAL MIXINS
+// -----------------------------
+
+.transition(@property, @duration, @ease) {
+	-webkit-transition: @property @duration @ease;
+	-moz-transition: @property @duration @ease;
+    -ms-transition: @property @duration @ease;
+	-o-transition: @property @duration @ease;
+	transition: @property @duration @ease;
+}
+
+// -----------------------------
+// 2. #LESS INCLUDES
 // -----------------------------
 
 @import "@{templateCommon}/bk-less-framework-v8.less";
@@ -24,18 +32,20 @@
 @import "@{templateLocal}/less/plugins.less";
 
 
+// -----------------------------
+// 3. #TEMPLATE STYLES
+// -----------------------------
 
-// -----------------------------
 // TYPOGRAPHY
-// -----------------------------
+// --------------------
 
 body {
-    font-smooth: always;
-    font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: geometricPrecision;
+	font-smooth: always;
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: geometricPrecision;
 }
 
 ul,
@@ -93,7 +103,7 @@ legend {
 p > a {
     &:hover {
         font-weight: 700;
-        .transition (all, 0.1s, ease);
+        .transition(all, 0.1s, ease);
         text-decoration: none;
         letter-spacing: 0px;
     }
@@ -102,7 +112,7 @@ a {
     color: @color__link--text;
     &:hover {
         color: darken(@color__link--text, 5%);
-        .transition (all, 0.1s, ease);
+        .transition(all, 0.1s, ease);
         text-decoration: none;
     }
 }
@@ -145,12 +155,8 @@ p {
     line-height: 20px;
 }
 
-// -----------------------------
-// 2. #Page Settings
-// -----------------------------
-
 // Page Container
-// --------------
+// --------------------
 
 .bk-zone {
     min-height: 40px;
@@ -166,10 +172,3 @@ p {
 .iconfill {
     fill: @color__socialicons--icon!important;
 }
-
-// -----------------------------
-// 3. #TEMPLATE STYLES
-// -----------------------------
-// -----------------------------
-// 4. #VARIABLES
-// -----------------------------
