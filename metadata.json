@@ -193,6 +193,7 @@
             "font__navigation--font-family": "@font-swatch6-font-family",
             "font__navigation--font-size": "@font-swatch6-font-size",
             "font__navigation--font-weight": "@font-swatch6-font-weight",
+			"font__navigation--line-height": "@font-swatch6-line-height",
             "font__navigation--letter-spacing": "@font-swatch6-letter-spacing",
             "color__navigation--text": "@font-swatch6-color",
             "color__navigation--text--hover": "@font-swatch6-color-hover",
@@ -208,9 +209,9 @@
         "button": {
             "color__button--background":"@font-swatch7-background-color",
             "color__button--background--hover":"darken(@font-swatch7-background-color, 5%)",
-            "font__button--font-family" : "@font-swatch7-font-family",
             "color__button--text" : "@font-swatch7-color",
             "color__button--text--hover" : "darken(@font-swatch7-color,5%)",
+            "font__button--font-family" : "@font-swatch7-font-family",
             "font__button--font-size" : "@font-swatch7-font-size",
             "font__button--font-weight" : "@font-swatch7-font-weight",
             "font__button--line-height" : "@font-swatch7-line-height",
@@ -225,7 +226,7 @@
             "color__slideshow-caption--background" : "fade(#000000, 40%)",
             "color__slideshow-title--text" : "@color-swatch7",
             "color__slideshow-description--text" : "@color-swatch7",
-            "color__slideshow-background-color" : "@color-swatch7",
+            "color__slideshow--background" : "@color-swatch7",
             "color__slideshow-pagination-item--background" : "@color-swatch7",
             "color__slideshow-pagination-item--background--selected" : "@color-swatch4"
         },

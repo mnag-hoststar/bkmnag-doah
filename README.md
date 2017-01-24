@@ -1,4 +1,4 @@
 DOAH
 =============
 
-Standard Basekit Template by Hoststar
+A V8 Basekit Template by Hoststar.
