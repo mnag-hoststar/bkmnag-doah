@@ -14,14 +14,15 @@
         {{zone('main')|raw}}
     </div>
 
-
     <footer class="bk-footer">
-        <div class="footerleft">
-            {{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
-        </div>
-        <div class="footerright">
-            {{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
-        </div>
+		<div class="footer">
+			<div class="footerleft">
+				{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+			</div>
+			<div class="footerright">
+				{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+			</div>
+		</div>
     </footer>
 </div>
 {% endblock %}
