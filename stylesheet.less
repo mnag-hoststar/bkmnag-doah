@@ -22,6 +22,14 @@
 	transition: @property @duration @ease;
 }
 
+.box-sizing--border-box() {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 // -----------------------------
 // 2. #LESS INCLUDES
 // -----------------------------
@@ -66,7 +74,7 @@ blockquote {
     @media @mobile {
     	padding: 8px 30px 15px;
         font-size: 20px;
-    	border: 10px solid @color__button--background;
+    	border-width: 10px;
     }
 }
 
@@ -86,6 +94,10 @@ pre {
     border: 1px solid #413a31;
     padding: 0.5em;
     background-color: transparent;
+}
+
+table, th, td {
+	border: 1px solid fade(@color__body--border, 30%);
 }
 
 code {
@@ -165,10 +177,11 @@ p {
 .container {
 	margin: 0 auto;
     width:80%;
-    background-color: @color__container--background;
 }
 
-
 .iconfill {
-    fill: @color__socialicons--icon!important;
+    fill: @color__button--text !important;
+    &:hover {
+        fill: @color__button--text--hover !important;
+    }
 }
