@@ -441,7 +441,7 @@ h3.feature__strapline {
     @media @tablet {
         font-size: 22px;
         font-weight: 500;
-		letter-spacing: font__feature-strapline--letter-spacing + 1px;
+		letter-spacing: @font__feature-strapline--letter-spacing + 1px;
         word-break: break-word;
     }
     @media @mobile {
@@ -481,7 +481,7 @@ h3.feature__strapline {
 .imagewidget__image-title {
     margin: 10px 0 5px;
     color: @color__image-title--text;
-    font-family: @font__h1--font-family;
+    font-family: @font__h4--font-family;
     text-align: left;
     text-transform: uppercase;
     font-weight: 700;
@@ -863,17 +863,20 @@ h3.feature__strapline {
     height: 64px;
     background-color: @color__slideshow-caption--background;
     position: absolute;
+	line-height: 1em;
+	font-size: 1em;
     color: @color__slideshow-title--text;
 	margin-top: -32px;
 	padding: 0;
     &:hover {
-        opacity: 0.7;
+    	background-color: darken(@color__slideshow-caption--background,5%);
+    	color: darken(@color__slideshow-title--text, 5%);
     }
     @media @mobile {
         width: 32px;
         height: 32px;
         position: absolute;
-        font-size: 12px!important;
+        font-size: 12px !important;
 	    margin-top: -16px;
     }
 }
@@ -887,7 +890,7 @@ h3.feature__strapline {
         @media @mobile {
             left: 10px;
             bottom: -1px;
-            font-size: 12px!important;
+            font-size: 12px !important;
 			margin-right: 0;
         }
     }
@@ -919,12 +922,6 @@ h3.feature__strapline {
     }
     span.control-text {
         display: none;
-    }
-    &:before {
-        color: @color__slideshow-title--text;
-    }
-    &:hover {
-        opacity: 0.7;
     }
     @media @mobile {
         &.icon--play:before,
@@ -1276,9 +1273,9 @@ a.social-link {
 }
 
 .twitter__account-name {
-    font-family: @font__h1--font-family;
+    font-family: @font__h4--font-family;
     font-size: @font__p--font-size;
-    font-weight: @font__h1--font-weight;
+    font-weight: @font__h4--font-family;
     color: @color__twitter-account-name--text;
     &:hover {
         color: darken(@color__h1--text, 5%);
