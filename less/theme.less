@@ -11,6 +11,7 @@
 // 5. #CONTENT
 // 6. #GENERAL FORMS
 // 7. #MESSAGES
+// 8. #COOKIE MESSAGE
 
 
 // -----------------------------
@@ -357,6 +358,8 @@ input#search-term {
     font-size: 1rem;
     padding: 0;
     box-shadow: none;
+	.border-radius(0);
+	.appearance(none);
     &:focus {
         border-bottom: 1px solid @color__body--border;
         box-shadow: 0 1px 0 0 @color__body--border;
@@ -836,4 +839,17 @@ select span {
 .overlay.fail .message-box {
     .message;
     .message--warning;
+}
+
+
+// -----------------------------
+// 8. #COOKIE MESSAGE
+// -----------------------------
+
+.bk-cookie-container {
+	// There are no styles for this yet.
+	// But the structure is here, just in case.
+	p, a {}
+	p a {}
+	.bk-cookie-close-button {}
 }

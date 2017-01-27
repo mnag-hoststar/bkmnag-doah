@@ -30,6 +30,20 @@
 	box-sizing: border-box;
 }
 
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.appearance(@property) {
+	-webkit-appearance: @property;
+	-moz-appearance: @property;
+	appearance: @property;
+}
+
 // -----------------------------
 // 2. #LESS INCLUDES
 // -----------------------------
