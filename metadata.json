@@ -105,8 +105,8 @@
 			"line-height": "24px",
 			"color": "@color-swatch4",
 			"letter-spacing": "inherit",
-			"background-color": "@color-swatch1",
-			"background-color-hover": "@color-swatch1"
+			"background-color": "lighten(@color-swatch4, 30%)",
+			"background-color-hover": "lighten(@color-swatch4, 30%)"
 		},
 		"font8": {
 			"font-family": "\"Oswald\", Arial, sans-serif",
@@ -128,7 +128,7 @@
 			"font-family": "\"Oswald\", Arial, sans-serif",
 			"font-size": "20px",
 			"font-weight": "300",
-			"line-height": "25px",
+			"line-height": "1.25em",
 			"color": "@color-swatch5",
 			"letter-spacing": "inherit"
 		}
@@ -199,10 +199,10 @@
             "color__navigation-list--background": "@color__header--background"
         },
         "button": {
-            "color__button--text": "@font-swatch7-color",
-            "color__button--text--hover": "darken(@font-swatch7-color,5%)",
-            "color__button--background":"@font-swatch7-background-color",
-            "color__button--background--hover":"darken(@font-swatch7-background-color, 5%)",
+            "color__button--text": "@color__h1--text",
+            "color__button--text--hover": "darken(@color__button--text,5%)",
+            "color__button--background":"lighten(@color__h1--text, 30%)",
+            "color__button--background--hover":"darken(@color__button--background, 5%)",
             "font__button--font-family": "@font-swatch7-font-family",
             "font__button--font-size": "@font-swatch7-font-size",
             "font__button--font-weight": "@font-swatch7-font-weight",
