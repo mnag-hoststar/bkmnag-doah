@@ -128,7 +128,7 @@
 			"font-family": "\"Oswald\", Arial, sans-serif",
 			"font-size": "20px",
 			"font-weight": "300",
-			"line-height": "1.25em",
+			"line-height": "25px",
 			"color": "@color-swatch5",
 			"letter-spacing": "inherit"
 		}
@@ -143,7 +143,7 @@
             "font__companyname--font-family": "@font-swatch10-font-family",
             "font__companyname--font-size":"@font-swatch10-font-size",
             "font__companyname--font-weight":"@font-swatch10-font-weight",
-            "font__companyname--line-height":"@font-swatch10-line-height",
+            "font__companyname--line-height":"1.25em",
             "font__companyname--letter-spacing":"@font-swatch10-letter-spacing",
             "color__companyname--text":"@font-swatch10-color"
         },
