@@ -138,7 +138,6 @@
             "color__primary": "@color-swatch4"
         },
         "site": {
-            "color__body--background": "@color-swatch7",
 			"color__container--background": "@color-swatch7",
             "color__link--text": "@color__primary",
             "font__companyname--font-family": "@font-swatch10-font-family",
