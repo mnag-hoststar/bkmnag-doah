@@ -438,12 +438,11 @@ h3.feature__strapline {
     color: @color__feature-strapline--text;
     text-transform: uppercase;
     word-break: break-word;
-	line-height: 1.25em;
     @media @tablet {
         font-size: 22px;
         font-weight: 500;
-		line-height: 1.5em;
-		letter-spacing: 1px;
+		line-height: @font__feature-strapline--line-height + 0.25em;
+		letter-spacing: font__feature-strapline--letter-spacing + 1px;
         word-break: break-word;
     }
     @media @mobile {
