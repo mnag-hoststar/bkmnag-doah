@@ -135,13 +135,7 @@
 	},
     "styles": {
         "colors": {
-            "color__primary": "@color-swatch4",
-			"message-color--standard": "#6e6e6e",
-			"message-color--error": "#d20000",
-			"message-color--warning": "#ffbc0b",
-			"message-color--information": "#aae6e8",
-			"message-color--success": "#bae914",
-			"message-color--not-found": "#6e6e6e"
+            "color__primary": "@color-swatch4"
         },
         "site": {
             "color__body--background": "@color-swatch7",
