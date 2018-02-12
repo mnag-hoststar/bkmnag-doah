@@ -7,26 +7,27 @@
 //  1.   #LOGO
 //  2.   #COMPANY NAME
 //  3.   #NAVIGATION
-//  4.   #FEATURE
-//  5.   #IMAGES
-//  6.   #GALLERY
-//  7.   #SLIDESHOW
-//  8.   #BUTTONS
-//  8.1  -- #STANDARD
-//  8.2  -- #TWEET
-//  8.3  -- #DROPBOX
-//  8.4  -- #CLICK TO CALL
-//  8.5  -- #PAYPAL
-//  9.   #CONTACT FORM
-// 10.   #SIGNUP FORM
-// 11.   #BLOGSEARCH FORM
-// 12.   #SOCIAL ICONS
-// 13.   #TWITTER FEED
-// 14.   #DIVIDER (KEYLINE)
-// 15.   #PROFILE
-// 16.   #MAP
-// 17.   #YOUTUBE
-// 18.   #YELP, SOUNDCLOUD, ETC.
+//  4.   #LANGUAGE SELECTOR
+//  5.   #FEATURE
+//  6.   #IMAGES
+//  7.   #GALLERY
+//  8.   #SLIDESHOW
+//  9.   #BUTTONS
+//  9.1  -- #STANDARD
+//  9.2  -- #TWEET
+//  9.3  -- #DROPBOX
+//  9.4  -- #CLICK TO CALL
+//  9.5  -- #PAYPAL
+// 10.   #CONTACT FORM
+// 11.   #SIGNUP FORM
+// 12.   #BLOGSEARCH FORM
+// 13.   #SOCIAL ICONS
+// 14.   #TWITTER FEED
+// 15.   #DIVIDER (KEYLINE)
+// 16.   #PROFILE
+// 17.   #MAP
+// 18.   #YOUTUBE
+// 19.   #YELP, SOUNDCLOUD, ETC.
 
 
 // Global style for flex items
@@ -66,9 +67,6 @@
 		margin: 0;
 	}
 }
-
-
-
 
 // -----------------------------
 // 1.  #LOGO
@@ -356,7 +354,192 @@ a.companyname__company-link {
 }
 
 // -----------------------------
-// 4.  #FEATURE
+// 4.  #LANGUAGE SELECTOR
+// -----------------------------
+
+// --------------------------
+// #General Styles
+// --------------------------
+
+@language-padding: 0.5em;
+@language-line-height: unit(@font__navigation--line-height*0.1, em);
+
+.language-selector.language-selector--dropdown,
+.language-selector.language-selector--horizontal {
+    position: absolute;
+    box-sizing: content-box;
+    z-index: 11100;
+    max-width: 1400px;
+}
+
+// Language Selector Light
+
+.language-selector.language-selector--light {
+    background-color: transparent;
+    .language-selector__inner {
+        background-color: @color__header--background;
+    }
+}
+
+// Language Selector Dark
+
+.language-selector.language-selector--dark {
+    background-color: transparent;
+    .language-selector__inner {
+        background-color: @color__header--border;
+    }
+}
+
+// General styles inside the Language Selector
+
+.language-selector {
+    .language-selector__inner {
+        box-sizing: content-box;
+        margin: 0 auto;
+        padding: 20px 40px;
+    	@media only screen and (max-width: 1800px) {
+        	margin-left: 10%;
+    		margin-right: 10%;
+    	}
+    	@media only screen and (max-width: 1200px) {
+        	margin-left: 6%;
+    		margin-right: 6%;
+    	}
+    }
+    
+    .language-selector__link {
+        box-sizing: border-box;
+        padding: @language-padding @language-padding*2;
+        min-height: @font__navigation--line-height;
+        border: none;
+    }
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	text-transform: uppercase;
+    	font-family: @font__navigation--font-family;
+    	font-size: @font__navigation--font-size;
+    	font-weight: @font__navigation--font-weight;
+    	line-height: @language-line-height;
+    	letter-spacing: @font__navigation--letter-spacing;
+    	color: @color__navigation--text;
+    }
+}
+
+// --------------------------
+// #Language Selector Dropdown
+// --------------------------
+
+.language-selector.language-selector--dropdown {
+    height: auto;
+    text-align: left;
+    
+    .language-selector__inner {
+        height: @language-line-height+@language-padding*2;
+        
+        @media @mobile {
+            width: 100%;
+        }
+    }
+
+    .language-selector__list {
+        box-sizing: border-box;
+        margin: 1em;
+        min-width: auto;
+        
+        @media @tablet {
+            position: relative;
+            margin: 0;
+        }
+    }
+
+    .language-selector__item {
+        &--current {
+            &:after {
+                top: 0;
+                right: 0;
+                content: '\f107';
+                font-family: 'FontAwesome', sans-serif;
+                color: @color__navigation--text;
+                min-width: 1em;
+                line-height: 100%;
+                padding: @language-line-height/2 1em;
+            }
+        }
+    }
+    
+    .language-selector__link {
+        padding-right: 3em;
+        
+    }
+
+    .language-selector__name,
+    .language-selector__localised-name {
+        @media only screen and (max-width: 300px) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+            display: block;
+        }
+    }
+}
+
+// --------------------------
+// #Language Selector Single Item
+// --------------------------
+
+.language-selector__item {
+    .language-selector.language-selector--light &,
+    .language-selector.language-selector--dark & {
+        border: none;
+        background-color: transparent;
+        
+        .language-selector__link {
+            background-color: transparent;
+        }
+        
+        .language-selector__link:hover {
+            background-color: @color__button--background;
+        }
+        
+        &.language-selector__item--current {
+            .language-selector__link,
+            .language-selector__link:hover {
+                background-color: @color__button--background;
+            }
+        }
+    }
+    
+    .language-selector--dropdown.language-selector--light &,
+    .language-selector--dropdown.language-selector--dark & {
+        border: none;
+        background-color: transparent;
+        
+        .language-selector__link {
+            background-color: darken(@color__header--background, 10%);
+        }
+        
+        .language-selector__link:hover {
+            background-color: darken(@color__button--background, 10%);
+        }
+        
+        &.language-selector__item--current {
+            .language-selector__link,
+            .language-selector__link:hover {
+                background-color: darken(@color__button--background, 10%);
+            }
+        }
+    }
+}
+
+
+// -----------------------------
+// 5.  #FEATURE
 // -----------------------------
 
 .feature__background-image {
@@ -475,7 +658,7 @@ h3.feature__strapline {
 }
     
 // -----------------------------
-// 5. #IMAGE WIDGET
+// 6. #IMAGE WIDGET
 // -----------------------------
 
 .imagewidget__image-title {
@@ -492,11 +675,14 @@ h3.feature__strapline {
     color: @color__image-description--text;
     text-align: left;
 }
-    
-// 5.  #Gallery
+
 // -----------------------------
+// 7.  #GALLERY
+// -----------------------------
+
 // Gallery Item
 // For screen size larger than 920px. Media queries below.
+
 .gallery {
     @media @tablet {
         font-size: 13px;
@@ -684,7 +870,7 @@ h3.feature__strapline {
 }
     
 // -----------------------------
-// 7.  #SLIDESHOW
+// 8.  #SLIDESHOW
 // -----------------------------
 
 .widget__responsiveslideshow {
@@ -935,7 +1121,7 @@ h3.feature__strapline {
 
 
 
-//Slide Navigation 2 Responsive Columns
+// Slide Navigation 2 Responsive Columns
 
 .responsivecolumns .columns-two-left,
 .responsivecolums .columns-two-right {
@@ -1020,7 +1206,7 @@ h3.feature__strapline {
 }
 
 // -----------------------------
-// 8. #BUTTONS
+// 9. #BUTTONS
 // -----------------------------
 
 // 8.1 Standard //
@@ -1085,7 +1271,7 @@ button.ecombasket-remove-button.js-remove,
 }
 
 // --------------------------------------------
-// 9.-11.  #CONTACT & #SIGNUP & BLOGSEARCH FORM
+// 10.-12.  #CONTACT & #SIGNUP & BLOGSEARCH FORM
 // --------------------------------------------
 
 .form-group,
@@ -1140,7 +1326,7 @@ button.ecombasket-remove-button.js-remove,
 }
 
 // -----------------------------
-// 12.  #SOCIAL ICONS
+// 13.  #SOCIAL ICONS
 // -----------------------------
 
 .widget__socialicons,
@@ -1209,7 +1395,7 @@ a.social-link {
 }
 
 // -----------------------------
-// 13. #TWITER FEED
+// 14. #TWITER FEED
 // -----------------------------
 
 .widget__twitter,
@@ -1284,7 +1470,7 @@ a.social-link {
 }
 
 // -----------------------------
-// 14. #DIVIDER - LINE WIDGET
+// 15. #DIVIDER - LINE WIDGET
 // -----------------------------
 
 .widget__line {
@@ -1299,7 +1485,7 @@ hr.rule {
 }
 
 // -----------------------------
-// 15. #PROFILE
+// 16. #PROFILE
 // -----------------------------
 
 h3.description.companydescription__description {
@@ -1307,7 +1493,7 @@ h3.description.companydescription__description {
     font-size: @font__h4--font-size;
 }
 // -----------------------------
-// 16. #MAP
+// 17. #MAP
 // -----------------------------
 .widget.map {
     border: 1px solid @color__h1--text;
@@ -1315,7 +1501,7 @@ h3.description.companydescription__description {
 }
 
 // -----------------------------
-// 17. #YOUTUBE
+// 18. #YOUTUBE
 // -----------------------------
 
 .widget.youtube {
@@ -1323,7 +1509,7 @@ h3.description.companydescription__description {
 }
 
 // -----------------------------
-// 18. #YELP, SOUNDCLOUD ...
+// 19. #YELP, SOUNDCLOUD ...
 // -----------------------------
 
 .widget.soundcloud,
