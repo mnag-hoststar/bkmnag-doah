@@ -70,8 +70,8 @@ body.edit .widget.extendednavigation {
 // 3. #HEADER & #BK-NAV
 // -----------------------------
 
-.flex-container {
-    padding: 30px 40px 20px;
+.navigation--flex-container {
+    position: relative;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -81,12 +81,13 @@ body.edit .widget.extendednavigation {
     -moz-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border-bottom: 1px solid @color__header--border;
-    margin: 0 auto 30px;
+    margin: 0 auto;
+    padding: 1em 40px;
     background-color: @color__header--background;
     flex-direction: row;
 	.box-sizing--border-box();
 	max-width: 1400px;
+	font-size: @font__navigation--font-size;
 	@media only screen and (max-width: 1800px) {
     	margin-left: 10%;
 		margin-right: 10%;
@@ -97,13 +98,22 @@ body.edit .widget.extendednavigation {
 	}
     @media @tablet {
         flex-direction: column;
-    	padding: 30px 0 0;
+        padding: 1em 0;
     }
 	@media @mobile {
-		padding: 20px 0 0;
 		.box-sizing--border-box();
 	}
+	
+	&:after {
+	    content: "";
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+        border-bottom: 1px solid @color__header--border;
+	}
 }
+
 
 .main-container {
 	background-color: @color__container--background;

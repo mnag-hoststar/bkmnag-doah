@@ -1,12 +1,12 @@
 {% extends "layout.twig" %} {% block content %}
 <div class="bk-pt-default">
-    <div class="flex-container">
-            <div class="flex-item company">
-                {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}} {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-            </div>
-            <div class="flex-item flex-nav">
-                {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
-            </div>
+    <div class="navigation--flex-container">
+		<div class="flex-item company">
+			{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}} {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+		</div>
+		<div class="flex-item flex-nav">
+			{{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+		</div>
     </div>
 
 
