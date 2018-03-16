@@ -639,13 +639,17 @@ a.companyname__company-link {
 .language-selector__name,
 .language-selector__localised-name {
     .language-selector.language-selector--flag-text & {
-        display: block;
+		display: inline-block;
         padding: @language-padding 0 @language-padding @language-padding;
     }
 
     .language-selector.language-selector--text &,
     .language-selector.language-selector--flag & {
     	padding: @language-padding 0;
+    }
+
+    .language-selector.language-selector--text & {
+        display: block;
     }
 	
 	.language-selector.language-selector--dropdown & {
