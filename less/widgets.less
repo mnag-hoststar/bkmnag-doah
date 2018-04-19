@@ -408,6 +408,10 @@ a.companyname__company-link {
     	line-height: @language-line-height;
     	letter-spacing: @font__navigation--letter-spacing;
     	color: @color__navigation--text;
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+		text-rendering: auto;
     }
 }
 	
@@ -638,6 +642,7 @@ a.companyname__company-link {
 // Name
 .language-selector__name,
 .language-selector__localised-name {
+	
     .language-selector.language-selector--flag-text & {
 		display: inline-block;
         padding: @language-padding 0 @language-padding @language-padding;
