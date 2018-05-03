@@ -34,7 +34,5 @@ $(document).ready(function() {
 	
     $(document).bind("DOMSubtreeModified",function(){
         $('.feature__content-wrap').css('padding-top', (navigationSpace())+'px');
-        
-        console.log('Working.');
     });
 });
