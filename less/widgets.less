@@ -452,10 +452,7 @@ a.companyname__company-link {
 		box-sizing: border-box;
 		margin: @language-padding;
 		min-width: auto;
-		
-		@media @mobile {
-			width: calc(~"100% -" @language-padding*2);
-		}
+		max-width: calc(~"100% -" @language-padding*2);
 	}
 	
 	.language-selector.language-selector--dropdown.language-selector--flag & {
@@ -475,6 +472,7 @@ a.companyname__company-link {
 	}
 
 	.language-selector.language-selector--dropdown & {
+	    max-width: 100%;
 		
 		.language-selector--light& {
 			background-color: @color__button--background;
@@ -519,10 +517,10 @@ a.companyname__company-link {
         		content: "\25be";
         		top: 50%;
         		right: 0;
-        		margin-top: -(@font__navigation--line-height/2);
+        		margin-top: -(@font__navigation--line-height/2+@font__navigation--line-height/10);
         		min-width: @language-padding*4;
     		    background-color: transparent;
-        		line-height: @language-line-height/2;
+        		line-height: @language-line-height;
         	    font-size: @font__navigation--font-size;
         		color: @color__navigation--text;
         		text-align: center;
@@ -641,6 +639,10 @@ a.companyname__company-link {
 		float: left;
 		box-sizing: border-box;
 		line-height: @language-line-height;
+	}
+	
+	.language-selector.language-selector--horizontal.language-selector--flag & {
+	    margin-right: 0;
 	}
 }
 
