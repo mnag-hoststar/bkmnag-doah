@@ -328,13 +328,13 @@ input::-webkit-input-placeholder {
 input:focus::-webkit-input-placeholder {
     transition: none;
 }
-input::focus::-moz-placeholder {
+input:focus::-moz-placeholder {
     transition: none;
 }
 input:focus:-moz-placeholder {
     transition: none;
 }
-input:focus:[placeholder] {
+input:focus[placeholder] {
     transition: none;
 }
 .form-group.focused input::-webkit-input-placeholder {
@@ -661,11 +661,9 @@ label[for*="input--terms"] span a.form__link {
 // ------------
 
 .signupform__input {
-    display: inline-block;
     float: left;
     vertical-align: top;
     .button--submit {
-        display: inline-block;
         float: right;
         min-width: 20%;
         vertical-align: bottom;
@@ -865,14 +863,6 @@ label[for*="input--terms"] span a.form__link {
 .overlay.fail .message-box {
     .message;
     .message--warning;
-}
-
-
-// -----------------------------
-// 8. #COOKIE MESSAGE
-// -----------------------------
-
-.bk-cookie-container {
 }
 
 
