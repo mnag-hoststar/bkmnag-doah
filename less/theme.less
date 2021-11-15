@@ -1,23 +1,6 @@
-// ------------------------------------
-// BaseKit Standard Theme: LESS > Theme
-// ------------------------------------
-// -----------------------------
-// #Table of Contents
-// -----------------------------
-// 1. #TYPOGRAPHY
-// 2. #CUSTOM PAGE
-// 3. #HEADER & #BK-NAV
-// 4. #FOOTER
-// 5. #CONTENT
-// 6. #GENERAL FORMS
-// 7. #MESSAGES
-// 8. #COOKIE MESSAGE
-// 9. #GDPR MESSAGE
+// BaseKit Standard Theme: Theme
 
-
-// -----------------------------
-// #Variables
-// -----------------------------
+// Variables
 
 @message-color--standard: #6e6e6e;
 @message-color--error: #d20000;
@@ -26,34 +9,17 @@
 @message-color--success: #bae914;
 @message-color--not-found: #6e6e6e;
 
-
-// -----------------------------
-// 1. #TYPOGRAPHY
-// -----------------------------
+// TYPOGRAPHY
 
 // Colour Variables
-// ----------------
 
 @bg-color: @color-swatch7;
 @button-color: @color__button--background;
 @spare-color: @color-swatch7;
 
 // Font Swatches
-// -------------
-// font1:  Heading 1
-// font2:  Heading 2
-// font3:  Heading 3
-// font4:  Heading 4
-// font5:  Paragraph
-// font6:  Navigation Link
-// font7:  Buttons
-// font8:  Feature Headline
-// font9:  Feature Strapline
-// font10: Company Name (Logo)
 
-// -----------------------------
-// 2. #CUSTOM PAGE
-// -----------------------------
+// CUSTOM PAGE
 
 body.edit .widget.navigation,
 body.edit .widget.extendednavigation {
@@ -61,15 +27,12 @@ body.edit .widget.extendednavigation {
 }
 
 // Default Page Style
-// ------------------
 
 .bk-pt-default .bk-header {
     border-bottom: 1px solid @color__h1--text;
 }
 
-// -----------------------------
-// 3. #HEADER & #BK-NAV
-// -----------------------------
+// HEADER & #BK-NAV
 
 .navigation--flex-container {
     position: relative;
@@ -89,18 +52,22 @@ body.edit .widget.extendednavigation {
 	.box-sizing--border-box();
 	max-width: 1400px;
 	font-size: @font__navigation--font-size;
+
 	@media only screen and (max-width: 1800px) {
     	margin-left: 10%;
 		margin-right: 10%;
 	}
+
 	@media only screen and (max-width: 1200px) {
     	margin-left: 6%;
 		margin-right: 6%;
 	}
+
     @media @tablet {
         flex-direction: column;
         padding: 1em 0;
     }
+
 	@media @mobile {
 		.box-sizing--border-box();
 	}
@@ -115,7 +82,6 @@ body.edit .widget.extendednavigation {
 	}
 }
 
-
 .main-container {
 	background-color: @color__container--background;
 	padding: 40px;
@@ -124,14 +90,17 @@ body.edit .widget.extendednavigation {
 	min-height: calc(100vh - 415px);
 	.box-sizing--border-box();
 	max-width: 1400px;
+
 	@media only screen and (max-width: 1800px) {
     	margin-left: 10%;
 		margin-right: 10%;
 	}
+
 	@media only screen and (max-width: 1200px) {
     	margin-left: 6%;
 		margin-right: 6%;
 	}
+
 	@media @mobile {
 		padding: 16px;
 		height: auto;
@@ -145,9 +114,7 @@ body.edit .widget.extendednavigation {
 	width: 100%;
 }
 
-// -----------------------------
-// 4. #FOOTER
-// -----------------------------
+// FOOTER
 
 .bk-footer {
     overflow: auto;
@@ -155,9 +122,11 @@ body.edit .widget.extendednavigation {
     background-color: @color__footer--background;
 	margin-top: 30px;
 	min-height: 220px;
+
 	@media @mobile {
 		height: auto;
 	}
+
     .widget__socialicons,
     .widget__profile .profile__socialicons {
         margin: 0 0 20px;
@@ -168,10 +137,12 @@ body.edit .widget.extendednavigation {
     margin: 20px auto 50px;
 	.box-sizing--border-box();
 	max-width: 1400px;
+
 	@media only screen and (max-width: 1800px) {
     	margin-left: 10%;
 		margin-right: 10%;
 	}
+
 	@media only screen and (max-width: 1200px) {
     	margin-left: 6%;
 		margin-right: 6%;
@@ -181,6 +152,7 @@ body.edit .widget.extendednavigation {
 .footerright,
 .footerleft {
     width: 49.5%;
+
     @media @mobile {
         width: 100%;
         text-align: center !important;
@@ -190,16 +162,19 @@ body.edit .widget.extendednavigation {
 .footerleft {
     float: left;
 	padding-left: 40px;
+
     @media @mobile {
         width: 100%;
         text-align: center !important;
 		padding-left: 0;
     }
 }
+
 .footerright {
     float: right;
 	padding-right: 40px;
     text-align: right;
+
     @media @mobile {
         width: 100%;
         text-align: center !important;
@@ -215,9 +190,7 @@ body.edit .widget.extendednavigation {
     padding-bottom: 1em;
 }
 
-// -----------------------------
-// 5. #CONTENT
-// -----------------------------
+// CONTENT
 
 .widget__content {
     padding: 0;
@@ -242,6 +215,7 @@ span.expand.button.button--expand {
     text-decoration: none;
     padding: 12px;
     border-bottom: 1px solid @color__link--text;
+
     &:hover {
         border-bottom: 2px solid @color__link--text;
         cursor: pointer;
@@ -250,9 +224,7 @@ span.expand.button.button--expand {
     }
 }
 
-// -----------------------------
-// 6. #GENERAL FORMS
-// -----------------------------
+// GENERAL FORMS
 
 legend {
     display: none!important;
@@ -391,6 +363,7 @@ textarea {
     color: @color__p--text!important;
     border: 1px solid fade(@color__h1--text, 30%);
     border-bottom: 1px solid @color__h1--text;
+
     &:focus {
         border: 1px solid fade(@color__h1--text, 30%);
         border-bottom: 1px solid @color__h1--text;
@@ -435,6 +408,7 @@ input.js-email.email {
 .select-wrap {
 	width: 100%;
 	margin-top: 32px;
+
 	@media @mobile {
 		max-width: 100%;
 	}
@@ -525,7 +499,6 @@ select span {
 }
 
 // Advanced Contact Form
-// ---------------------
 
 .advancedcontactform {
     text-align: left;
@@ -658,7 +631,6 @@ label[for*="input--terms"] span a.form__link {
 
 
 // Signup Form
-// ------------
 
 .signupform__input {
     float: left;
@@ -672,7 +644,6 @@ label[for*="input--terms"] span a.form__link {
 }
 
 // Clearfix
-// --------
 
 .clearfix:before,
 .clearfix:after {
@@ -689,13 +660,9 @@ label[for*="input--terms"] span a.form__link {
 }
 
 
-// -----------------------------
-// 7. #MESSAGES
-// -----------------------------
-
+// MESSAGES
 
 // Message
-// -------
 
 .message {
     position: relative;
@@ -747,7 +714,7 @@ label[for*="input--terms"] span a.form__link {
 }
 
 // Error
-// -----
+
 .message--error {
 	border-color: @message-color--error;
 
@@ -760,12 +727,11 @@ label[for*="input--terms"] span a.form__link {
 	// Icon
 
 	&:before {
-		content: "\f06a"; // exclamation circle
+		content: "\f06a";
 	}
 }
 
 // Warning
-// -------
 
 .message--warning {
 	border-color: @message-color--warning;
@@ -779,13 +745,12 @@ label[for*="input--terms"] span a.form__link {
 	// Icon
 
 	&:before {
-		content: "\f071"; // triangle
+		content: "\f071";
 		color: darken(@message-color--warning, 10%);
 	}
 }
 
 // Information
-// -----------
 
 .message--information {
 	border-color: @message-color--information;
@@ -800,13 +765,12 @@ label[for*="input--terms"] span a.form__link {
 	// Icon
 
 	&:before {
-		content: "\f05a"; // circled i
+		content: "\f05a";
 		color: darken(@message-color--information, 30%);
 	}
 }
 
 // Success
-// -------
 
 .message--success {
 	border-color: @message-color--success;
@@ -820,13 +784,12 @@ label[for*="input--terms"] span a.form__link {
 	// Icon
 
 	&:before {
-		content: "\f00c"; // check
+		content: "\f00c";
 		color: darken(@message-color--success, 20%);
 	}
 }
 
 // Not Found
-// ---------
 
 .message--not-found {
 	border-color: @message-color--not-found;
@@ -840,20 +803,17 @@ label[for*="input--terms"] span a.form__link {
 	// Icon
 
 	&:before {
-		content: "\f002"; // magnifying glass
+		content: "\f002";
 	}
 }
 
-
 // Message in Template's Footer
-// ----------------------------
 
 .template-footer .message {
     margin: 0;
 }
 
 // Contact Form and Signup Form Messages
-// -------------------------------------
 
 .overlay.success .message-box {
     .message;
@@ -865,10 +825,7 @@ label[for*="input--terms"] span a.form__link {
     .message--warning;
 }
 
-
-// -----------------------------
-// 9. #GDPR MESSAGE
-// -----------------------------
+// GDPR MESSAGE
 
 .gdpr-footer {
     position: fixed;

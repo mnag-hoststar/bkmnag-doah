@@ -1,18 +1,6 @@
-// --------------------------------
-// HOSTSTAR MNAG TEMPLATE (v2.0)
-// --------------------------------
+// HOSTSTAR MNAG TEMPLATE
 
-// -----------------------------
-// #Table of Contents
-// -----------------------------
-
-// 1. #GLOBAL MIXINS
-// 2. #LESS INCLUDES
-// 4. #TEMPLATE STYLES
-
-// -----------------------------
-// 1. #GLOBAL MIXINS
-// -----------------------------
+// GLOBAL MIXINS
 
 .transition(@property, @duration, @ease) {
 	-webkit-transition: @property @duration @ease;
@@ -44,22 +32,14 @@
 	appearance: @property;
 }
 
-// -----------------------------
-// 2. #LESS INCLUDES
-// -----------------------------
+// LESS INCLUDES
 
 @import "@{templateCommon}/bk-less-framework-v8.less";
 @import "@{templateLocal}/less/theme.less";
 @import "@{templateLocal}/less/widgets.less";
 @import "@{templateLocal}/less/plugins.less";
 
-
-// -----------------------------
-// 3. #TEMPLATE STYLES
-// -----------------------------
-
 // TYPOGRAPHY
-// --------------------
 
 body {
 	font-smooth: always;
@@ -73,9 +53,11 @@ ul,
 ol {
     padding: 0 0 .5em 2em;
 }
+
 ul {
     list-style-type: circle;
 }
+
 blockquote {
     padding: 20px 30px;
     border: 15px solid lighten(@color__h1--text, 30%);
@@ -186,7 +168,6 @@ p {
 }
 
 // Page Container
-// --------------------
 
 .bk-zone {
     min-height: 40px;
@@ -199,6 +180,7 @@ p {
 
 .iconfill {
     fill: @color__button--text !important;
+    
     &:hover {
         fill: @color__button--text--hover !important;
     }

@@ -1,20 +1,10 @@
-// --------------------------------------
-// BaseKit Standard Theme: LESS > Plugins
-// --------------------------------------
+// BaseKit Standard Theme: Plugins
 
-// -----------------------------
-// #TABLE OF CONTENTS
-// -----------------------------
-//  1.   #BLOG
-//  2.   #MENU
-//  3.   #E-COMMERCE
-
-// -----------------------------
-// #GENERAL MIXINS
-// -----------------------------
+// GENERAL MIXINS
 
 .mixin__tag-item {
     margin: 0 1em 0 0;
+
     &:last-child {
         margin: 0;
     }
@@ -27,10 +17,12 @@
     color: @color__link--text;
     .box-sizing--border-box();
     font-weight: 400;
+
     &:before,
     &:after {
         display: none;
     }
+
     &:hover {
         font-weight: 400;
         text-decoration: none;
@@ -40,20 +32,20 @@
 }
 
 .mixin__product-attribute-title {
-	display: inline-block;
-	margin: 0 1em 0.4em 0;
+    display: inline-block;
+    margin: 0 1em 0.4em 0;
 }
 
 .mixin__tag-list {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .mixin__menu-item {
-	display: inline-block;
-	margin: 5px;
+    display: inline-block;
+    margin: 5px;
     border-bottom: 1px solid @color__link--text;
     font-family: @font__button--font-family;
     padding: 10px;
@@ -62,7 +54,8 @@
     font-weight: 400;
     background-color: transparent;
     .box-sizing--border-box();
-	.transition(all, 0.2s, ease);
+    .transition(all, 0.2s, ease);
+
     &:before,
     &:after {
         display: none;
@@ -74,27 +67,26 @@
     }
 }
 
-// -----------------------------
-// 1. Blog Post List
-// -----------------------------
+// Blog Post List
 
 .widget__blogpostlist {
     margin-bottom: 40px;
 }
 
 .blogpostlist__post-items {
-	margin: -10px;
-	font-size: 0;
-} 
+    margin: -10px;
+    font-size: 0;
+}
 
 .blogpostlist__post-article {
     display: inline-block;
     vertical-align: top;
     width: 50%;
     margin-bottom: 30px;
-	padding: 15px;
+    padding: 15px;
     .box-sizing--border-box();
-	font-size: @font__p--font-size;
+    font-size: @font__p--font-size;
+	
     @media @tablet {
         width: 100%;
     }
@@ -116,7 +108,7 @@
 }
 
 .blogpostlist__post-title a {
-	color: @color__blogpost-title--text;
+    color: @color__blogpost-title--text;
 }
 
 // Post Content
@@ -132,10 +124,11 @@
     font-weight: @font__button--font-weight;
     text-transform: uppercase;
     padding: 10px;
-    letter-spacing:0px;
+    letter-spacing: 0px;
     background-color: @color__button--background;
+
     &:hover {
-    	color: @color__button--text--hover;
+        color: @color__button--text--hover;
         background-color: @color__button--background--hover;
         cursor: pointer;
         .transition(all, 0.2s, ease);
@@ -145,7 +138,7 @@
 // Blog List Footer
 
 .blogpostlist__post-footer {
-    font-size: 0.9em!important;
+    font-size: 0.9em !important;
 }
 
 .blogpostlist__post-footer time.timestamp {
@@ -156,6 +149,7 @@
 }
 
 // Footer Pagination Items
+
 footer.post-list-footer {
     width: 96%;
 }
@@ -180,10 +174,12 @@ a.button.button--pagination.button--next {
     font-weight: 400;
     width: 96%;
     .box-sizing--border-box();
+
     &:before,
     &:after {
         display: none;
     }
+
     &:hover {
         box-shadow: 0 1.5px 0 @color__link--text;
         font-weight: 700;
@@ -194,7 +190,7 @@ a.button.button--pagination.button--next {
 // Blog Post Single
 
 .blogpost__post-title {
-	color: @color__blogpostlist-title--text;
+    color: @color__blogpostlist-title--text;
 }
 
 .blogpost__post-image {
@@ -207,6 +203,7 @@ a.button.button--pagination.button--next {
     background-position: center center;
     margin-bottom: 40px;
     background-color: transparent;
+
     img.image {
         display: none;
     }
@@ -220,6 +217,7 @@ a.button.button--pagination.button--next {
 .blogpost__post-footer {
     position: relative;
     border-right: 1px solid @color__h1--text;
+
     @media @mobile {
         border-right: none;
     }
@@ -236,9 +234,9 @@ a.button.button--pagination.button--next {
         bottom: 0;
         display: inline;
         position: absolute;
-    	.box-sizing--border-box();
+        .box-sizing--border-box();
         width: 120px;
-		
+
         @media @mobile {
             display: block;
             width: 100%;
@@ -255,14 +253,17 @@ a.button.button--pagination.button--next {
 .blogpost__post-attributes {
     display: table;
     margin-left: 120px;
+
     @media @mobile {
         width: 100%;
         margin: 20px 0 20px;
         border-left: 1px solid @color__h1--text;
     }
+
     div {
         &:last-child {
             border-right: none;
+
             @media @mobile {
                 border-right: 1px solid @color__h1--text;
             }
@@ -280,7 +281,7 @@ a.button.button--pagination.button--next {
 .blogpost__category-title,
 .blogpost__tags-title {
     .mixin__product-attribute-title ();
-	width: 100%;
+    width: 100%;
 }
 
 .blogpost__tag-list {
@@ -289,17 +290,17 @@ a.button.button--pagination.button--next {
 
 .blogpost__tag-item {
     .mixin__tag-item ();
-	margin: 0;
+    margin: 0;
 }
 
 .blogpost__tag-link,
 .blogpost__category-link {
     .mixin__category-tags-link ();
-	display: inline-block;
-	margin: 0 1em 0 0;
+    display: inline-block;
+    margin: 0 1em 0 0;
 }
 
-//Social Sharing Icon Group
+// Social Sharing Icon Group
 
 .blogpost__sharing-links {
     float: right;
@@ -311,10 +312,11 @@ a.button.button--pagination.button--next {
     margin-top: 10px;
 }
 
-//Social Sharing Blog Post Icons
+// Social Sharing Blog Post Icons
 
 .blogpost__network-item {
     margin: 5px;
+
     button.button.icon.icon--facebook,
     button.button.icon.icon--twitter,
     button.button.icon.icon--googleplus {
@@ -323,10 +325,12 @@ a.button.button--pagination.button--next {
         background-color: @color__button--background;
         color: @color__button--text;
         font-size: 12px;
-        text-transform:uppercase;
+        text-transform: uppercase;
+
         &:before {
-            font-size: 16px!important;
+            font-size: 16px !important;
         }
+
         &:hover {
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
@@ -336,9 +340,7 @@ a.button.button--pagination.button--next {
     }
 }
 
-// -----------------------------
-// 1. #BLOG SEARCH
-// -----------------------------
+// BLOG SEARCH
 
 .blogsearch__fieldset {
     margin: 0px auto 10px;
@@ -347,24 +349,24 @@ a.button.button--pagination.button--next {
     text-align: center;
 }
 
-// -----------------------------
-// 2. #MENU
-// -----------------------------
+// MENU
 
 .menu__section-header {
     margin-bottom: 25px;
 }
-//Menusection Toggle (Categories)
+
+// Menusection Toggle (Categories)
+
 .menusections-body {
     text-align: center;
     margin: 0 0 40px;
 }
 
 a.menu-item-name {
-	.mixin__menu-item();
+    .mixin__menu-item();
 }
 
-//Menu Widget
+// Menu Widget
 
 .widget__menu {
     margin-bottom: 40px;
@@ -373,18 +375,22 @@ a.menu-item-name {
 .menu-section .menu-items {
     text-align: center;
 }
+
 .menusetions__menusections-item,
 .menusections-item {
     line-height: 50px;
 }
+
 .menu-item {
     padding: 30px;
+
     @media @mobile {
         padding: 0px;
     }
 }
+
 h3.menu__section-subtitle {
-    text-transform:none;
+    text-transform: none;
 }
 
 .menu .item-image .image-link {
@@ -409,6 +415,7 @@ h3.menu__section-subtitle {
     background-color: transparent;
     text-align: center;
     margin: 1.5em 0;
+
     @media @mobile {
         padding: 0px;
     }
@@ -418,22 +425,20 @@ footer.section-footer {
     text-align: center;
 }
 
-//Featured Menu- Sections
+// Featured Menu- Sections
 
 section.menu-section--featured {
     border: 15px solid @color__button--background;
-
 }
 
 .menu-item--featured,
 .menu-section--featured {
     padding: 30px;
-    background-color: transparent!important;
+    background-color: transparent !important;
     border: 15px solid @color__button--background;
-
 }
 
-//Section Header
+// Section Header
 
 header.section.header {
     text-align: center;
@@ -445,7 +450,7 @@ header.section.header {
     font-size: @font-swatch5-font-size;
 }
 
-//Item Footer
+// Item Footer
 
 .item-footer {
     .item-price p {
@@ -453,20 +458,25 @@ header.section.header {
         font-family: @font-swatch4-font-family;
         font-size: @font__button--font-size;
     }
+
     .item-subtitle {
         text-transform: uppercase;
         padding: 15px 0px 0px 0px;
     }
+
     .item-subtitle,
     .item-details {
         font-size: 12px;
     }
+
     ul.menu__dietary-list {
-        padding:0px;
+        padding: 0px;
     }
+
     .dietary-list {
         margin-top: 10px;
     }
+
     .dietary-item {
         text-transform: uppercase;
         font-size: 0.9em !important;
@@ -474,7 +484,8 @@ header.section.header {
         font-weight: 400;
         font-family: @font__h1--font-family;
         color: @color__link--text;
-    	.box-sizing--border-box();
+        .box-sizing--border-box();
+
         &:hover {
             color: darken(@color__link--text, 10%);
             text-decoration: none;
@@ -482,12 +493,9 @@ header.section.header {
     }
 }
 
-// -----------------------------
-// 3. #E-COMMERCE
-// -----------------------------
+// E-COMMERCE
 
 // Products List
-// -------------
 
 .widget__ecomproductslist,
 .widget__ecomfeaturedproducts {
@@ -499,10 +507,12 @@ header.section.header {
 h2.ecomfeaturedproducts__listing-title {
     padding: 20px 0px;
 }
+
 .ecomproductslist__product-filters {
     margin-left: 0;
     margin-bottom: 40px;
 }
+
 .product-filters .input--search {
     height: 50px;
 }
@@ -510,63 +520,74 @@ h2.ecomfeaturedproducts__listing-title {
 // Search Field
 
 .fieldset--search {
-	.form-body {
-		font-size: 0; // inline-block fix, so there are no spaces
-		.form-group {
-			margin: 0;
-			&:first-child {
-				width: 100%/3*2;
-				padding-right: 10px;
-    			.box-sizing--border-box();
-				@media @mobile {
-					width: 100%;
-					padding-right: 0;
-				}
-			}
-			&:last-child {
-				width: 100%/3;
-				padding-left: 10px;
-    			.box-sizing--border-box();
-				@media @mobile {
-					width: 100%;
-					padding-left: 0;
-				}
-			}
-			.input--search,
-			.button--submit {
-				width: 100%;
-			}
-			.button--submit {
-				padding-left: 0;
-				padding-right: 0;
-				@media @mobile {
-					margin-top: 15px;
-				}
-			}
-		}
-	}
+    .form-body {
+        font-size: 0; // inline-block fix, so there are no spaces
+
+        .form-group {
+            margin: 0;
+
+            &:first-child {
+                width: 100%/3 * 2;
+                padding-right: 10px;
+                .box-sizing--border-box();
+
+                @media @mobile {
+                    width: 100%;
+                    padding-right: 0;
+                }
+            }
+
+            &:last-child {
+                width: 100%/3;
+                padding-left: 10px;
+                .box-sizing--border-box();
+
+                @media @mobile {
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+
+            .input--search,
+            .button--submit {
+                width: 100%;
+            }
+
+            .button--submit {
+                padding-left: 0;
+                padding-right: 0;
+
+                @media @mobile {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
 }
 
 // Filter Fields
 
 .fieldset--filters {
-	.form-body {
-		margin: 0 -10px;
-		&:after {
-			display: block;
-			content: " ";
-			clear: both;
-		}
-	}
+    .form-body {
+        margin: 0 -10px;
+
+        &:after {
+            display: block;
+            content: " ";
+            clear: both;
+        }
+    }
+
     .form-group {
         width: 33.33%;
-		margin: 0;
-		padding: 0 10px;
-    	.box-sizing--border-box();
-		float: left;
+        margin: 0;
+        padding: 0 10px;
+        .box-sizing--border-box();
+        float: left;
+		
         @media only screen and (max-width: 650px) {
             width: 100%;
-    		margin-right: 0;
+            margin-right: 0;
         }
     }
 }
@@ -582,48 +603,57 @@ h2.ecomfeaturedproducts__listing-title {
 
 .ecomproductslist__product-list,
 .ecomfeaturedproducts__product-list {
-	position: static;
-	margin: 0;
+    position: static;
+    margin: 0;
     padding: 0px;
-	font-size: 0; // inline-block fix, so there are no spaces
-	margin-left: -10px;
-	margin-right: -10px;
+    font-size: 0;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 .ecomproductslist__product-item,
 .ecomfeaturedproducts__product-item {
-	display: inline-block;
-	width: 33.33%;
-	vertical-align: top;
-	padding: 10px 15px 15px;
+    display: inline-block;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 10px 15px 15px;
     .box-sizing--border-box();
+
     @media @tablet {
         width: 50%;
     }
+
     @media @mobile {
         width: 100%;
     }
 }
+
 a.ecomfeaturedproducts__title-link,
 a.ecomproductslist__title {
     font-weight: 400;
+
     &:hover {
         color: darken(@color__h3--text, 5%);
-        font-weight:400;
+        font-weight: 400;
     }
 }
+
 .product-item-title {
     margin-bottom: 5px;
+
     @media @tablet {
         line-height: 22px;
     }
+
     a {
-		color: @color__ecomproductslist-product-title--text;
+        color: @color__ecomproductslist-product-title--text;
+
         @media @tablet {
-            font-size: 0.9em!important;
+            font-size: 0.9em !important;
         }
+
         @media @mobile {
-            font-size: 0.8em!important;
+            font-size: 0.8em !important;
         }
     }
 }
@@ -655,14 +685,15 @@ a.ecomproductslist__title {
 }
 
 .ecomproductslist__listing-footer {
-	clear: both;
+    clear: both;
 }
 
 .ecomproductslist__pagination-list {
     text-align: center;
     border-top: 1px solid fade(@color__h1--text, 30%);
-	padding: 10px 0;
-	margin: 0;
+    padding: 10px 0;
+    margin: 0;
+
     .current {
         color: @color__h1--text;
         border: 1px solid @color__h1--text;
@@ -674,11 +705,12 @@ a.ecomproductslist__title {
     color: @color__button--text;
     text-transform: uppercase;
     border-bottom: 1px solid @color__button--text;
+
     &:hover {
         box-shadow: 0 1.5px 0 @color__button--text;
-    	background-color: @color__button--background--hover;
-    	color: @color__button--text--hover;
-    	border-bottom: 1px solid @color__button--text--hover;
+        background-color: @color__button--background--hover;
+        color: @color__button--text--hover;
+        border-bottom: 1px solid @color__button--text--hover;
         background-color: transparent;
         .transition(all, 0.1s, ease);
     }
@@ -690,53 +722,58 @@ a.ecomproductslist__title {
     font-size: @font__button--font-size;
     font-weight: @font__button--font-weight;
     line-height: @font__button--line-height;
-	letter-spacing: @font__button--letter-spacing;
+    letter-spacing: @font__button--letter-spacing;
     border: 1px solid fade(@color__h1--text, 30%);
     margin: 5px 10px 0 0;
     padding: 8px;
     text-decoration: none;
+
     &:hover {
         border: 1px solid @color__button--text--hover;
     }
+
     a.button {
         background-color: @color__button--background;
         color: @color__button--text;
-		&:hover {
-        	background-color: @color__button--background--hover;
-        	color: @color__button--text--hover;
-		}
+
+        &:hover {
+            background-color: @color__button--background--hover;
+            color: @color__button--text--hover;
+        }
     }
 }
 
 .ecomproduct__button {
-	@media @mobile {
-		margin-left: auto;
-		margin-right: auto;
-	}
+    @media @mobile {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 // Single Item
-// -----------
 
 .ecomproduct__product-title {
-	color: @color__ecomproduct-title--text;
+    color: @color__ecomproduct-title--text;
 }
 
 .ecomproduct__product-images {
     width: 50%;
     float: left;
     margin-right: 40px;
+
     @media @tablet {
-        width: 40%!important;
+        width: 40% !important;
     }
+
     @media only screen and (max-width: 700px) {
         width: 100% !important;
-		margin-bottom: 30px;
+        margin-bottom: 30px;
     }
 }
 
 .ecomproduct__product-image {
     background-color: @color__ecomproductslist-product-item--background;
+
     a.image-link {
         margin-bottom: 1em;
         height: auto;
@@ -745,13 +782,15 @@ a.ecomproductslist__title {
 }
 
 .ecomproduct__product-gallery {
-	margin: 20px 0 0;
+    margin: 20px 0 0;
     padding: 0px;
-	&:after {
-		display: block;
-		content: "";
-		clear: both;
-	}
+
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+
     .ecomproduct__gallery-item {
         height: 50px;
         width: 50px;
@@ -759,18 +798,20 @@ a.ecomproductslist__title {
         float: left;
         text-align: left;
         margin: 0 0.5em 0 0;
-    	background-color: @color__ecomproductslist-product-item--background;
+        background-color: @color__ecomproductslist-product-item--background;
     }
 }
 
 .ecomproduct__product-content {
     width: 41%;
     display: inline-block;
+
     @media @tablet {
-        width: 44%!important;
+        width: 44% !important;
     }
+
     @media only screen and (max-width: 700px) {
-        width: 100%!important;
+        width: 100% !important;
     }
 }
 
@@ -783,6 +824,7 @@ a.ecomproductslist__title {
 
 .ecomproduct__product-actions {
     display: inline;
+
     button.button.icon.icon--add,
     a.button.icon.icon--basket {
         padding: 12px 35px;
@@ -795,27 +837,29 @@ a.ecomproductslist__title {
         text-decoration: none;
         text-transform: uppercase;
         display: inline-block;
-		text-align: center;
-		min-width: 200px;
+        text-align: center;
+        min-width: 200px;
+
         &:hover {
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
             cursor: pointer;
         }
-		&:before {
-			margin-right: 10px;
-			font-size: 1.2em;
-		}
+
+        &:before {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
     }
 }
 
 .form.ecomproduct__form {
- margin-top: 1.2em;   
+    margin-top: 1.2em;
 }
 
 .ecomproduct__product-category,
 .ecomproduct__product-tags {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .ecomproduct__product-attribute-title {
@@ -824,7 +868,7 @@ a.ecomproductslist__title {
 
 .ecomproduct__product-attribute-title,
 .ecomproduct__tags-title {
-	width: 100%;
+    width: 100%;
 }
 
 .ecomproduct__tag-list {
@@ -844,28 +888,23 @@ a.ecomproduct__tag-link {
 .bk-zone column columns-two-right {
     .product-content {
         width: 100%;
-        @media only screen
-		and (min-width: 768px)
-		and (max-width: 1024px)
-		and (orientation: landscape)
-		and (-webkit-min-device-pixel-ratio: 1) {
-            width: 100%!important;
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+            width: 100% !important;
         }
     }
 }
 
 .ecomcategorieslist__category-list {
-    list-style:none;
-    text-align:center;
+    list-style: none;
+    text-align: center;
 }
 .ecomcategorieslist__category-item {
-    display:inline-block;
+    display: inline-block;
     font-weight: 400;
 }
 
-/* ===============================
-ECOM - BASKET BUTTON
-================================== */
+// ECOM - BASKET BUTTON
 
 .widget__ecombasket {
     button.basket-toggle {
@@ -879,11 +918,13 @@ ECOM - BASKET BUTTON
         text-decoration: none;
         text-transform: uppercase;
         display: inline-block;
+
         &:hover {
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
             cursor: pointer;
         }
+
         &:before,
         &:after {
             display: none;
@@ -891,73 +932,80 @@ ECOM - BASKET BUTTON
     }
 }
 
-// -------------------------------
-// 4. #Basket Summary
-// -------------------------------
+// Basket Summary
 
 // Mixins
 
 .mixin__summary-table-cell-1 {
-	width: 53%;
-	@media @tablet {
-		width: 38%;
-	}
-	@media @mobile {
-		width: 100%;
-	}
+    width: 53%;
+
+    @media @tablet {
+        width: 38%;
+    }
+
+    @media @mobile {
+        width: 100%;
+    }
 }
 
 .mixin__summary-table-cells-without-first {
-	position: absolute;
-	top: 0;
-	@media @mobile {
-		position: static;
-	}
+    position: absolute;
+    top: 0;
+
+    @media @mobile {
+        position: static;
+    }
 }
 
 .mixin__summary-table-cell-2 {
-	width: 160px;
-	right: 340px;
-	@media only screen and (max-width: 1200px) {
-		width: auto;
-		width: inherit;
-		right: auto;
-		right: inherit;
-		left: 43%;
-	}
-	@media @tablet {
-		left: 18%;
-	}
+    width: 160px;
+    right: 340px;
+
+    @media only screen and (max-width: 1200px) {
+        width: auto;
+        width: inherit;
+        right: auto;
+        right: inherit;
+        left: 43%;
+    }
+
+    @media @tablet {
+        left: 18%;
+    }
 }
 
 .mixin__summary-table-cell-3 {
-	width: 160px;
-	right: 165px;
-	@media only screen and (max-width: 1200px) {
-		width: auto;
-		width: inherit;
-		right: auto;
-		right: inherit;
-		left: 63%;
-	}
-	@media @tablet {
-		left: 50%;
-	}
+    width: 160px;
+    right: 165px;
+
+    @media only screen and (max-width: 1200px) {
+        width: auto;
+        width: inherit;
+        right: auto;
+        right: inherit;
+        left: 63%;
+    }
+
+    @media @tablet {
+        left: 50%;
+    }
 }
 
 .mixin__summary-table-cell-4 {
-	width: 160px;
-	right: 0;
-	@media only screen and (max-width: 1200px) {
-		width: auto;
-		width: inherit;
-		right: auto;
-		right: inherit;
-		left: 81%;
-	}
-	@media @tablet {
-		left: 76%;
-	}
+    width: 160px;
+    right: 0;
+
+    @media only screen and (max-width: 1200px) {
+        width: auto;
+        width: inherit;
+        right: auto;
+        right: inherit;
+        left: 81%;
+    }
+	
+    @media @tablet {
+        left: 76%;
+    }
 }
 
 // Basket Table
@@ -971,6 +1019,7 @@ ECOM - BASKET BUTTON
     &:before {
         display: none;
     }
+
     @media @mobile {
         margin: 20px auto;
     }
@@ -979,333 +1028,355 @@ ECOM - BASKET BUTTON
 .ecombasketsummary__summary-table {
     margin: 20px 0;
     border: none;
-	border-bottom: 1px solid fade(@color__h1--text, 30%);
+    border-bottom: 1px solid fade(@color__h1--text, 30%);
 
-	&,
-	.summary-body,
-	.table-row {
-		display: block;
-	}
-	
-	// Table Cells
+    &,
+    .summary-body,
+    .table-row {
+        display: block;
+    }
 
-	.table-row {
-		position: relative;
-		border: none;
-		border-top: 1px solid fade(@color__h1--text, 30%);
-		@media @mobile {
-			padding: 5px 0 15px;
-		}
-	}
-	
-	.table-row--heading {
-		@media @mobile {
-			display: none;
-		}
-	}
+    // Table Cells
 
-	.cell {
-		vertical-align: middle;
-		display: inline-block;
-		padding: 20px 0;
-		text-align: center;
-		border: none;
-		@media @mobile {
-			padding: 8px 12px;
-			display: block;
-		}
-	}
-	
-	.cell--header {
-		text-decoration: none;
-		text-transform: uppercase;
-		font-weight: 600;
-		font-size: 13px;
-		text-align: left;
-		background-color: transparent;
-	    width: 14%;
-		@media @tablet {
-			width: 19%;
-		}
+    .table-row {
+        position: relative;
+        border: none;
+        border-top: 1px solid fade(@color__h1--text, 30%);
+
+        @media @mobile {
+            padding: 5px 0 15px;
+        }
+    }
+
+    .table-row--heading {
+
+        @media @mobile {
+            display: none;
+        }
+    }
+
+    .cell {
+        vertical-align: middle;
+        display: inline-block;
+        padding: 20px 0;
+        text-align: center;
+        border: none;
+
+        @media @mobile {
+            padding: 8px 12px;
+            display: block;
+        }
+    }
+
+    .cell--header {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 13px;
+        text-align: left;
+        background-color: transparent;
+        width: 14%;
+
+        @media @tablet {
+            width: 19%;
+        }
+
+        &:first-child {
+            .mixin__summary-table-cell-1();
+        }
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+            .mixin__summary-table-cells-without-first();
+        }
+
+        &:nth-child(2) {
+            .mixin__summary-table-cell-2();
+        }
+
+        &:nth-child(3) {
+            .mixin__summary-table-cell-3();
+        }
+
+        &:nth-child(4) {
+            .mixin__summary-table-cell-4();
+        }
+    }
+
+    // Cell Image
+
+    .cell--image {
+        width: 12%;
+        margin-right: 2%;
+        min-height: 65px;
+
+        @media @tablet {
+            display: block;
+            width: 14%;
+            margin-right: 0;
+            padding-bottom: 0;
+        }
+
+        @media @mobile {
+            margin-right: 0;
+            padding: 8px 12px;
+            width: 100%;
+            text-align: center;
+        }
+
+        a.summary-item-link {
+            display: block;
+            background: transparent;
+            text-align: left;
+            background-image: none !important;
+
+            @media @mobile {
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+
+        img.image--thumb {
+            width: 100%;
+            margin: 0px auto;
+        }
+    }
+
+    // Cell Title
+
+    .cell--title {
+        text-align: left;
+        width: 85%;
+        padding-right: 520px;
+
+        @media only screen and (max-width: 1200px) {
+            width: 26%;
+            padding-right: 0;
+        }
+
+        @media @tablet {
+            width: 100%;
+            padding-top: 10px;
+        }
+
+        @media @mobile {
+            display: inline-block;
+            padding: 0px 12px 15px;
+            text-align: center;
+
+            &:after {
+                content: " ";
+                border-bottom: 1px solid fade(@color__h1--text, 30%);
+                width: 80px;
+                display: block;
+                margin: 5px auto;
+            }
+        }
+
+        a.summary-item-link {
+            text-transform: uppercase;
+            font-family: @font__h1--font-family;
+            font-weight: @font__h1--font-weight;
+            font-size: @font-swatch6-font-size;
+            color: @color__p--text;
+            letter-spacing: 0px;
+            background-image: none !important;
+
+            &:hover {
+                font-weight: @font__h1--font-weight;
+                color: darken(@color__p--text, 5%);
+                letter-spacing: 0px;
+            }
+
+            @media @tablet {
+                font-size: calc(@font-swatch6-font-size - 2px);
+            }
+
+            @media @mobile {
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .cell--quantity,
+    .cell--price,
+    .cell--total {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: auto;
+
+        @media @tablet {
+            bottom: auto;
+            bottom: initial;
+            min-height: 70px;
+        }
+
+        @media @mobile {
+            position: static;
+            min-height: 0;
+        }
+    }
+
+    // Center alignment in the table
+
+    .quantity-wrap,
+    .summary-item-price,
+    .summary-item-total {
+        top: 50%;
+        position: absolute;
+        height: 20px;
+
+        @media @tablet {
+            top: 0;
+        }
+
+        @media @mobile {
+            position: static;
+        }
+    }
+
+    .quantity-wrap {
+        margin-top: -15px;
+
+        @media @tablet {
+            margin-top: 20px;
+        }
+    }
+
+    .summary-item-price,
+    .summary-item-total {
+        margin-top: -10px;
+
+        @media @tablet {
+            margin-top: 20px;
+        }
+
+        @media @mobile {
+            margin-top: 0;
+        }
+    }
+
+    // Plus and minus buttons
+
+    .cell--quantity {
+        .mixin__summary-table-cell-2();
+        min-width: 100px;
+        text-align: left;
+
+        @media @mobile {
+            border-top: none !important;
+            width: 100% !important;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-top: 1px solid @color__link--text;
+        }
+
+        .quantity-wrap {
+            display: table;
+            background-color: transparent;
+            width: 100%;
+
+            @media @mobile {
+                min-width: 100% !important;
+                margin: 2px auto 10px;
+            }
+
+            .quantity-field {
+                display: inline-block;
+                width: 30px;
+                text-align: center;
+                color: @font-swatch5-color;
+                font-weight: 300;
+            }
+
+            .button--quantity {
+                position: relative;
+                display: inline;
+                width: 30px;
+                height: 30px;
+                font-weight: 300;
+                line-height: 0;
+                vertical-align: middle;
+                color: transparent;
+
+                &:after {
+                    font-family: "FontAwesome", sans-serif;
+                    color: @color__h1--text;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    line-height: 30px;
+                    width: 30px;
+                    text-align: center;
+                    font-size: 14px !important;
+
+                    &:hover {
+                        color: @color__link--text;
+                    }
+                }
+
+                &.quantity-minus {
+                    &:after {
+                        content: "\f068";
+                    }
+                }
+
+                &.quantity-plus {
+                    &:after {
+                        content: "\f067";
+                    }
+                }
+            }
+        }
+    }
+
+    // Price fields
+
+    .cell--price {
+        .mixin__summary-table-cell-3();
+    }
+
+    .cell--total {
+        .mixin__summary-table-cell-4();
+    }
+
+    .cell--price,
+    .cell--total {
+        text-transform: uppercase;
+        font-weight: 600;
+        border-top: 0;
+
+        @media @mobile {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    // Basket Summary Total Price
+
+    .table-row--order-total {
+        text-align: right;
 		
-		// Item 
-		&:first-child {
-			.mixin__summary-table-cell-1();
-		}
-		
-		// Quantity, Price, Subtotal
-		&:nth-child(2),
-		&:nth-child(3),
-		&:nth-child(4) {
-			.mixin__summary-table-cells-without-first();
-		}
-		
-		// Quantity
-		&:nth-child(2) {
-			.mixin__summary-table-cell-2();
-		}
-		
-		// Price
-		&:nth-child(3) {
-			.mixin__summary-table-cell-3();
-		}
-		
-		// Subtotal
-		&:nth-child(4) {
-			.mixin__summary-table-cell-4();
-		}
-	}
-	
-	// Cell Image
-	
-	.cell--image {
-		width: 12%;
-		margin-right: 2%;
-		min-height: 65px;
-		@media @tablet {
-			display: block;
-			width: 14%;
-			margin-right: 0;
-    		padding-bottom: 0;
-		}
-		@media @mobile {
-			margin-right: 0;
-			padding: 8px 12px;
-			width: 100%;
-			text-align: center;
-		}
-		
-		a.summary-item-link {
-			display: block;
-			background: transparent;
-			text-align: left;
-			background-image: none !important;
-			
-			@media @mobile {
-				width: 60%;
-				margin: 0 auto;
-			}
-		}
-	
-		img.image--thumb {
-			width: 100%;
-			margin: 0px auto;
-		}
-	}
-	
-	// Cell Title
-	
-	.cell--title {
-		text-align: left;
-		width: 85%;
-		padding-right: 520px;
-		@media only screen and (max-width: 1200px) {
-			width: 26%;
-			padding-right: 0;
-		}
-		@media @tablet {
-			width: 100%;
-			padding-top: 10px;
-		}
-		@media @mobile {
-			display: inline-block;
-			padding: 0px 12px 15px;
-			text-align: center;
-			&:after {
-				content: " ";
-				border-bottom: 1px solid fade(@color__h1--text, 30%);
-				width: 80px;
-				display: block;
-				margin: 5px auto;
-			}
-		}
+        @media @mobile {
+            text-align: center;
+            padding: 0;
+        }
+    }
 
-		a.summary-item-link {
-			text-transform: uppercase;
-			font-family: @font__h1--font-family;
-			font-weight: @font__h1--font-weight;
-			font-size: @font-swatch6-font-size;
-			color: @color__p--text;
-			letter-spacing: 0px;
-			background-image: none !important;
-			&:hover {
-				font-weight: @font__h1--font-weight;
-				color: darken(@color__p--text, 5%);
-				letter-spacing:0px;
-			}
-			@media @tablet {
-				font-size: calc(@font-swatch6-font-size - 2px);
-			}
-			@media @mobile {
-				text-align: center;
-				font-size: 18px;
-			}
-		}
-	}
-	
-	.cell--quantity,
-	.cell--price,
-	.cell--total {
-    	display: inline-block;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		width: auto;
-		@media @tablet {
-			bottom: auto;
-			bottom: initial;
-    		min-height: 70px;
-		}
-		@media @mobile {
-    		position: static;
-    		min-height: 0;
-		}
-	}
-	
-	// Center alignment in the table
-	
-	.quantity-wrap,
-	.summary-item-price,
-	.summary-item-total {
-	    top: 50%;
-		position: absolute;
-		height: 20px;
-		@media @tablet {
-			top: 0;
-		}
-		@media @mobile {
-    		position: static;
-		}
-	}
-	.quantity-wrap {
-		margin-top: -15px;
-		@media @tablet {
-			margin-top: 20px;
-		}
-	}
-	.summary-item-price,
-	.summary-item-total {
-	    margin-top: -10px;
-		@media @tablet {
-			margin-top: 20px;
-		}
-		@media @mobile {
-			margin-top: 0;
-		}
-	}
-	
-	// Plus and minus buttons
+    .cell--order-total {
+        padding: 8px 0 8px 12px;
 
-	.cell--quantity {
-		.mixin__summary-table-cell-2();
-		min-width: 100px;
-		text-align: left;
-		
-		@media @mobile {
-			border-top: none !important;
-			width: 100% !important;
-			text-align: center;
-			font-weight: 600;
-			text-transform: uppercase;
-			border-top: 1px solid @color__link--text;
-		}
-
-		.quantity-wrap {
-			display: table;
-			background-color: transparent;
-			width: 100%;
-			@media @mobile {
-				min-width: 100%!important;
-				margin: 2px auto 10px;
-			}
-
-			.quantity-field {
-				display: inline-block;
-				width: 30px;
-				text-align: center;
-				color: @font-swatch5-color;
-				font-weight: 300;
-			}
-
-			.button--quantity {
-				position: relative;
-				display: inline;
-				width: 30px;
-				height: 30px;
-				font-weight: 300;
-				line-height: 0;
-				vertical-align: middle;
-				color: transparent;
-				
-				&:after {
-					font-family: 'FontAwesome', sans-serif;
-					color: @color__h1--text;
-					position: absolute;
-					left: 0;
-					top: 0;
-					line-height: 30px;
-					width: 30px;
-					text-align: center;
-					font-size: 14px !important;
-					&:hover {
-						color: @color__link--text;
-					}
-				}
-				
-
-				&.quantity-minus {
-					&:after {
-						content: "\f068";
-					}
-				}
-				&.quantity-plus {
-					&:after {
-						content: "\f067";
-					}
-				}
-			}
-		}
-	}
-	
-	// Price fields
-	
-	.cell--price {
-		.mixin__summary-table-cell-3();
-	}
-	
-	.cell--total {
-		.mixin__summary-table-cell-4();
-	}
-
-	.cell--price,
-	.cell--total {
-		text-transform: uppercase;
-		font-weight: 600;
-		border-top: 0;
-		@media @mobile {
-			width: 100%;
-			text-align: center;
-		}
-	}
-
-	// Basket Summary Total Price
-
-	.table-row--order-total {
-		text-align: right;
-		@media @mobile {
-			text-align: center;
-			padding: 0;
-		}
-	}
-	
-	.cell--order-total {
-		padding: 8px 0 8px 12px;
-		.ecombasketsummary__order-total {
-			@media @mobile {
-				text-align: center;
-			}
-		}
-	}
+        .ecombasketsummary__order-total {
+            @media @mobile {
+                text-align: center;
+            }
+        }
+    }
 }
 
 // Proceed to checkout Button
@@ -1314,6 +1385,7 @@ ECOM - BASKET BUTTON
     border: 0;
     padding: 0;
     text-align: right;
+
     @media @tablet {
         text-align: center;
     }
@@ -1322,12 +1394,12 @@ ECOM - BASKET BUTTON
 // Categories links
 
 .category-list.ecomcategorieslist__category-list {
-	margin-left: 0;
-	padding-left: 0;
-	margin-top: 40px;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
 a.ecomcategorieslist__category-link {
-	.mixin__menu-item();
+    .mixin__menu-item();
 }
