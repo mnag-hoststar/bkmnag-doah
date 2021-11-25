@@ -521,7 +521,16 @@ h2.ecomfeaturedproducts__listing-title {
 
 .fieldset--search {
     .form-body {
-        font-size: 0; // inline-block fix, so there are no spaces
+        display: flex;
+        align-items: flex-end;
+
+        @media @mobile {
+            display: block;
+        }
+
+        .responsivecolumns & {
+            display: block;
+        }
 
         .form-group {
             margin: 0;
@@ -535,6 +544,11 @@ h2.ecomfeaturedproducts__listing-title {
                     width: 100%;
                     padding-right: 0;
                 }
+
+                .responsivecolumns & {
+                    width: 100%;
+                    padding-right: 0;
+                }
             }
 
             &:last-child {
@@ -543,6 +557,11 @@ h2.ecomfeaturedproducts__listing-title {
                 .box-sizing--border-box();
 
                 @media @mobile {
+                    width: 100%;
+                    padding-left: 0;
+                }
+
+                .responsivecolumns & {
                     width: 100%;
                     padding-left: 0;
                 }
@@ -560,6 +579,10 @@ h2.ecomfeaturedproducts__listing-title {
                 @media @mobile {
                     margin-top: 15px;
                 }
+
+                .responsivecolumns & {
+                    margin-top: 15px;
+                }
             }
         }
     }
@@ -569,7 +592,18 @@ h2.ecomfeaturedproducts__listing-title {
 
 .fieldset--filters {
     .form-body {
+        display: flex;
         margin: 0 -10px;
+
+        @media @mobile {
+            display: block;
+            margin: 0;
+        }
+		
+        .responsivecolumns & {
+            display: block;
+            margin: 0;
+        }
 
         &:after {
             display: block;
@@ -579,24 +613,21 @@ h2.ecomfeaturedproducts__listing-title {
     }
 
     .form-group {
-        width: 33.33%;
+        width: 100%/3;
         margin: 0;
         padding: 0 10px;
         .box-sizing--border-box();
-        float: left;
+        width: 100%;
+        padding: 0 10px;
 		
-        @media only screen and (max-width: 650px) {
+        @media @mobile {
             width: 100%;
-            margin-right: 0;
+            padding: 0;
         }
-    }
-}
-
-.columns-two-left,
-.columns-two-right {
-    .fieldset--filters {
-        .form-group {
-            width: 46.333%;
+		
+        .responsivecolumns & {
+            width: 100%;
+            padding: 0;
         }
     }
 }
@@ -625,6 +656,12 @@ h2.ecomfeaturedproducts__listing-title {
 
     @media @mobile {
         width: 100%;
+        padding: 10px 10px 15px;
+    }
+
+    .responsivecolumns & {
+        width: 100%;
+        padding: 10px 10px 15px;
     }
 }
 
