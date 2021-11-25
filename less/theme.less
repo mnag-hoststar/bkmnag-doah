@@ -244,10 +244,6 @@ legend {
     display: none!important;
 }
 
-.form-group {
-    display: flex;
-}
-
 label {
     font-size: 16px;
     font-weight: 500;
@@ -256,38 +252,25 @@ label {
     text-transform: uppercase;
     opacity: 0.4;
     pointer-events: none;
-    position: absolute;
-    transform: translate3d(0, 22px, 0) scale(1);
-    transform-origin: left top;
     transition: 240ms;
-}
-
-label.label--message {
-    padding: 10px;
-	
-	.focused & {
-    	padding: 0;
-	}
+    text-align: left;
 }
 
 label.label--select,
 label.label--variation,
 label.label--filter {
 	opacity: 1;
-    transform: scale(0.75);
 }
 
 .form-group.focused label,
 .form-group:focus > select label,
 label.active {
     opacity: 1;
-    transform: scale(0.75);
 }
 
 input,
 select {
     align-self: flex-end;
-    margin-top: 4px !important;
     color: @color__p--text;
 }
 
@@ -371,8 +354,6 @@ textarea {
     background-color: rgba(255,255,255, 0.8) !important;
     resize: vertical;
     min-height: 150px;
-    margin-bottom: 20px;
-    margin-top: 18px!important;
     padding: 10px;
     width: 100%;
     color: @color__p--text!important;
@@ -418,15 +399,6 @@ input.js-email.email {
     display: inline-block;
     vertical-align: top;
     color: @color__p--text;
-}
-
-.select-wrap {
-	width: 100%;
-	margin-top: 32px;
-
-	@media @mobile {
-		max-width: 100%;
-	}
 }
 
 select {
@@ -533,7 +505,6 @@ select span {
 [class*="form-group--terms"],
 .advancedcontactform__option-list {
     padding: 0px;
-    padding-top: 20px;
 	width: 100%;
 }
 
@@ -569,6 +540,8 @@ select span {
 	position: relative;
 	width: 100%;
 	margin-bottom: 18px;
+    line-height: @font__p--line-height;
+    min-height: @font__p--line-height;
 
 	label {
 		position: relative;
@@ -624,7 +597,6 @@ select span {
 label[for*="input--terms"],
 label[for*="input--terms"] span a.form__link {
     opacity: 1;
-    transform: scale(0.75);
     word-break: break-word;
 }
 
