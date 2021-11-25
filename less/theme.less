@@ -1,4 +1,4 @@
-// BaseKit Standard Theme: Theme
+// Theme
 
 // Variables
 
@@ -345,6 +345,7 @@ input#search-term {
     box-shadow: none;
 	.border-radius(0);
 	.appearance(none);
+    
     &:focus {
         border-bottom: 1px solid @color__h1--text;
         box-shadow: 0 1px 0 0 @color__h1--text;
@@ -503,9 +504,11 @@ select span {
 .advancedcontactform {
     text-align: left;
     width: 100%;
+
     .legend {
         margin-bottom: 20px;
     }
+
     .form {
         text-align: left;
         width: 100%;
@@ -595,6 +598,7 @@ select span {
 		&:before {
 			border-radius: 10px;
 		}
+
 		&:after {
 			border-radius: 10px;
 		}
@@ -718,13 +722,9 @@ label[for*="input--terms"] span a.form__link {
 .message--error {
 	border-color: @message-color--error;
 
-	// Heading 3, Paragraph, Icon
-
 	*, &:before {
 		color: darken(@message-color--error, 20%);
 	}
-
-	// Icon
 
 	&:before {
 		content: "\f06a";
@@ -736,13 +736,9 @@ label[for*="input--terms"] span a.form__link {
 .message--warning {
 	border-color: @message-color--warning;
 
-	// Heading 3, Paragraph
-
 	* {
 		color: darken(@message-color--warning, 30%);
 	}
-
-	// Icon
 
 	&:before {
 		content: "\f071";
@@ -756,13 +752,9 @@ label[for*="input--terms"] span a.form__link {
 	border-color: @message-color--information;
 	color: @message-color--information;
 
-	// Heading 3, Paragraph
-
 	* {
 		color: darken(@message-color--information, 50%);
 	}
-
-	// Icon
 
 	&:before {
 		content: "\f05a";
@@ -775,13 +767,9 @@ label[for*="input--terms"] span a.form__link {
 .message--success {
 	border-color: @message-color--success;
 
-	// Heading 3, Paragraph
-
 	* {
 		color: darken(@message-color--success, 30%);
 	}
-
-	// Icon
 
 	&:before {
 		content: "\f00c";
@@ -794,13 +782,9 @@ label[for*="input--terms"] span a.form__link {
 .message--not-found {
 	border-color: @message-color--not-found;
 
-	// Heading 3, Paragraph, Icon
-
 	*, &:before {
 		color: darken(@message-color--not-found, 20%);
 	}
-
-	// Icon
 
 	&:before {
 		content: "\f002";
