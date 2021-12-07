@@ -333,12 +333,12 @@ a.companyname__company-link {
 		margin: 0 auto;
 		width: auto;
     	
-    	@media only screen and (max-width: 1800px) {
+    	@media @desktop-larger {
     		margin-left: 10%;
     		margin-right: 10%;
     	}
     	
-    	@media only screen and (max-width: 1200px) {
+    	@media @desktop-large {
     		margin-left: 6%;
     		margin-right: 6%;
     	}
@@ -695,12 +695,12 @@ a.companyname__company-link {
 	padding-bottom: 5%;
 	padding-bottom: 5vh;
 
-	@media only screen and (max-width: 1800px) {
+	@media @desktop-larger {
     	padding-left: 10%;
 		padding-right: 10%;
 	}
 
-	@media only screen and (max-width: 1200px) {
+	@media @desktop-large {
     	padding-left: 6%;
 		padding-right: 6%;
 	}
@@ -724,7 +724,7 @@ a.companyname__company-link {
 	.box-sizing--border-box();
 	max-width: 1400px;
 
-	@media only screen and (max-width: 1800px) {
+	@media @desktop-larger {
 		margin: 0;
 	}
 
@@ -831,7 +831,7 @@ h3.feature__strapline {
         line-height: 21px;
     }
 
-    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+    @media @mobile-small-to-mobile {
         font-size: 10px;
         font-weight: 600;
     }
@@ -875,7 +875,7 @@ h3.feature__strapline {
         width: 100%
     }
 
-    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+    @media @mobile-small-to-mobile {
         font-size: 18px;
         line-height: 20px;
     }
@@ -1053,16 +1053,16 @@ h3.feature__strapline {
         min-height: 400px;
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-        min-height: 450px!important;
-    }
-
-    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-        min-height: 280px!important;
+    @media @tablet-to-desktop {
+        min-height: 450px !important;
     }
 
     @media @mobile {
         min-height: 200px!important;
+    }
+
+    @media @mobile-small-to-mobile {
+        min-height: 280px!important;
     }
 }
 
@@ -1071,7 +1071,7 @@ h3.feature__strapline {
         min-height: 200px!important;
     }
 
-    @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+    @media @mobile-small-to-mobile {
         min-height: 280px!important;
     }
 }
@@ -1087,7 +1087,7 @@ h3.feature__strapline {
 
 // Tablet Portrait
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+@media @tablet-to-desktop {
     .responsivecolumns .columns-two-left,
     .responsivecolumns .columns-two-right {
         .responsiveslideshow .contain .figure {
@@ -1112,7 +1112,7 @@ h3.feature__strapline {
 
 // Tablet Landscape
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media @tablet-to-desktop {
     .responsivecolumns .columns-two-left,
     .responsivecolumns .columns-two-right {
         .responsiveslideshow .contain .figure {
@@ -1123,7 +1123,7 @@ h3.feature__strapline {
 
 // Mobile Landscape
 
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+@media @mobile-small-to-mobile {
     .responsivecolumns .columns-two-left,
     .responsivecolumns .columns-two-right {
         .responsiveslideshow .contain .figure {
@@ -1134,7 +1134,7 @@ h3.feature__strapline {
 
 // Mobile Portrait
 
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+@media @mobile-small-to-mobile {
     .responsivecolumns .columns-two-left,
     .responsivecolumns .columns-two-right {
         .responsiveslideshow .contain .figure {
