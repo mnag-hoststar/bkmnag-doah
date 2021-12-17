@@ -54,13 +54,11 @@ body.edit .widget.extendednavigation {
 	font-size: @font__navigation--font-size;
 
 	@media @desktop-larger {
-    	margin-left: 10%;
-		margin-right: 10%;
+        width: 80%;
 	}
 
 	@media @desktop-large {
-    	margin-left: 6%;
-		margin-right: 6%;
+        width: 88%;
 	}
 
     @media @tablet {
@@ -80,10 +78,17 @@ body.edit .widget.extendednavigation {
 	    bottom: 0;
         border-bottom: 1px solid @color__header--border;
 	}
+
+    body > & {
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 }
 
 .main-container {
-	background-color: @color__container--background;
+	background-color: #fff;
 	padding: 40px;
 	margin: 0 auto;
 	width: auto;
@@ -107,20 +112,12 @@ body.edit .widget.extendednavigation {
 	}
 }
 
-.homepage-background {
-    position: absolute;
-    top: 0px;
-    z-index: 0;
-	width: 100%;
-}
-
 // FOOTER
 
 .bk-footer {
     overflow: auto;
     border-top: 1px solid @color__footer--border;
     background-color: @color__footer--background;
-	margin-top: 30px;
 	min-height: 220px;
 
 	@media @mobile {
@@ -254,6 +251,18 @@ label {
     pointer-events: none;
     transition: 240ms;
     text-align: left;
+
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
 }
 
 label.label--select,
@@ -272,6 +281,18 @@ input,
 select {
     align-self: flex-end;
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 input[placeholder] {
@@ -308,19 +329,79 @@ input:focus[placeholder] {
 }
 .form-group.focused input::-webkit-input-placeholder {
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 .form-group.focused input[placeholder] {
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 .form-group.focused input::-moz-placeholder {
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 .form-group.focused ::-moz-placeholder {
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 .form-group.focused input:-moz-placeholder {
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 input[type=search],
@@ -342,32 +423,107 @@ input#search-term {
     box-shadow: none;
 	.border-radius(0);
 	.appearance(none);
+
+    .style--light & {
+        border-color: @color--accent;
+    }
+
+    .style--accent & {
+        border-color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: @color--accent;
+    }
     
     &:focus {
         border-bottom: 1px solid @color__h1--text;
         box-shadow: 0 1px 0 0 @color__h1--text;
         background-color: transparent;
+
+        .style--light & {
+            border-color: @color--accent;
+            box-shadow: 0 1px 0 0 @color--accent;
+        }
+
+        .style--accent & {
+            border-color: @contrast--accent;
+            box-shadow: 0 1px 0 0 @contrast--accent;
+        }
+
+        .style--dark & {
+            border-color: @color--accent;
+            box-shadow: 0 1px 0 0 @color--accent;
+        }
     }
 }
 
 textarea {
-    background-color: rgba(255,255,255, 0.8) !important;
+    background-color: rgba(255,255,255, 0.8);
     resize: vertical;
     min-height: 150px;
     padding: 10px;
     width: 100%;
-    color: @color__p--text!important;
+    color: @color__p--text;
     border: 1px solid fade(@color__h1--text, 30%);
     border-bottom: 1px solid @color__h1--text;
+
+    .style--light & {
+        background-color: fade(@color--light, 20%);
+        border-color: fade(@color--accent, 30%);
+        border-bottom: 1px solid @color--accent;
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: fade(@color--accent, 20%);
+        border-color: fade(@contrast--accent, 30%);
+        border-bottom: 1px solid @contrast--accent;
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        background-color: fade(@color--dark, 20%);
+        border-color: fade(@color--accent, 30%);
+        border-bottom: 1px solid @color--accent;
+        color: fade(@contrast--dark, 90%);
+    }
 
     &:focus {
         border: 1px solid fade(@color__h1--text, 30%);
         border-bottom: 1px solid @color__h1--text;
+
+        .style--light & {
+            border-color: fade(@color--accent, 30%);
+            border-bottom: 1px solid @color--accent;
+        }
+
+        .style--accent & {
+            border-color: fade(@contrast--accent, 30%);
+            border-bottom: 1px solid @contrast--accent;
+        }
+
+        .style--dark & {
+            border-color: fade(@color--accent, 30%);
+            border-bottom: 1px solid @color--accent;
+        }
     }
 }
 
 textarea:focus {
-    background-color: rgba(255,255,255, 0.8) !important;
+    background-color: rgba(255,255,255, 0.8);
+
+    .style--light & {
+        background-color: fade(@color--light, 20%);
+    }
+
+    .style--accent & {
+        background-color: fade(@color--accent, 20%);
+    }
+
+    .style--dark & {
+        background-color: fade(@color--dark, 20%);
+    }
 }
 
 input[type=search],
@@ -399,6 +555,18 @@ input.js-email.email {
     display: inline-block;
     vertical-align: top;
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 select {
@@ -412,7 +580,7 @@ select {
     width: 100%;
     position: relative;
     cursor: pointer;
-    background-color: rgba(255,255,255, 0.6) !important;;
+    background-color: rgba(255,255,255, 0.6);
     border: none;
     border: 1px solid @color__h1--text;
     outline: none;
@@ -424,29 +592,77 @@ select {
     display: block;
     background: image('/images/arrow-small-down.svg') no-repeat center right;
     background-size: 30px;
+
+    .style--light & {
+        background-color: fade(@color--light, 40%);
+        border-color: fade(@color--accent, 30%);
+    }
+
+    .style--accent & {
+        background-color: fade(@color--accent, 40%);
+        border-color: fade(@contrast--accent, 30%);
+    }
+
+    .style--dark & {
+        background-color: fade(@color--dark, 40%);
+        border-color: fade(@color--accent, 30%);
+    }
 }
 
 select.selected {
-    color: @color__p--text!important;
+    color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 select:hover {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    background-color: rgba(255,255,255, 0.8) !important;
 }
 
+select:hover,
+select:focus,
+select:focus > label {
+    background-color: rgba(255,255,255, 0.8);
+
+    .style--light & {
+        background-color: fade(@color--light, 40%);
+    }
+
+    .style--accent & {
+        background-color: fade(@color--accent, 40%);;
+    }
+
+    .style--dark & {
+        background-color: fade(@color--dark, 40%);
+    }
+}
+
+select:focus,
+select:focus > label,
 select:selected {
     color: @color__h4--text;
-}
 
-select:focus {
-    background-color: rgba(255,255,255, 0.8) !important;
-    color: @color__h4--text;
-}
+    .style--light & {
+        color: @color--accent;
+    }
 
-select:focus > label {
-    background-color: rgba(255,255,255, 0.8) !important;
-    color: @color__h4--text;
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
 }
 
 option {
@@ -459,12 +675,6 @@ option {
     z-index: 999;
     top: 0px;
     left: 0px;
-    background-color: #fff;
-    margin: 0;
-    min-width: 100px;
-    max-height: 650px;
-    overflow-y: auto;
-    z-index: 999;
 }
 
 select > ul {
@@ -564,6 +774,21 @@ select span {
 			margin-top: -9px;
 			background-color: @bg-color;
 			border: 2px solid @color__h1--text;
+
+            .style--light & {
+                background-color: @color--light;
+                border-color: @color--accent;
+            }
+
+            .style--accent & {
+                background-color: @color--accent;
+                border-color: @contrast--accent;
+            }
+
+            .style--dark & {
+                background-color: @color--dark;
+                border-color: @color--accent;
+            }
 		}
 
 		&:after {
@@ -576,19 +801,26 @@ select span {
 			height: 12px;
 			margin-top: -5px;
 			background-color: @color__h1--text;
+
+            .style--light & {
+                background-color: @color--accent;
+            }
+
+            .style--accent & {
+                background-color: @contrast--accent;
+            }
+
+            .style--dark & {
+                background-color: @color--accent;
+            }
 		}
 	}
 }
 	
-.option-item.option-item--radio {
-	label {
-		&:before {
-			border-radius: 10px;
-		}
-
-		&:after {
-			border-radius: 10px;
-		}
+.option-item.option-item--radio label {
+	&:before,
+    &:after {
+		border-radius: 10px;
 	}
 }
 

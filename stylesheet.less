@@ -50,6 +50,7 @@
 // TYPOGRAPHY
 
 body {
+    background-color: #fff;
 	font-smooth: always;
 	-moz-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -75,6 +76,21 @@ blockquote {
     line-height: 1.6em;
     margin: 25px 0px;
     word-break: break-word;
+
+    .style--light & {
+        border-color: lighten(@color--accent, 30%);
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 30%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: fade(@color--accent, 30%);
+        color: @color--accent;
+    }
 
     @media @mobile {
     	padding: 8px 30px 15px;
@@ -104,6 +120,18 @@ pre {
 
 table, th, td {
 	border: 1px solid fade(@color__h1--text, 30%);
+
+    .style--light & {
+        border-color: fade(@color--accent, 30%);
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 30%);
+    }
+
+    .style--dark & {
+        border-color: fade(@color--accent, 30%);
+     }
 }
 
 code {
@@ -130,10 +158,34 @@ a {
     color: @color__link--text;
     word-break: break-word;
 
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
+
     &:hover {
         color: darken(@color__link--text, 5%);
         .transition(all, 0.1s, ease);
         text-decoration: none;
+
+        .style--light & {
+            color: darken(@color--accent, 5%);
+        }
+
+        .style--accent & {
+            color: darken(@contrast--accent, 5%);
+        }
+
+        .style--dark & {
+            color: lighten(@color--accent, 5%);
+        }
     }
 }
 
@@ -146,6 +198,37 @@ h6 {
     padding-bottom: 7px;
     text-transform: uppercase;
     word-break: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
+}
+
+h5 {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 h1,
@@ -170,10 +253,23 @@ h4 {
     color: @color__h4--text;
 }
 
-p {
+p,
+[data-name="content"] li {
     color: @color__p--text;
     padding-bottom: 7px;
     line-height: 20px;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 // Page Container
