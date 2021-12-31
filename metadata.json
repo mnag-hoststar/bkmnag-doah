@@ -209,6 +209,10 @@
             "font__button--line-height": "@font-swatch7-line-height",
             "font__button--letter-spacing": "@font-swatch7-letter-spacing"
         },
+		"forms": {
+		  "color__form--background": "@color-swatch7",
+		  "color__form--border": "@color__h1--text"
+		},
         "gallery": {
             "color__gallery-title--text": "@font-swatch7-background-color",
             "color__gallery-description--text": "@color-swatch7",

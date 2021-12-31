@@ -29,7 +29,7 @@ body.edit .widget.extendednavigation {
 // Default Page Style
 
 .bk-pt-default .bk-header {
-    border-bottom: 1px solid @color__h1--text;
+    border-bottom: 1px solid @color__form--border;
 }
 
 // HEADER & #BK-NAV
@@ -334,7 +334,7 @@ select,
 input#search-term {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid @color__h1--text;
+    border-bottom: 1px solid @color__form--border;
     height: 3rem;
     font-size: @font__p--font-size;
     font-family: @font__p--font-family;
@@ -344,30 +344,27 @@ input#search-term {
 	.appearance(none);
     
     &:focus {
-        border-bottom: 1px solid @color__h1--text;
-        box-shadow: 0 1px 0 0 @color__h1--text;
+        border-bottom: 1px solid @color__form--border;
+        box-shadow: 0 1px 0 0 @color__form--border;
         background-color: transparent;
     }
 }
 
 textarea {
-    background-color: rgba(255,255,255, 0.8) !important;
+    background-color: fade(@color__form--background, 80%) !important;
     resize: vertical;
     min-height: 150px;
     padding: 10px;
     width: 100%;
     color: @color__p--text!important;
-    border: 1px solid fade(@color__h1--text, 30%);
-    border-bottom: 1px solid @color__h1--text;
+    border: 1px solid fade(@color__form--border, 30%);
+    border-bottom: 1px solid @color__form--border;
 
     &:focus {
-        border: 1px solid fade(@color__h1--text, 30%);
-        border-bottom: 1px solid @color__h1--text;
+        border: 1px solid fade(@color__form--border, 30%);
+        border-bottom: 1px solid @color__form--border;
+        background-color: fade(@color__form--background, 80%) !important;
     }
-}
-
-textarea:focus {
-    background-color: rgba(255,255,255, 0.8) !important;
 }
 
 input[type=search],
@@ -412,9 +409,9 @@ select {
     width: 100%;
     position: relative;
     cursor: pointer;
-    background-color: rgba(255,255,255, 0.6) !important;
+    background-color: fade(@color__form--background, 60%) !important;
     border: none;
-    border: 1px solid @color__h1--text;
+    border: 1px solid @color__form--border;
     outline: none;
     height: 3rem;
     line-height: 3rem;
@@ -424,65 +421,61 @@ select {
     display: block;
     background: image('/images/arrow-small-down.svg') no-repeat center right;
     background-size: 30px;
-}
 
-select.selected {
-    color: @color__p--text!important;
-}
-
-select:hover {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    background-color: rgba(255,255,255, 0.8) !important;
-}
-
-select:selected {
-    color: @color__h4--text;
-}
-
-select:focus {
-    background-color: rgba(255,255,255, 0.8) !important;
-    color: @color__h4--text;
-}
-
-select:focus > label {
-    background-color: rgba(255,255,255, 0.8) !important;
-    color: @color__h4--text;
+    &.selected {
+        color: @color__p--text !important;
+    }
+    
+    &:hover {
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+        background-color: fade(@color__form--background, 80%) !important;
+    }
+    
+    &:selected {
+        color: @color__h4--text;
+    }
+    
+    &:focus {
+        background-color: fade(@color__form--background, 80%) !important;
+        color: @color__h4--text;
+    
+        > label {
+            background-color: fade(@color__form--background, 80%) !important;
+            color: @color__h4--text;
+        }
+    }
+    
+    > ul {
+        background-color: @color__form--background;
+        margin: 0;
+        min-width: 100px;
+        max-height: 650px;
+        overflow-y: auto;
+        position: absolute;
+        z-index: 999;
+    }
+    
+    span {
+        color: initial;
+        position: absolute;
+        right: 0;
+        top: 16px;
+        font-size: 10px;
+    }
 }
 
 option {
-    background-color: #fff;
     margin: 0;
-    min-width: 100px;
-    max-height: 650px;
-    overflow-y: auto;
     position: absolute;
     z-index: 999;
     top: 0px;
     left: 0px;
-    background-color: #fff;
+    background-color: @color__form--background;
     margin: 0;
     min-width: 100px;
     max-height: 650px;
     overflow-y: auto;
     z-index: 999;
-}
-
-select > ul {
-    background-color: #fff;
-    margin: 0;
-    min-width: 100px;
-    max-height: 650px;
-    overflow-y: auto;
-    position: absolute;
-    z-index: 999;
-}
-
-select span {
-    color: initial;
-    position: absolute;
-    right: 0;
-    top: 16px;
-    font-size: 10px;
 }
 
 // Advanced Contact Form
@@ -563,7 +556,7 @@ select span {
 			height: 20px;
 			margin-top: -9px;
 			background-color: @bg-color;
-			border: 2px solid @color__h1--text;
+			border: 2px solid @color__form--border;
 		}
 
 		&:after {
@@ -575,7 +568,7 @@ select span {
 			width: 12px;
 			height: 12px;
 			margin-top: -5px;
-			background-color: @color__h1--text;
+			background-color: @color__form--border;
 		}
 	}
 }
@@ -646,7 +639,7 @@ label[for*="input--terms"] span a.form__link {
     padding: 1em;
 	padding-left: 3.5em;
     margin: 1em auto;
-    background-color: #fff;
+    background-color: @color__form--background;
 	border: 1px solid;
 	border-color: @message-color--standard;
 
