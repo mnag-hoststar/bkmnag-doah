@@ -579,6 +579,7 @@ a.companyname__company-link {
 }
 
 // Icon
+
 .language-selector__icon {
     .language-selector & {
 		padding: @language-padding 0;
@@ -1393,7 +1394,7 @@ button.ecombasket-remove-button.js-remove,
 	} 
 }
 
-// CONTACT & #SIGNUP & BLOGSEARCH FORM
+// FORMS
 
 .form-group,
 .form-group .advancedcontactform {
@@ -1430,13 +1431,459 @@ button.ecombasket-remove-button.js-remove,
     &:focus {
         outline: none;
     }
+
 	&:hover {
     	background-color: @color__button--background--hover;
 	}
 }
 
 .contactform__form-group {
-    margin-top: 0px!important;
+    margin-top: 0px !important;
+}
+
+legend {
+    display: none!important;
+}
+
+// Label
+
+label {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: @font__h4--font-family;
+    color: @color__h4--text;
+    text-transform: uppercase;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: 240ms;
+    text-align: left;
+}
+
+label.label--select,
+label.label--variation,
+label.label--filter {
+	opacity: 1;
+}
+
+.form-group.focused label,
+.form-group:focus > select label,
+label.active {
+    opacity: 1;
+}
+
+// Input
+
+input,
+select {
+    align-self: flex-end;
+    color: @color__p--text;
+}
+
+input {
+    &[placeholder] {
+        color: transparent;
+        transition: 240ms;
+
+        .form-group.focused & {
+            color: @color__p--text;
+        }
+    }
+
+    &::-moz-placeholder {
+        color: transparent;
+        transition: 240ms;
+
+        .form-group.focused & {
+            color: @color__p--text;
+        }
+    }
+    
+    &::-webkit-input-placeholder {
+        color: transparent;
+        transition: 240ms;
+
+        .form-group.focused & {
+            color: @color__p--text;
+        }
+    }
+    
+    &:focus {
+        &[placeholder] {
+            transition: none;
+        }
+
+        &::-moz-placeholder {
+            transition: none;
+        }
+
+        &::-webkit-input-placeholder {
+            transition: none;
+        }
+    }
+}
+
+input[type=search],
+input[type=text],
+input[type=email],
+textarea,
+select,
+.contactform__input,
+.signupform__input,
+.blogsearch__input,
+input#search-term {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid @color__form--border;
+    height: 3rem;
+    font-size: @font__p--font-size;
+    font-family: @font__p--font-family;
+    padding: 0;
+    box-shadow: none;
+	.border-radius(0);
+	.appearance(none);
+    
+    &:focus {
+        border-bottom: 1px solid @color__form--border;
+        box-shadow: 0 1px 0 0 @color__form--border;
+        background-color: transparent;
+    }
+}
+
+input[type=search],
+input[type=text],
+input[type=email],
+.contactform__input,
+.signupform__input,
+.blogsearch__input {
+    width: 100%;
+    min-height: 38px;
+}
+
+input.js-email.email {
+    width: 100%;
+}
+
+.contactform__input,
+.signupform__input,
+.blogsearch__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    height: 42px;
+    width: 100%;
+    border: 0;
+    display: inline-block;
+    vertical-align: top;
+    color: @color__p--text;
+}
+
+// Textareas
+
+textarea {
+    background-color: fade(@color__form--background, 80%) !important;
+    resize: vertical;
+    min-height: 150px;
+    padding: 10px;
+    width: 100%;
+    color: @color__p--text!important;
+    border: 1px solid fade(@color__form--border, 30%);
+    border-bottom: 1px solid @color__form--border;
+
+    &:focus {
+        border: 1px solid fade(@color__form--border, 30%);
+        border-bottom: 1px solid @color__form--border;
+        background-color: fade(@color__form--background, 80%) !important;
+    }
+}
+
+// Dropdown
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    background-color: fade(@color__form--background, 60%) !important;
+    border: none;
+    border: 1px solid @color__form--border;
+    outline: none;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    padding: 0 0 0 5px;
+    display: block;
+    background: image('/images/arrow-small-down.svg') no-repeat center right;
+    background-size: 30px;
+
+    &.selected {
+        color: @color__p--text !important;
+    }
+    
+    &:hover {
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+        background-color: fade(@color__form--background, 80%) !important;
+    }
+    
+    &:selected {
+        color: @color__h4--text;
+    }
+    
+    &:focus {
+        background-color: fade(@color__form--background, 80%) !important;
+        color: @color__h4--text;
+    
+        > label {
+            background-color: fade(@color__form--background, 80%) !important;
+            color: @color__h4--text;
+        }
+    }
+    
+    > ul {
+        background-color: @color__form--background;
+        margin: 0;
+        min-width: 100px;
+        max-height: 650px;
+        overflow-y: auto;
+        position: absolute;
+        z-index: 999;
+    }
+    
+    span {
+        color: initial;
+        position: absolute;
+        right: 0;
+        top: 16px;
+        font-size: 10px;
+    }
+}
+
+option {
+    margin: 0;
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    background-color: @color__form--background;
+    margin: 0;
+    min-width: 100px;
+    max-height: 650px;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+// Radiobuttons and Checkboxes
+
+.widget .form .option-list {
+	margin-top: 1em;
+	margin-bottom: 2em;
+
+	.option-item--radio,
+	.option-item--checkbox {
+		position: relative;
+		width: 100%;
+		margin-bottom: @font-swatch5-line-height / 2;
+		padding: 0;
+		min-height: @font-swatch5-line-height;
+	}
+}
+
+.widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
+.widget.contactform .form-group.contactform__form-group--terms,
+.widget.signupform .form-group.signupform__form-group--terms,
+footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-group--terms {
+	position: relative;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.widget .form .option-list,
+.widget .form-group[class*="form-group--terms"] {
+	input[type="radio"],
+	input[type="checkbox"] {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: floor(@font-swatch5-line-height*0.8+2) !important;
+		height: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		bottom: 0;
+
+		&:checked + label:after {
+			opacity: 1;
+		}
+	}
+
+	.label--radio,
+	.label--checkbox,
+	label[for*="input--terms"] {
+		display: block;
+		position: relative;
+		cursor: pointer;
+		padding-left: 2em;
+		margin-bottom: 0;
+		word-break: break-word;
+		text-align: left;
+		text-transform: none;
+
+		span a.form__link {
+			font-family: @font-swatch5-font-family;
+			font-weight: @font-swatch5-font-weight;
+			font-size: @font-swatch5-font-size;
+			line-height: @font-swatch5-line-height;
+			letter-spacing: @font-swatch5-letter-spacing;
+		}
+
+		.style--light & {
+			color: @contrast--light;
+		}
+
+		.style--accent & {
+			color: @contrast--accent;
+		}
+
+		.style--dark & {
+			color: @contrast--dark;
+		}
+			
+		&:before,
+		&:after {
+			cursor: pointer;
+			display: block;
+			content: " ";
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&:before {
+			min-width: 0;
+			margin-top: floor(@font-swatch5-line-height*0.1);
+			height: floor(@font-swatch5-line-height*0.8);
+			width: floor(@font-swatch5-line-height*0.8);
+			background-color: @color-swatch1;
+			border: 1px solid @font-swatch7-background-color;
+
+			.style--light & {
+				border-color: @color--accent;
+			}
+
+			.style--accent & {
+				border-color: @color--dark;
+			}
+
+			.style--dark & {
+				border-color: @color--accent;
+			}
+		}
+
+		&:after {
+			opacity: 0;
+			width: floor(@font-swatch5-line-height*0.8);
+		}
+	}
+
+	.label--radio {
+		&:before {
+			border-radius: 50%;
+		}
+		
+		&:after {
+			border-radius: 50%;
+			background-color: @font-swatch7-background-color;
+			border: 1px solid @font-swatch7-background-color;
+			margin-top: floor(@font-swatch5-line-height*0.1);
+			height: floor(@font-swatch5-line-height*0.8);
+			transform: scale(50%);
+
+			.style--light & {
+				background-color: @color--accent;
+				border: 1px solid @color--accent;
+			}
+
+			.style--accent & {
+				background-color: @color--dark;
+				border: 1px solid @color--dark;
+			}
+
+			.style--dark & {
+				background-color: @color--accent;
+				border: 1px solid @color--accent;
+			}
+		}
+	}
+
+	.label--checkbox,
+	label[for*="input--terms"] {
+		&:after {
+			margin-top: floor(@font-swatch5-line-height*-0.2+1);
+			height: floor(@font-swatch5-line-height*1.2);
+			border: 1px solid transparent;
+			box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
+			transform: scale(50%) rotate(45deg);
+
+			.style--light & {
+				box-shadow: -6px -6px 0 0 inset @color--accent;
+			}
+
+			.style--accent & {
+				box-shadow: -6px -6px 0 0 inset @color--dark;
+			}
+
+			.style--dark & {
+				box-shadow: -6px -6px 0 0 inset @color--accent;
+			}
+		}
+	}
+	
+	label[for*="input--terms"] span a.form__link {
+		text-decoration: underline;
+		border: none;
+	}
+}
+
+// Advanced Contact Form
+
+.advancedcontactform {
+    text-align: left;
+    width: 100%;
+	
+    .form-group {
+        .error {
+            border-bottom: 2px solid @message-color--error !important;
+            
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .form {
+        text-align: left;
+        width: 100%;
+    }
+
+    .legend {
+        margin-bottom: 20px;
+    }
+
+    input.error {
+        border: none !important;
+    }
+	
+    textarea.error {
+        border: 1px solid @message-color--error !important;
+    }
 }
 
 // SOCIAL ICONS
