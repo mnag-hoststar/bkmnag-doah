@@ -1316,6 +1316,7 @@ h3.feature__strapline {
 .button.signupform__button,
 .advancedcontactform__button,
 .button.button--submit,
+.userregistration fieldset .userregistrationbtn,
 .widget.profile fieldset button.btn,
 .widget.signupform fieldset button.btn,
 .blog-search-submit-button,
@@ -1523,6 +1524,7 @@ input {
     }
 }
 
+input,
 input[type=search],
 input[type=text],
 input[type=email],
@@ -1550,6 +1552,7 @@ input#search-term {
     }
 }
 
+input,
 input[type=search],
 input[type=text],
 input[type=email],
@@ -1885,6 +1888,42 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
     textarea.error {
         border: 1px solid @message-color--error !important;
     }
+}
+
+// Registration Form
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
+			}
+		}
+	}
 }
 
 // SOCIAL ICONS
