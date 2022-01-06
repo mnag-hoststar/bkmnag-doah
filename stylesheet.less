@@ -250,7 +250,7 @@ table {
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
-	border-top: 1px solid @font__p--font-size;
+	border-top: 1px solid @color__p--text;
 	margin: 0;
 	hyphens: auto;
 
@@ -276,7 +276,7 @@ td, th {
 
 th {
 	padding: 0.5em;
-	border-bottom: 1px solid @font__p--font-size;
+	border-bottom: 1px solid @color__p--text;
 	text-align: left;
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
@@ -323,7 +323,7 @@ th {
 }
 
 td {
-	border-bottom: 1px solid fade(@font__p--font-size, 60%);
+	border-bottom: 1px solid fade(@color__p--text, 60%);
 	padding: 1em 0.5em;
 	font-family: @font__p--font-family;
 	font-weight: @font__p--font-weight;
@@ -358,7 +358,7 @@ td {
 	&:last-child {
 		@media @mobile {
 			padding: 0 0.5em 1em;
-			border-bottom: 1px solid fade(@font__p--font-size, 60%);
+			border-bottom: 1px solid fade(@color__p--text, 60%);
 
 			.style--light & {
 				border-bottom-color: fade(@contrast--light, 60%);
@@ -391,7 +391,7 @@ td {
 		&:last-child {
 			@media @tablet-horizontal {
 				padding: 0 0.5em 1em;
-				border-bottom: 1px solid fade(@font__p--font-size, 60%);
+				border-bottom: 1px solid fade(@color__p--text, 60%);
 
 				.style--light & {
 					border-bottom-color: fade(@contrast--light, 60%);
@@ -425,7 +425,7 @@ td {
 
 		&:last-child {
 			padding: 0 0.5em 1em;
-			border-bottom: 1px solid fade(@font__p--font-size, 60%);
+			border-bottom: 1px solid fade(@color__p--text, 60%);
 
 			.style--light & {
 				border-bottom-color: fade(@contrast--light, 60%);
@@ -443,7 +443,7 @@ td {
 }
 
 tr:last-child td {
-	border-bottom: 1px solid @font__p--font-size;
+	border-bottom: 1px solid @color__p--text;
 
 	.style--light & {
 		border-bottom-color: @contrast--light;
@@ -463,7 +463,7 @@ tr:last-child td {
 	
 	&:last-child {
 		@media @mobile {
-			border-bottom: 1px solid @font__p--font-size;
+			border-bottom: 1px solid @color__p--text;
 
 			.style--light & {
 				border-bottom-color: @contrast--light;
@@ -487,7 +487,7 @@ tr:last-child td {
 
 		&:last-child {
 			@media @tablet {
-				border-bottom: 1px solid @font__p--font-size;
+				border-bottom: 1px solid @color__p--text;
 
 				.style--light & {
 					border-bottom-color: @contrast--light;
@@ -514,7 +514,7 @@ tr:last-child td {
 		border-bottom: none;
 
 		&:last-child {
-			border-bottom: 1px solid @font__p--font-size;
+			border-bottom: 1px solid @color__p--text;
 
 			.style--light & {
 				border-bottom-color: @contrast--light;
