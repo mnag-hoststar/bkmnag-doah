@@ -21,18 +21,25 @@ $(document).ready(function() {
     	}
 	}
 	
+	if ($('#page-zones__template-widgets__feature-featurehome').hasClass('bk-tpl-hidden')) {
+    	$('.main-container').css('padding-top', (navigationSpace())+'px');
+
+    	$(window).resize(function() {
+	        $('.main-container').css('padding-top', (navigationSpace())+'px');
+		});
+
+		$(document).bind("DOMSubtreeModified",function(){
+	        $('.main-container').css('padding-top', (navigationSpace())+'px');
+	    });
+    }
+
     $('.feature__content-wrap').css('padding-top', (navigationSpace())+'px');
-	
+
 	$(window).resize(function() {
         $('.feature__content-wrap').css('padding-top', (navigationSpace())+'px');
-	    console.log(navigationSpace());
 	});
 
-	// ------------------------------
-    // Changes by the editor are saved in the style elmement with the class js-compiled-styles.
-	// ------------------------------
-	
-    $(document).bind("DOMSubtreeModified",function(){
+	$(document).bind("DOMSubtreeModified",function(){
         $('.feature__content-wrap').css('padding-top', (navigationSpace())+'px');
     });
 });

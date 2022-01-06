@@ -91,7 +91,6 @@ a.companyname__company-link {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-	
 }
 
 .navigation-body,
@@ -669,6 +668,11 @@ a.companyname__company-link {
 
 // FEATURE
 
+[data-widget-type="feature"] {
+	margin-bottom: 40px;
+	z-index: 0;
+}
+
 .feature__background-image {
 	position: relative;
     background-repeat: no-repeat;
@@ -679,7 +683,6 @@ a.companyname__company-link {
     background-size: cover;
     min-height: 100%;
     min-height: 100vh;
-	margin-bottom: 40px;
 	padding-bottom: 5%;
 	padding-bottom: 5vh;
 
@@ -803,12 +806,36 @@ h3.feature__strapline {
     text-align: left;
     text-transform: uppercase;
     font-weight: 700;
+
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
 }
 
 .imagewidget__image-description {
     margin: 0 0 10px;
     color: @color__image-description--text;
     text-align: left;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 // GALLERY
@@ -1110,6 +1137,14 @@ h3.feature__strapline {
         }
     }
 
+    .image-title {
+    	color: @color__slideshow-title--text;
+    }
+
+    .image-description {
+    	color: @color__slideshow-description--text;
+    }
+
     .slide-navigation {
         position: absolute;
         top: 50%;
@@ -1293,6 +1328,21 @@ h3.feature__strapline {
             cursor: pointer;
             padding: 0px!important;
             color: transparent;
+
+            .style--light & {
+            	background-color: @color--light;
+		        border-color: darken(@color--light, 30%);
+		    }
+
+		    .style--accent & {
+		        background-color: @color--accent;
+		        border-color: darken(@color--accent, 30%);
+		    }
+
+		    .style--dark & {
+		        background-color: @color--dark;
+		        border-color: darken(@color--dark, 30%);
+		    }
     
             @media @mobile {
                 width: 12px !important;
@@ -1305,6 +1355,21 @@ h3.feature__strapline {
             border: 1px solid darken(@color__slideshow-pagination-item--background--selected, 30%) !important;
             border: none;
             padding: 0px !important;
+
+            .style--light & {
+            	background-color: @color--accent;
+		        border-color: darken(@color--light, 30%);
+		    }
+
+		    .style--accent & {
+		        background-color: @color--dark;
+		        border-color: darken(@color--accent, 30%);
+		    }
+
+		    .style--dark & {
+		        background-color: @color--accent;
+		        border-color: darken(@color--dark, 30%);
+		    }
         }
     }
 }
@@ -1340,6 +1405,21 @@ button.ecombasket-remove-button.js-remove,
     cursor: pointer;
     outline: none;
 
+    .style--light & {
+    	background-color: lighten(@color--accent, 30%);
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: lighten(@color--accent, 30%);
+        color: @color--accent;
+    }
+
     &:focus {
         outline: none;
     }
@@ -1347,6 +1427,21 @@ button.ecombasket-remove-button.js-remove,
     &:hover {
         background-color: @color__button--background--hover;
         color: @color__button--text--hover;
+
+        .style--light & {
+	    	background-color: lighten(@color--accent, 20%);
+	        color: @color--accent;
+	    }
+
+	    .style--accent & {
+	        background-color: darken(@color--dark, 10%);
+	        color: @contrast--dark;
+	    }
+
+	    .style--dark & {
+	        background-color: lighten(@color--accent, 20%);
+	        color: @color--accent;
+	    }
     }
 
     @media @mobile {
@@ -1357,16 +1452,33 @@ button.ecombasket-remove-button.js-remove,
 .widget__paypal,
 .widget__tweet,
 .widget__dropbox,
-.widget__clicktocall {
+.widget__clicktocall,
+[data-name="filedownload"] {
     a.button.tweet__button,
     button.dropbox__button,
-    .phone-number-link {
+    .phone-number-link,
+    .icon--filedownload {
         background-color: @color__button--background;
         color: @color__button--text;
         font-family: @font__button--font-family;
         padding: 12px 30px;
         text-transform: uppercase;
         font-weight: 700;
+
+        .style--light & {
+	    	background-color: lighten(@color--accent, 30%);
+	        color: @color--accent;
+	    }
+
+	    .style--accent & {
+		    background-color: @color--dark;
+		    color: @contrast--dark;
+		}
+
+	    .style--dark & {
+	        background-color: lighten(@color--accent, 30%);
+	        color: @color--accent;
+	    }
 
         &:before {
             font-size: 1.25em;
@@ -1376,6 +1488,21 @@ button.ecombasket-remove-button.js-remove,
 			.transition(all, 0.2s, ease);
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
+
+            .style--light & {
+		    	background-color: lighten(@color--accent, 20%);
+		        color: @color--accent;
+		    }
+
+		    .style--accent & {
+			    background-color: darken(@color--dark, 10%);
+			    color: @contrast--dark;
+			}
+
+		    .style--dark & {
+		        background-color: lighten(@color--accent, 20%);
+		        color: @color--accent;
+		    }
         }
     }
 }
@@ -1396,7 +1523,23 @@ button.ecombasket-remove-button.js-remove,
 	} 
 }
 
+.clicktocall__label {
+	.style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+	    color: @contrast--dark;
+	}
+
+    .style--dark & {
+        color: @color--accent;
+    }
+}
+
 // FORMS
+
+// CONTACT & #SIGNUP & BLOGSEARCH FORM
 
 .form-group,
 .form-group .advancedcontactform {
@@ -1429,6 +1572,21 @@ button.ecombasket-remove-button.js-remove,
 .blogsearch__button {
     float: left;
     background-color: @color__button--background;
+
+    .style--light & {
+    	background-color: lighten(@color--accent, 30%);
+        color: @color--accent;
+    }
+
+    .style--accent & {
+	    background-color: @color--dark;
+	    color: @contrast--dark;
+	}
+
+    .style--dark & {
+        background-color: lighten(@color--accent, 30%);
+        color: @color--accent;
+    }
     
     &:focus {
         outline: none;
@@ -1436,6 +1594,21 @@ button.ecombasket-remove-button.js-remove,
 
 	&:hover {
     	background-color: @color__button--background--hover;
+
+    	.style--light & {
+	    	background-color: lighten(@color--accent, 20%);
+	        color: @color--accent;
+	    }
+
+	    .style--accent & {
+		    background-color: darken(@color--dark, 10%);
+		    color: @contrast--dark;
+		}
+
+	    .style--dark & {
+	        background-color: lighten(@color--accent, 20%);
+	        color: @color--accent;
+	    }
 	}
 }
 
@@ -1459,6 +1632,18 @@ label {
     pointer-events: none;
     transition: 240ms;
     text-align: left;
+
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
 }
 
 label.label--select,
@@ -1479,6 +1664,18 @@ input,
 select {
     align-self: flex-end;
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 input {
@@ -1488,6 +1685,18 @@ input {
 
         .form-group.focused & {
             color: @color__p--text;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+        
+            .style--accent & {
+                color: fade(@contrast--accent, 90%);
+            }
+        
+            .style--dark & {
+                color: fade(@contrast--dark, 90%);
+            }
         }
     }
 
@@ -1497,6 +1706,18 @@ input {
 
         .form-group.focused & {
             color: @color__p--text;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+        
+            .style--accent & {
+                color: fade(@contrast--accent, 90%);
+            }
+        
+            .style--dark & {
+                color: fade(@contrast--dark, 90%);
+            }
         }
     }
     
@@ -1506,6 +1727,18 @@ input {
 
         .form-group.focused & {
             color: @color__p--text;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+        
+            .style--accent & {
+                color: fade(@contrast--accent, 90%);
+            }
+        
+            .style--dark & {
+                color: fade(@contrast--dark, 90%);
+            }
         }
     }
     
@@ -1544,11 +1777,38 @@ input#search-term {
     box-shadow: none;
 	.border-radius(0);
 	.appearance(none);
+
+    .style--light & {
+        border-color: @color--accent;
+    }
+
+    .style--accent & {
+        border-color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: @color--accent;
+    }
     
     &:focus {
         border-bottom: 1px solid @color__form--border;
         box-shadow: 0 1px 0 0 @color__form--border;
         background-color: transparent;
+
+        .style--light & {
+            border-color: @color--accent;
+            box-shadow: 0 1px 0 0 @color--accent;
+        }
+
+        .style--accent & {
+            border-color: @contrast--accent;
+            box-shadow: 0 1px 0 0 @contrast--accent;
+        }
+
+        .style--dark & {
+            border-color: @color--accent;
+            box-shadow: 0 1px 0 0 @color--accent;
+        }
     }
 }
 
@@ -1581,6 +1841,18 @@ input.js-email.email {
     display: inline-block;
     vertical-align: top;
     color: @color__p--text;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 // Textareas
@@ -1595,10 +1867,49 @@ textarea {
     border: 1px solid fade(@color__form--border, 30%);
     border-bottom: 1px solid @color__form--border;
 
+    .style--light & {
+        background-color: fade(@color--light, 20%);
+        border-color: fade(@color--accent, 30%);
+        border-bottom: 1px solid @color--accent;
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: fade(@color--accent, 20%);
+        border-color: fade(@contrast--accent, 30%);
+        border-bottom: 1px solid @contrast--accent;
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        background-color: fade(@color--dark, 20%);
+        border-color: fade(@color--accent, 30%);
+        border-bottom: 1px solid @color--accent;
+        color: fade(@contrast--dark, 90%);
+    }
+
     &:focus {
         border: 1px solid fade(@color__form--border, 30%);
         border-bottom: 1px solid @color__form--border;
         background-color: fade(@color__form--background, 80%) !important;
+
+        .style--light & {
+            border-color: fade(@color--accent, 30%);
+            border-bottom: 1px solid @color--accent;
+            background-color: fade(@color--light, 20%);
+        }
+
+        .style--accent & {
+            border-color: fade(@contrast--accent, 30%);
+            border-bottom: 1px solid @contrast--accent;
+            background-color: fade(@color--accent, 20%);
+        }
+
+        .style--dark & {
+            border-color: fade(@color--accent, 30%);
+            border-bottom: 1px solid @color--accent;
+            background-color: fade(@color--dark, 20%);
+        }
     }
 }
 
@@ -1628,26 +1939,107 @@ select {
     background: image('/images/arrow-small-down.svg') no-repeat center right;
     background-size: 30px;
 
+    .style--light & {
+        background-color: fade(@color--light, 40%);
+        border-color: fade(@color--accent, 30%);
+    }
+
+    .style--accent & {
+        background-color: fade(@color--accent, 40%);
+        border-color: fade(@contrast--accent, 30%);
+    }
+
+    .style--dark & {
+        background-color: fade(@color--dark, 40%);
+        border-color: fade(@color--accent, 30%);
+    }
+
     &.selected {
         color: @color__p--text !important;
+
+        .style--light & {
+            color: @contrast--light;
+        }
+    
+        .style--accent & {
+            color: @contrast--accent;
+        }
+    
+        .style--dark & {
+            color: @contrast--dark;
+        }
     }
     
     &:hover {
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
         background-color: fade(@color__form--background, 80%) !important;
+
+        .style--light & {
+            background-color: fade(@color--light, 40%);
+        }
+    
+        .style--accent & {
+            background-color: fade(@color--accent, 40%);
+        }
+    
+        .style--dark & {
+            background-color: fade(@color--dark, 40%);
+        }
     }
     
     &:selected {
         color: @color__h4--text;
+
+        .style--light & {
+            color: @color--accent;
+        }
+    
+        .style--accent & {
+            color: @contrast--accent;
+        }
+    
+        .style--dark & {
+            color: @color--accent;
+        }
     }
     
     &:focus {
         background-color: fade(@color__form--background, 80%) !important;
         color: @color__h4--text;
+
+        .style--light & {
+            background-color: fade(@color--light, 40%);
+            color: @color--accent;
+        }
+    
+        .style--accent & {
+            background-color: fade(@color--accent, 40%);
+            color: @color--accent;
+        }
+    
+        .style--dark & {
+            background-color: fade(@color--dark, 40%);
+            color: @color--accent;
+        }
     
         > label {
             background-color: fade(@color__form--background, 80%) !important;
             color: @color__h4--text;
+
+            .style--light & {
+                background-color: fade(@color--light, 40%);
+                color: @color--accent;
+            }
+        
+            .style--accent & {
+                background-color: fade(@color--accent, 40%);
+                color: @color--accent;
+            }
+        
+            .style--dark & {
+                background-color: fade(@color--dark, 40%);
+                color: @color--accent;
+            }
         }
     }
     
@@ -1941,7 +2333,6 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 
 .socialicons__social-item {
     display: inline-block;
-	color: @color__button--text;
     background-color: @color__button--background;
     padding-bottom: 10px;
     width: 35px;
@@ -1949,17 +2340,39 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 	margin: 7px 5px;
 	text-align: left;
 
+	.style--light & {
+    	background-color: lighten(@color--accent, 30%);
+    }
+
+    .style--accent & {
+	    background-color: @color--dark;
+	}
+
+    .style--dark & {
+        background-color: lighten(@color--accent, 30%);
+    }
+
     &:hover {
-        color: @color__button--text--hover;
         background-color: @color__button--background--hover;
         .transition(all, 0.2s, ease);
+
+        .style--light & {
+	    	background-color: lighten(@color--accent, 20%);
+	    }
+
+	    .style--accent & {
+		    background-color: darken(@color--dark, 10%);
+		}
+
+	    .style--dark & {
+	        background-color: lighten(@color--accent, 20%);
+	    }
     }
 }
 
 a.socialicons__social-link,
 a.social-link {
     color: @color__button--text;
-    background-color: @color__button--background;
     margin: 0 5px;
     background-size: 32px;
     background-color: transparent;
@@ -1967,14 +2380,37 @@ a.social-link {
     top: 9px;
 	left: 5px;
 
+	.style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+	    color: @contrast--dark;
+	}
+
+    .style--dark & {
+        color: @color--accent;
+    }
+
     &:before {
         font-size: 20px;
     }
 
     &:hover {
         color: @color__button--text--hover;
-        background-color: @color__button--background--hover;
         .transition(all, 0.1s, ease);
+
+        .style--light & {
+	        color: @color--accent;
+	    }
+
+	    .style--accent & {
+		    color: @contrast--dark;
+		}
+
+	    .style--dark & {
+	        color: @color--accent;
+	    }
     }
 	
 	&.icon--facebook {
@@ -1990,10 +2426,8 @@ a.social-link {
     display: none;
 }
 
-.companyphone {
-    .phone-number-link {
-        padding-bottom: 10px;
-    }
+.companyphone .phone-number-link {
+    padding-bottom: 10px;
 }
 
 // TWITER FEED
@@ -2013,6 +2447,21 @@ a.social-link {
         margin-bottom: 1em;
         border: 1px solid @color__h1--text;
         background-color: @color__twitter-item--background;
+
+        .style--light & {
+        	background-color: @color--light;
+		    border-color: @color--accent;
+		}
+
+		.style--accent & {
+			background-color: @color--accent;
+		    border-color: @contrast--accent;
+		}
+
+		.style--dark & {
+			background-color: @color--dark;
+		    border-color: @color--accent;
+		}
     
         &:after {
             display: block;
@@ -2031,9 +2480,21 @@ a.social-link {
         }
     }
 
-    .imestamp,
+    .timestamp,
     .twitter-feed__via {
         font-size: 0.8em;
+
+        .style--light & {
+	        color: @contrast--light;
+	    }
+
+	    .style--accent & {
+	        color: fade(@contrast--accent, 90%);
+	    }
+
+	    .style--dark & {
+	        color: fade(@contrast--dark, 90%);
+	    }
     }
     
     .tweet-content {
@@ -2047,6 +2508,18 @@ a.social-link {
         line-height: @font-swatch4-line-height;
         margin-bottom: 5px;
         text-transform: uppercase;
+
+        .style--light & {
+	        color: @contrast--light;
+	    }
+
+	    .style--accent & {
+	        color: fade(@contrast--accent, 90%);
+	    }
+
+	    .style--dark & {
+	        color: fade(@contrast--dark, 90%);
+	    }
     
         &:hover {
             text-decoration: none;
@@ -2059,10 +2532,34 @@ a.social-link {
         font-size: @font__p--font-size;
         font-weight: @font__h4--font-family;
         color: @color__twitter-account-name--text;
+
+        .style--light & {
+	        color: @color--accent;
+	    }
+
+	    .style--accent & {
+	        color: @contrast--accent;
+	    }
+
+	    .style--dark & {
+	        color: @color--accent;
+	    }
     
         &:hover {
             color: darken(@color__h1--text, 5%);
             text-decoration: none!important;
+
+            .style--light & {
+		        color: darken(@color--accent, 5%);
+		    }
+
+		    .style--accent & {
+		        color: darken(@contrast--accent, 5%);
+		    }
+
+		    .style--dark & {
+		        color: darken(@color--accent, 5%);
+		    }
         }
     }
 }
@@ -2086,6 +2583,18 @@ hr.rule {
     background-color: @color__h1--text;
     margin: 0;
     height: 1px;
+
+    .style--light & {
+        background-color: @color--accent;
+    }
+
+    .style--accent & {
+        background-color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+    }
 }
 
 // PROFILE
@@ -2093,6 +2602,18 @@ hr.rule {
 h3.description.companydescription__description {
     color: @color__p--text;
     font-size: @font__h4--font-size;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 // MAP
@@ -2100,6 +2621,18 @@ h3.description.companydescription__description {
 .widget.map {
     border: 1px solid @color__h1--text;
     margin-bottom: 40px;
+
+    .style--light & {
+        border-color: @color--accent;
+    }
+
+    .style--accent & {
+        border-color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: @color--accent;
+    }
 }
 
 // EMBEDS
@@ -2136,6 +2669,18 @@ h3.description.companydescription__description {
     padding: 20px;
 	margin-bottom: 20px;
 
+	.style--light & {
+        border-color: @color--accent;
+    }
+
+    .style--accent & {
+        border-color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: @color--accent;
+    }
+
     .review-list {
         margin: 0;
         padding: 0;
@@ -2155,13 +2700,44 @@ h3.description.companydescription__description {
         padding: 10px;
         background-color: @color__button--background;
         margin-top: 5px;
-        letter-spacing:0.3px;
+        letter-spacing: 0.3px;
+
+        .style--light & {
+	    	background-color: lighten(@color--accent, 30%);
+	        color: @color--accent;
+	    }
+
+	    .style--accent & {
+		    background-color: @color--dark;
+		    color: @contrast--dark;
+		}
+
+	    .style--dark & {
+	        background-color: lighten(@color--accent, 30%);
+	        color: @color--accent;
+	    }
+
         &:hover {
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
             cursor: pointer;
             letter-spacing:0.25px;
             .transition(all, 0.2s, ease);
+
+            .style--light & {
+		    	background-color: lighten(@color--accent, 20%);
+		        color: @color--accent;
+		    }
+
+		    .style--accent & {
+			    background-color: darken(@color--dark, 10%);
+			    color: @contrast--dark;
+			}
+
+		    .style--dark & {
+		        background-color: lighten(@color--accent, 20%);
+		        color: @color--accent;
+		    }
         }
     }
     
@@ -2182,5 +2758,17 @@ h3.description.companydescription__description {
     .review-author {
         font-size: 15px;
         color: @color__p--text;
+
+        .style--light & {
+	        color: @contrast--light;
+	    }
+
+	    .style--accent & {
+	        color: fade(@contrast--accent, 90%);
+	    }
+
+	    .style--dark & {
+	        color: fade(@contrast--dark, 90%);
+	    }
     }
 }

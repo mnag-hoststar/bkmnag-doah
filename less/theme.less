@@ -54,13 +54,11 @@ body.edit .widget.extendednavigation {
 	font-size: @font__navigation--font-size;
 
 	@media @desktop-larger {
-    	margin-left: 10%;
-		margin-right: 10%;
+        width: 80%;
 	}
 
 	@media @desktop-large {
-    	margin-left: 6%;
-		margin-right: 6%;
+        width: 88%;
 	}
 
     @media @tablet {
@@ -80,10 +78,17 @@ body.edit .widget.extendednavigation {
 	    bottom: 0;
         border-bottom: 1px solid @color__header--border;
 	}
+
+    body > & {
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 }
 
 .main-container {
-	background-color: @color__container--background;
+	background-color: #fff;
 	padding: 40px;
 	margin: 0 auto;
 	width: auto;
@@ -107,20 +112,12 @@ body.edit .widget.extendednavigation {
 	}
 }
 
-.homepage-background {
-    position: absolute;
-    top: 0px;
-    z-index: 0;
-	width: 100%;
-}
-
 // FOOTER
 
 .bk-footer {
     overflow: auto;
     border-top: 1px solid @color__footer--border;
     background-color: @color__footer--background;
-	margin-top: 30px;
 	min-height: 220px;
 
 	@media @mobile {

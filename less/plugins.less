@@ -139,11 +139,66 @@
     letter-spacing: 0px;
     background-color: @color__button--background;
 
+    .style--light & {
+        background-color: lighten(@color--accent, 30%);
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: lighten(@color--accent, 30%);
+        color: @color--accent;
+    }
+
     &:hover {
         color: @color__button--text--hover;
         background-color: @color__button--background--hover;
         cursor: pointer;
         .transition(all, 0.2s, ease);
+
+        .style--light & {
+            background-color: lighten(@color--accent, 20%);
+            color: @color--accent;
+        }
+
+        .style--accent & {
+            background-color: darken(@color--dark, 10%);
+            color: @contrast--dark;
+        }
+
+        .style--dark & {
+            background-color: lighten(@color--accent, 20%);
+            color: @color--accent;
+        }
+    }
+}
+
+// Blog List Footer
+
+.blogpostlist__post-footer {
+    font-size: 0.9em !important;
+}
+
+.blogpostlist__post-footer time.timestamp {
+    font-style: italic;
+    float: right;
+    padding: 14px 0px;
+    font-size: 0.9em;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
     }
 }
 
@@ -695,6 +750,18 @@ a.ecomproductslist__title {
     background-size: contain;
     overflow: hidden;
     background-color: @color__ecomproductslist-product-item--background;
+
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 }
 
 .product-item-image,
@@ -708,6 +775,18 @@ a.ecomproductslist__title {
     border-top: 1px solid fade(@color__h1--text, 30%);
     text-align: center;
     padding-bottom: 25px;
+
+    .style--light & {
+        border-color: fade(@color--accent, 30%);
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 30%);
+    }
+
+    .style--dark & {
+        border-color: fade(@color--accent, 30%);
+    }
 }
 
 .ecomproductslist__listing-footer {
@@ -720,9 +799,36 @@ a.ecomproductslist__title {
     padding: 10px 0;
     margin: 0;
 
+    .style--light & {
+        border-color: fade(@color--accent, 30%);
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 30%);
+    }
+
+    .style--dark & {
+        border-color: fade(@color--accent, 30%);
+    }
+
     .current {
         color: @color__h1--text;
         border: 1px solid @color__h1--text;
+
+        .style--light & {
+            border-color: @color--accent;
+            color: @color--accent;
+        }
+
+        .style--accent & {
+            border-color: @contrast--accent;
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            border-color: @color--accent;
+            color: @color--accent;
+        }
     }
 }
 
@@ -754,17 +860,74 @@ a.ecomproductslist__title {
     padding: 8px;
     text-decoration: none;
 
+    .style--light & {
+        border-color: fade(@color--accent, 30%);
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 30%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: fade(@color--accent, 30%);
+        color: @color--accent;
+    }
+
     &:hover {
         border: 1px solid @color__button--text--hover;
+
+        .style--light & {
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            border-color: @contrast--accent;
+        }
+
+        .style--dark & {
+            border-color: @color--accent;
+        }
     }
 
     a.button {
         background-color: @color__button--background;
         color: @color__button--text;
 
+        .style--light & {
+            background-color: lighten(@color--accent, 30%);
+            color: @color--accent;
+        }
+
+        .style--accent & {
+            background-color: @color--dark;
+            color: @contrast--dark;
+        }
+
+        .style--dark & {
+            background-color: lighten(@color--accent, 30%);
+            color: @color--accent;
+        }
+
         &:hover {
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
+
+            .style--light & {
+                background-color: lighten(@color--accent, 20%);
+                color: @color--accent;
+            }
+
+            .style--accent & {
+                background-color: darken(@color--dark, 10%);
+                color: @contrast--dark;
+            }
+
+            .style--dark & {
+                background-color: lighten(@color--accent, 20%);
+                color: @color--accent;
+            }
         }
     }
 }
@@ -800,6 +963,18 @@ a.ecomproductslist__title {
 .ecomproduct__product-image {
     background-color: @color__ecomproductslist-product-item--background;
 
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
+
     a.image-link {
         margin-bottom: 1em;
         height: auto;
@@ -825,6 +1000,18 @@ a.ecomproductslist__title {
         text-align: left;
         margin: 0 0.5em 0 0;
         background-color: @color__ecomproductslist-product-item--background;
+
+        .style--light & {
+            background-color: @color--light;
+        }
+
+        .style--accent & {
+            background-color: @color--accent;
+        }
+
+        .style--dark & {
+            background-color: @color--dark;
+        }
     }
 }
 

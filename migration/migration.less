@@ -1,0 +1,90 @@
+
+// -------------------------------------------
+//  Migration Styles -
+//
+//  These changes allow rows to work with
+//  existing templates in BK10
+// -------------------------------------------
+
+
+
+// Template styling resets
+// ------------------------------------
+
+#migrated {
+
+	&.edit > .navigation--flex-container {
+		@media @desktop-larger {
+			width: ~"calc(80% - 200px)";
+		}
+
+		@media @desktop-large {
+	        width: ~"calc(88% - 200px)";
+		}
+
+		@media only screen and (max-width: 930px) {
+			width: 88%;
+		}
+	}
+
+	.main-container {
+		padding: 0;
+	}
+}
+
+
+
+// Row improvments
+// ------------------------------------
+
+
+
+// Re-add the reset styles
+// ------------------------------------
+
+#migrated {
+
+	.empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not([data-name="row"]),
+    [data-widget-type="pagetitle"],
+    [data-name="row"] .row:not(.row--width-no-padding) .row__container {
+        margin-left: auto;
+        margin-right: auto;
+        width: ~"calc(100% - 80px)";
+
+        @media @mobile {
+        	width: ~"calc(100% - 32px)";
+        }
+    }
+
+    // Move spacing to first widget in the main zone (not sections)
+    .edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 40px;
+
+         @media @mobile {
+         	margin-top: 16px;
+         }
+    }
+
+    // Move spacing to last widget in the main zone (not sections)
+    #page-zones__main > .widget:not([data-name="row"]):last-child {
+        margin-bottom: 40px;
+
+         @media @mobile {
+         	margin-top: 16px;
+         }
+    }
+
+    // Add spacing to the top of a widget when it follows a section
+    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
+        margin-top: 20px;
+    }
+
+    // Empy zone spacing
+    &.edit #page-zones__main:empty {
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+}
