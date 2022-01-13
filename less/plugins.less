@@ -1052,6 +1052,10 @@ a.ecomproductslist__title {
         display: inline-block;
         text-align: center;
         min-width: 200px;
+  	  
+		@media @mobile {
+			width: 100%;
+		}
 
         &:hover {
             background-color: @color__button--background--hover;
@@ -1060,6 +1064,7 @@ a.ecomproductslist__title {
         }
 
         &:before {
+			float: none;
             margin-right: 10px;
             font-size: 1.2em;
         }
