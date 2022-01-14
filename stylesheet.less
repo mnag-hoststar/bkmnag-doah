@@ -214,10 +214,9 @@ p,
     }
 }
 
-.widget {
+.widget, .widget.in-editing {
 	p, span, small, pre, code,
-	table, th, td,
-	&.content {
+	table, th, td, .content {
 		color: @color__p--text;
 	
 		.style--light & {
@@ -232,6 +231,12 @@ p,
 			color: @contrast--dark;
 		}
 	}
+}
+
+.widget .content,
+.widget.in-editing .content {
+	font-size: @font__p--font-size !important;
+	line-height: @font__p--line-height !important;
 }
 
 // Preformatted and Code Text
