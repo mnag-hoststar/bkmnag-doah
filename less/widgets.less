@@ -1920,6 +1920,19 @@ textarea {
 
 // Dropdown
 
+.select-wrap {
+	position: relative;
+	max-width: 50%;
+
+	@media @tablet {
+		max-width: 100%;
+	}
+
+	.responsivecolumns & {
+		max-width: 100%;
+	}
+}
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1941,7 +1954,9 @@ select {
     margin: 0 0 15px 0;
     padding: 0 0 0 5px;
     display: block;
-    background: image('/images/arrow-small-down.svg') no-repeat center right;
+    background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-position: right 0.5em center;
     background-size: 30px;
 
     .style--light & {
