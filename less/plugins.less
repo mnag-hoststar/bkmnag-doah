@@ -46,7 +46,6 @@
 .mixin__menu-item {
     display: inline-block;
     margin: 5px;
-    border-bottom: 1px solid @color__link--text;
     font-family: @font__button--font-family;
     padding: 10px;
     text-transform: uppercase;
@@ -142,10 +141,6 @@
     float: right;
     padding: 14px 0px;
     font-size: 0.9em;
-
-    .style--light & {
-        color: @contrast--light;
-    }
 
     .style--accent & {
         color: fade(@contrast--accent, 90%);
@@ -342,95 +337,6 @@ a.button.button--pagination.button--next {
     text-align: center;
 }
 
-// MENU
-
-.menu__section-header {
-    margin-bottom: 25px;
-}
-
-// Menusection Toggle (Categories)
-
-.menusections-body {
-    text-align: center;
-    margin: 0 0 40px;
-}
-
-a.menu-item-name {
-    .mixin__menu-item();
-}
-
-// Menu Widget
-
-.widget__menu {
-    margin-bottom: 40px;
-}
-
-.menu-section .menu-items {
-    text-align: center;
-}
-
-.menusetions__menusections-item,
-.menusections-item {
-    line-height: 50px;
-}
-
-.menu-item {
-    padding: 30px;
-
-    @media @mobile {
-        padding: 0px;
-    }
-}
-
-h3.menu__section-subtitle {
-    text-transform: none;
-}
-
-.menu .item-image .image-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    line-height: 1px;
-    width: 100%;
-}
-
-.menu .item-image .image {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
-.menu-subsection,
-.menu-section {
-    margin-bottom: 30px;
-    padding: 30px;
-    background-color: transparent;
-    text-align: center;
-    margin: 1.5em 0;
-
-    @media @mobile {
-        padding: 0px;
-    }
-}
-
-footer.section-footer {
-    text-align: center;
-}
-
-// Featured Menu- Sections
-
-section.menu-section--featured {
-    border: 15px solid @color__button--background;
-}
-
-.menu-item--featured,
-.menu-section--featured {
-    padding: 30px;
-    background-color: transparent !important;
-    border: 15px solid @color__button--background;
-}
-
 // Section Header
 
 header.section.header {
@@ -444,6 +350,10 @@ header.section.header {
 }
 
 // Item Footer
+
+footer.section-footer {
+    text-align: center;
+}
 
 .item-footer {
     .item-price p {
@@ -691,10 +601,6 @@ a.ecomproductslist__title {
     overflow: hidden;
     background-color: @color__ecomproductslist-product-item--background;
 
-    .style--light & {
-        background-color: @color--light;
-    }
-
     .style--accent & {
         background-color: @color--accent;
     }
@@ -716,10 +622,6 @@ a.ecomproductslist__title {
     text-align: center;
     padding-bottom: 25px;
 
-    .style--light & {
-        border-color: fade(@color--accent, 30%);
-    }
-
     .style--accent & {
         border-color: fade(@contrast--accent, 30%);
     }
@@ -739,10 +641,6 @@ a.ecomproductslist__title {
     padding: 10px 0;
     margin: 0;
 
-    .style--light & {
-        border-color: fade(@color--accent, 30%);
-    }
-
     .style--accent & {
         border-color: fade(@contrast--accent, 30%);
     }
@@ -754,11 +652,6 @@ a.ecomproductslist__title {
     .current {
         color: @color__h1--text;
         border: 1px solid @color__h1--text;
-
-        .style--light & {
-            border-color: @color--accent;
-            color: @color--accent;
-        }
 
         .style--accent & {
             border-color: @contrast--accent;
@@ -800,11 +693,6 @@ a.ecomproductslist__title {
     padding: 8px;
     text-decoration: none;
 
-    .style--light & {
-        border-color: fade(@color--accent, 30%);
-        color: @color--accent;
-    }
-
     .style--accent & {
         border-color: fade(@contrast--accent, 30%);
         color: @contrast--accent;
@@ -817,10 +705,6 @@ a.ecomproductslist__title {
 
     &:hover {
         border: 1px solid @color__button--text--hover;
-
-        .style--light & {
-            border-color: @color--accent;
-        }
 
         .style--accent & {
             border-color: @contrast--accent;
@@ -835,11 +719,6 @@ a.ecomproductslist__title {
         background-color: @color__button--background;
         color: @color__button--text;
 
-        .style--light & {
-            background-color: lighten(@color--accent, 30%);
-            color: @color--accent;
-        }
-
         .style--accent & {
             background-color: @color--dark;
             color: @contrast--dark;
@@ -853,11 +732,6 @@ a.ecomproductslist__title {
         &:hover {
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
-
-            .style--light & {
-                background-color: lighten(@color--accent, 20%);
-                color: @color--accent;
-            }
 
             .style--accent & {
                 background-color: darken(@color--dark, 10%);
@@ -903,10 +777,6 @@ a.ecomproductslist__title {
 .ecomproduct__product-image {
     background-color: @color__ecomproductslist-product-item--background;
 
-    .style--light & {
-        background-color: @color--light;
-    }
-
     .style--accent & {
         background-color: @color--accent;
     }
@@ -940,10 +810,6 @@ a.ecomproductslist__title {
         text-align: left;
         margin: 0 0.5em 0 0;
         background-color: @color__ecomproductslist-product-item--background;
-
-        .style--light & {
-            background-color: @color--light;
-        }
 
         .style--accent & {
             background-color: @color--accent;

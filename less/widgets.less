@@ -209,6 +209,7 @@
                             margin: 0.75em;
                             padding: 1em 0;
                             background-color: @color__header--background;
+                            max-width: none;
                         }
                     
                         .default-page & {
@@ -329,6 +330,7 @@
 	&.language-selector--light {
 		background-color: @color__header--background;
 	}
+
 	&.language-selector--dark {
 		background-color: @color__button--background;
 	}
@@ -803,10 +805,6 @@ h3.feature__strapline {
     text-transform: uppercase;
     font-weight: 700;
 
-    .style--light & {
-        color: @color--accent;
-    }
-
     .style--accent & {
         color: @contrast--accent;
     }
@@ -820,10 +818,6 @@ h3.feature__strapline {
     margin: 0 0 10px;
     color: @color__image-description--text;
     text-align: left;
-
-    .style--light & {
-        color: @contrast--light;
-    }
 
     .style--accent & {
         color: fade(@contrast--accent, 90%);
@@ -1250,11 +1244,6 @@ h3.feature__strapline {
             padding: 0px!important;
             color: transparent;
 
-            .style--light & {
-            	background-color: @color--light;
-		        border-color: darken(@color--light, 30%);
-		    }
-
 		    .style--accent & {
 		        background-color: @color--accent;
 		        border-color: darken(@color--accent, 30%);
@@ -1276,11 +1265,6 @@ h3.feature__strapline {
             border: 1px solid darken(@color__slideshow-pagination-item--background--selected, 30%) !important;
             border: none;
             padding: 0px !important;
-
-            .style--light & {
-            	background-color: @color--accent;
-		        border-color: darken(@color--light, 30%);
-		    }
 
 		    .style--accent & {
 		        background-color: @color--dark;
@@ -1333,11 +1317,6 @@ button.ecombasket-remove-button.js-remove,
     text-align: center;
     min-height: 48px;
 
-    .style--light & {
-    	background-color: lighten(@color--accent, 30%);
-        color: @color--accent;
-    }
-
     .style--accent & {
         background-color: @color--dark;
         color: @contrast--dark;
@@ -1355,11 +1334,6 @@ button.ecombasket-remove-button.js-remove,
     &:hover {
         background-color: @color__button--background--hover;
         color: @color__button--text--hover;
-
-        .style--light & {
-	    	background-color: lighten(@color--accent, 20%);
-	        color: @color--accent;
-	    }
 
 	    .style--accent & {
 	        background-color: darken(@color--dark, 10%);
@@ -1397,11 +1371,6 @@ button.ecombasket-remove-button.js-remove,
         text-transform: uppercase;
         font-weight: 700;
 
-        .style--light & {
-	    	background-color: lighten(@color--accent, 30%);
-	        color: @color--accent;
-	    }
-
 	    .style--accent & {
 		    background-color: @color--dark;
 		    color: @contrast--dark;
@@ -1421,11 +1390,6 @@ button.ecombasket-remove-button.js-remove,
             background-color: @color__button--background--hover;
             color: @color__button--text--hover;
 
-            .style--light & {
-		    	background-color: lighten(@color--accent, 20%);
-		        color: @color--accent;
-		    }
-
 		    .style--accent & {
 			    background-color: darken(@color--dark, 10%);
 			    color: @contrast--dark;
@@ -1442,10 +1406,6 @@ button.ecombasket-remove-button.js-remove,
 .widget button.btn span,
 .clicktocall__label {
 	color: @font-swatch7-color;
-
-	.style--light & {
-		color: @contrast--accent;
-	}
 
 	.style--accent & {
 		color: @contrast--dark;
@@ -1492,11 +1452,6 @@ button.ecombasket-remove-button.js-remove,
     float: left;
     background-color: @color__button--background;
 
-    .style--light & {
-    	background-color: lighten(@color--accent, 30%);
-        color: @color--accent;
-    }
-
     .style--accent & {
 	    background-color: @color--dark;
 	    color: @contrast--dark;
@@ -1513,11 +1468,6 @@ button.ecombasket-remove-button.js-remove,
 
 	&:hover {
     	background-color: @color__button--background--hover;
-
-    	.style--light & {
-	    	background-color: lighten(@color--accent, 20%);
-	        color: @color--accent;
-	    }
 
 	    .style--accent & {
 		    background-color: darken(@color--dark, 10%);
@@ -1552,10 +1502,6 @@ label, .label {
     text-align: left;
     word-break: break-word;
 
-    .style--light & {
-        color: @color--accent;
-    }
-
     .style--accent & {
         color: @contrast--accent;
     }
@@ -1583,10 +1529,6 @@ input,
 select {
     align-self: flex-end;
     color: @color__p--text;
-
-    .style--light & {
-        color: @contrast--light;
-    }
 
     .style--accent & {
         color: fade(@contrast--accent, 90%);
@@ -1621,13 +1563,6 @@ input#search-term {
     border-bottom: 1px solid @color__form--border;
     color: @color__p--text !important;
 
-    .style--light & {
-        background-color: fade(@color--light, 20%);
-        border-color: fade(@color--accent, 30%);
-        border-bottom: 1px solid @color--accent;
-        color: @contrast--light;
-    }
-
     .style--accent & {
         background-color: fade(@color--accent, 20%);
         border-color: fade(@contrast--accent, 30%);
@@ -1646,12 +1581,6 @@ input#search-term {
         border: 1px solid fade(@color__form--border, 30%);
         border-bottom: 1px solid @color__form--border;
         background-color: fade(@color__form--background, 80%) !important;
-
-        .style--light & {
-            border-color: fade(@color--accent, 30%);
-            border-bottom: 1px solid @color--accent;
-            background-color: fade(@color--light, 20%);
-        }
 
         .style--accent & {
             border-color: fade(@contrast--accent, 30%);
@@ -1688,10 +1617,6 @@ input.js-email.email {
 
     .form-group.focused & {
         color: @color__p--text;
-
-        .style--light & {
-            color: @contrast--light;
-        }
     
         .style--accent & {
             color: fade(@contrast--accent, 90%);
@@ -1709,10 +1634,6 @@ input.js-email.email {
 
     .form-group.focused & {
         color: @color__p--text;
-
-        .style--light & {
-            color: @contrast--light;
-        }
     
         .style--accent & {
             color: fade(@contrast--accent, 90%);
@@ -1730,10 +1651,6 @@ input.js-email.email {
 
     .form-group.focused & {
         color: @color__p--text;
-
-        .style--light & {
-            color: @contrast--light;
-        }
     
         .style--accent & {
             color: fade(@contrast--accent, 90%);
@@ -1773,10 +1690,6 @@ input.js-email.email {
     display: inline-block;
     vertical-align: top;
     color: @color__p--text;
-
-    .style--light & {
-        color: @contrast--light;
-    }
 
     .style--accent & {
         color: fade(@contrast--accent, 90%);
@@ -1833,18 +1746,13 @@ select {
     line-height: 3rem;
     font-size: 1rem;
     margin: 0 0 15px 0;
-    padding: 0 2.5em 0 10px;
+    padding: 0 2.5em 0 10px !important;
     display: block;
     background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
     background-repeat: no-repeat;
     background-position: right 0.5em center;
     background-size: 1.5em;
     text-overflow: ellipsis;
-
-    .style--light & {
-        background-color: fade(@color--light, 40%);
-        border-color: fade(@color--accent, 30%);
-    }
 
     .style--accent & {
         background-color: fade(@color--accent, 40%);
@@ -1858,10 +1766,6 @@ select {
 
     &.selected {
         color: @color__p--text !important;
-
-        .style--light & {
-            color: @contrast--light;
-        }
     
         .style--accent & {
             color: @contrast--accent;
@@ -1875,10 +1779,6 @@ select {
     &:hover {
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
         background-color: fade(@color__form--background, 80%) !important;
-
-        .style--light & {
-            background-color: fade(@color--light, 40%);
-        }
     
         .style--accent & {
             background-color: fade(@color--accent, 40%);
@@ -1891,10 +1791,6 @@ select {
     
     &:selected {
         color: @color__h4--text;
-
-        .style--light & {
-            color: @color--accent;
-        }
     
         .style--accent & {
             color: @contrast--accent;
@@ -1908,11 +1804,6 @@ select {
     &:focus {
         background-color: fade(@color__form--background, 80%) !important;
         color: @color__h4--text;
-
-        .style--light & {
-            background-color: fade(@color--light, 40%);
-            color: @color--accent;
-        }
     
         .style--accent & {
             background-color: fade(@color--accent, 40%);
@@ -1927,11 +1818,6 @@ select {
         > label {
             background-color: fade(@color__form--background, 80%) !important;
             color: @color__h4--text;
-
-            .style--light & {
-                background-color: fade(@color--light, 40%);
-                color: @color--accent;
-            }
         
             .style--accent & {
                 background-color: fade(@color--accent, 40%);
@@ -2030,10 +1916,6 @@ select {
 		line-height: 1.4em;
         color: @color__p--text;
         min-height: 1.4em;
-        
-        .style--light & {
-            color: @contrast--light;
-        }
     
         .style--accent & {
             color: @contrast--accent;
@@ -2059,6 +1941,14 @@ select {
 			border: 2px solid @color__h1--text;
             min-width: 20px !important;
             border-radius: 0;
+
+            .style--accent & {
+                border-color: @color--dark;
+            }
+        
+            .style--dark & {
+                border-color: @color--accent;
+            }
 		}
 
 		&:after {
@@ -2071,6 +1961,14 @@ select {
 			height: 12px;
 			margin-top: -5px;
 			background-color: @color__h1--text;
+
+            .style--accent & {
+                background-color: @color--dark;
+            }
+        
+            .style--dark & {
+                background-color: @color--accent;
+            }
 		}
 	}
 }
@@ -2106,10 +2004,6 @@ label[for*="input--terms"] span a.form__link {
     .form__link {
         text-decoration: underline;
         color: @color__p--text;
-    
-        .style--light & {
-            color: @contrast--light;
-        }
     
         .style--accent & {
             color: fade(@contrast--accent, 90%);
@@ -2213,10 +2107,6 @@ label[for*="input--terms"] span a.form__link {
     margin: 7px 5px;
     text-align: center;
 
-	.style--light & {
-    	background-color: lighten(@color--accent, 30%);
-    }
-
     .style--accent & {
 	    background-color: @color--dark;
 	}
@@ -2228,10 +2118,6 @@ label[for*="input--terms"] span a.form__link {
     &:hover {
         background-color: @color__button--background--hover;
         .transition(all, 0.2s, ease);
-
-        .style--light & {
-	    	background-color: lighten(@color--accent, 20%);
-	    }
 
 	    .style--accent & {
 		    background-color: darken(@color--dark, 10%);
@@ -2253,10 +2139,6 @@ a.social-link {
     width: 100%;
     display: block;
 
-	.style--light & {
-        color: @color--accent;
-    }
-
     .style--accent & {
 	    color: @contrast--dark;
 	}
@@ -2273,10 +2155,6 @@ a.social-link {
     &:hover {
         color: @color__button--text--hover;
         .transition(all, 0.1s, ease);
-
-        .style--light & {
-	        color: @color--accent;
-	    }
 
 	    .style--accent & {
 		    color: @contrast--dark;
@@ -2310,11 +2188,6 @@ a.social-link {
         border: 1px solid @color__h1--text;
         background-color: @color__twitter-item--background;
 
-        .style--light & {
-        	background-color: @color--light;
-		    border-color: @color--accent;
-		}
-
 		.style--accent & {
 			background-color: @color--accent;
 		    border-color: @contrast--accent;
@@ -2342,10 +2215,6 @@ a.social-link {
     .twitter-feed__via {
         font-size: 0.8em;
 
-        .style--light & {
-	        color: @contrast--light;
-	    }
-
 	    .style--accent & {
 	        color: fade(@contrast--accent, 90%);
 	    }
@@ -2367,10 +2236,6 @@ a.social-link {
         margin-bottom: 5px;
         text-transform: uppercase;
 
-        .style--light & {
-	        color: @contrast--light;
-	    }
-
 	    .style--accent & {
 	        color: fade(@contrast--accent, 90%);
 	    }
@@ -2391,10 +2256,6 @@ a.social-link {
         font-weight: @font__h4--font-family;
         color: @color__twitter-account-name--text;
 
-        .style--light & {
-	        color: @color--accent;
-	    }
-
 	    .style--accent & {
 	        color: @contrast--accent;
 	    }
@@ -2406,10 +2267,6 @@ a.social-link {
         &:hover {
             color: darken(@color__h1--text, 5%);
             text-decoration: none!important;
-
-            .style--light & {
-		        color: darken(@color--accent, 5%);
-		    }
 
 		    .style--accent & {
 		        color: darken(@contrast--accent, 5%);
@@ -2442,10 +2299,6 @@ hr.rule {
     margin: 0;
     height: 1px;
 
-    .style--light & {
-        background-color: @color--accent;
-    }
-
     .style--accent & {
         background-color: @contrast--accent;
     }
@@ -2461,10 +2314,6 @@ h3.description.companydescription__description {
     color: @color__p--text;
     font-size: @font__h4--font-size;
 
-    .style--light & {
-        color: @contrast--light;
-    }
-
     .style--accent & {
         color: fade(@contrast--accent, 90%);
     }
@@ -2479,10 +2328,6 @@ h3.description.companydescription__description {
 .widget.map {
     border: 1px solid @color__h1--text;
     margin-bottom: 40px;
-
-    .style--light & {
-        border-color: @color--accent;
-    }
 
     .style--accent & {
         border-color: @contrast--accent;
@@ -2527,10 +2372,6 @@ h3.description.companydescription__description {
     padding: 20px;
 	margin-bottom: 20px;
 
-	.style--light & {
-        border-color: @color--accent;
-    }
-
     .style--accent & {
         border-color: @contrast--accent;
     }
@@ -2560,11 +2401,6 @@ h3.description.companydescription__description {
         margin-top: 5px;
         letter-spacing: 0.3px;
 
-        .style--light & {
-	    	background-color: lighten(@color--accent, 30%);
-	        color: @color--accent;
-	    }
-
 	    .style--accent & {
 		    background-color: @color--dark;
 		    color: @contrast--dark;
@@ -2581,11 +2417,6 @@ h3.description.companydescription__description {
             cursor: pointer;
             letter-spacing:0.25px;
             .transition(all, 0.2s, ease);
-
-            .style--light & {
-		    	background-color: lighten(@color--accent, 20%);
-		        color: @color--accent;
-		    }
 
 		    .style--accent & {
 			    background-color: darken(@color--dark, 10%);
@@ -2616,10 +2447,6 @@ h3.description.companydescription__description {
     .review-author {
         font-size: 15px;
         color: @color__p--text;
-
-        .style--light & {
-	        color: @contrast--light;
-	    }
 
 	    .style--accent & {
 	        color: fade(@contrast--accent, 90%);

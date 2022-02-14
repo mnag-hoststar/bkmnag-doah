@@ -47,6 +47,27 @@
 @import "@{templateLocal}/less/widgets.less";
 @import "@{templateLocal}/less/plugins.less";
 
+// BASEKIT ELEMENTS
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay button.top-level-overlay__arrangement-button--up,
+.row-overlay__arrangement-button--up,
+.top-level-overlay button.top-level-overlay__arrangement-button--down,
+.row-overlay__arrangement-button--down, .row-overlay__edit-button {
+	background: transparent !important;
+}
+
+.row-overlay__edit-button {
+	background: #fff !important;
+}
+
+.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
+.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
+	left: auto !important;
+    top: auto !important;
+}
+
 // MAIN
 
 body {
@@ -76,10 +97,6 @@ h1,
 h2,
 h3,
 h4 {
-    .style--light & {
-        color: @color--accent;
-    }
-
     .style--accent & {
         color: @contrast--accent;
     }
@@ -112,11 +129,7 @@ h4 {
 }
 
 h5 {
-    .style--light & {
-        color: @contrast--light;
-    }
-
-    .style--accent & {
+	.style--accent & {
         color: @contrast--accent;
     }
 
@@ -128,10 +141,6 @@ h5 {
 a {
     color: @color__link--text;
     word-break: break-word;
-
-    .style--light & {
-        color: @color--accent;
-    }
 
     .style--accent & {
         color: @contrast--accent;
@@ -146,10 +155,6 @@ a {
         .transition(all, 0.1s, ease);
         text-decoration: none;
 
-        .style--light & {
-            color: darken(@color--accent, 5%);
-        }
-
         .style--accent & {
             color: darken(@contrast--accent, 5%);
         }
@@ -160,16 +165,58 @@ a {
     }
 }
 
+h5,
+.contentgroup__h5 {
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size;
+	line-height: @font__h4--line-height;
+	letter-spacing: @font__h4--letter-spacing;
+	color: @color__h4--text;
+
+	.make-font-a-little-smaller(@font__h4--font-size, 0.9);
+	.make-font-smaller(@font__h4--font-size);
+	.make-font-a-lot-smaller(@font__h4--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h4--line-height, 0.9);
+	.make-line-height-smaller(@font__h4--line-height);
+	.make-line-height-a-lot-smaller(@font__h4--line-height);
+}
+
+h6,
+.contentgroup__h6 {
+	padding-bottom: 0.2em;
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size*0.8;
+	line-height: @font__h4--line-height*0.8;
+	color: @color__h4--text;
+
+	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
+	.make-font-smaller(@font__h4--font-size, 0.7);
+	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+	
+	.make-line-height-a-little-smaller(@font__h4--line-height, 0.7);
+	.make-line-height-smaller(@font__h4--line-height, 0.7);
+	.make-line-height-a-lot-smaller(@font__h4--line-height, 0.7, 0.6);
+}
+
 // Normal Text
 
-p {
-    color: @color__p--text;
-    padding-bottom: 7px;
-    line-height: 20px;
-
-	.style--light & {
-		color: @contrast--light;
-	}
+p, .paragraph, ul, ol, li,
+.contentgroup__body,
+.contentgroup__body span,
+.contentgroup__body small {
+	font-family: @font__p--font-family;
+	font-size: @font__p--font-size;
+	font-weight: @font__p--font-weight;
+	line-height: unit(@font__p--line-height*0.1, em);
+	letter-spacing: @font__p--letter-spacing;
+	color: @color__p--text;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
 
 	.style--accent & {
 		color: @contrast--accent;
@@ -178,6 +225,11 @@ p {
 	.style--dark & {
 		color: @contrast--dark;
 	}
+}
+
+p {
+    padding-bottom: 7px;
+    line-height: 20px;
 
 	> a:hover {
 		font-weight: 700;
@@ -196,16 +248,11 @@ p > a {
     }
 }
 
-p,
 [data-name="content"],
 [data-name="content"] li {
     color: @color__p--text;
     padding-bottom: 7px;
     line-height: 20px;
-
-    .style--light & {
-        color: @contrast--light;
-    }
 
     .style--accent & {
         color: fade(@contrast--accent, 90%);
@@ -216,30 +263,21 @@ p,
     }
 }
 
-// Normal Text
+[data-name="content"],
+.embed-content {
+	font-size: @font__p--font-size !important;
+	line-height: @font__p--line-height !important;
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font__p--font-size !important;
-		line-height: @font__p--line-height !important;
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @color__p--text;
 	
-		&, p, span, small, pre, code,
-		table, th, td {
-			color: @color__p--text;
-		
-			.style--light & {
-				color: @contrast--light;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
 		}
 	}
 }
@@ -256,10 +294,6 @@ pre, code {
 	overflow: auto;
 	font-family: monospace;
 
-	.style--light & {
-		background-color: fade(@contrast--light, 10%);
-	}
-
 	.style--accent & {
 		background-color: fade(@contrast--accent, 10%);
 	}
@@ -271,10 +305,6 @@ pre, code {
 
 code {
 	border-left: 1px solid @color__p--text;
-
-	.style--light & {
-		border-color: @contrast--light;
-	}
 
 	.style--accent & {
 		border-color: @contrast--accent;
@@ -296,11 +326,6 @@ blockquote {
     line-height: 1.6em;
     margin: 25px 0px;
     word-break: break-word;
-
-	.style--light & {
-		border-color: lighten(@color--accent, 30%);
-		color: @color--accent;
-	}
 
 	.style--accent & {
 		border-color: fade(@contrast--accent, 30%);
@@ -393,10 +418,6 @@ legend {
 table, th, td {
 	border: 1px solid fade(@color__h1--text, 30%);
 
-    .style--light & {
-        border-color: fade(@color--accent, 30%);
-    }
-
     .style--accent & {
         border-color: fade(@contrast--accent, 30%);
     }
@@ -416,11 +437,6 @@ table {
 	margin: 0;
 	hyphens: auto;
 	color: @color__p--text;
-
-	.style--light & {
-		border-top-color: @contrast--light;
-		color: @contrast--light;
-	}
 
 	.style--accent & {
 		border-top-color: @contrast--accent;
@@ -451,11 +467,6 @@ th {
 	letter-spacing: @font__p--letter-spacing;
 	color: @color__h4--text;
 
-	.style--light & {
-		border-bottom-color: @contrast--light;
-		color: @contrast--light;
-	}
-
 	.style--accent & {
 		border-bottom-color: @contrast--accent;
 		color: @contrast--accent;
@@ -483,10 +494,6 @@ td {
 	font-size: @font__p--font-size;
 	line-height: @font__p--line-height;
 	letter-spacing: @font__p--letter-spacing;
-
-	.style--light & {
-		border-bottom-color: fade(@contrast--light, 60%);
-	}
 
 	.style--accent & {
 		border-bottom-color: fade(@contrast--accent, 60%);
@@ -522,10 +529,6 @@ td {
 		@media @mobile {
 			padding: 0 0.5em 1em;
 			border-bottom: 1px solid fade(@color__p--text, 60%);
-
-			.style--light & {
-				border-bottom-color: fade(@contrast--light, 60%);
-			}
 		
 			.style--accent & {
 				border-bottom-color: fade(@contrast--accent, 60%);
@@ -539,10 +542,6 @@ td {
 		.responsivecolumns & {
 			padding: 0 0.5em 1em;
 			border-bottom: 1px solid fade(@color__p--text, 60%);
-
-			.style--light & {
-				border-bottom-color: fade(@contrast--light, 60%);
-			}
 		
 			.style--accent & {
 				border-bottom-color: fade(@contrast--accent, 60%);
@@ -557,10 +556,6 @@ td {
 
 tr:last-child td {
 	border-bottom: 1px solid @color__p--text;
-
-	.style--light & {
-		border-bottom-color: @contrast--light;
-	}
 
 	.style--accent & {
 		border-bottom-color: @contrast--accent;
@@ -581,10 +576,6 @@ tr:last-child td {
 	&:last-child {
 		@media @mobile {
 			border-bottom: 1px solid @color__p--text;
-
-			.style--light & {
-				border-bottom-color: @contrast--light;
-			}
 		
 			.style--accent & {
 				border-bottom-color: @contrast--accent;
@@ -597,10 +588,6 @@ tr:last-child td {
 
 		.responsivecolumns & {
 			border-bottom: 1px solid @color__p--text;
-
-			.style--light & {
-				border-bottom-color: @contrast--light;
-			}
 		
 			.style--accent & {
 				border-bottom-color: @contrast--accent;
