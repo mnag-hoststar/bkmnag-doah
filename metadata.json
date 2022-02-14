@@ -104,7 +104,7 @@
 			"font-family": "\"Oswald\", Arial, sans-serif",
 			"font-size": "14px",
 			"font-weight": "700",
-			"line-height": "24px",
+			"line-height": "16px",
 			"color": "@color-swatch4",
 			"letter-spacing": "inherit",
 			"background-color": "lighten(@color-swatch4, 30%)",
@@ -198,7 +198,7 @@
             "font__navigation--letter-spacing": "@font-swatch6-letter-spacing",
             "color__navigation--text": "@font-swatch6-color",
             "color__navigation--text--hover": "@font-swatch6-color-hover",
-            "color__navigation-list--background": "@color__header--background"
+            "color__navigation-list--background": "@color__container--background"
         },
         "button": {
             "color__button--text": "@color__h1--text",

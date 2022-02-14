@@ -140,6 +140,8 @@ body.edit .widget.extendednavigation {
 }
 
 .footer {
+    display: flex;
+    flex-wrap: wrap;
     margin: 20px auto 50px;
 	.box-sizing--border-box();
 	max-width: 1400px;
@@ -157,7 +159,7 @@ body.edit .widget.extendednavigation {
 
 .footerright,
 .footerleft {
-    width: 49.5%;
+    width: 50%;
 
     @media @mobile {
         width: 100%;
@@ -166,25 +168,27 @@ body.edit .widget.extendednavigation {
 }
 
 .footerleft {
-    float: left;
 	padding-left: 40px;
+    padding-right: 20px;
 
     @media @mobile {
         width: 100%;
         text-align: center !important;
 		padding-left: 0;
+        padding-right: 0;
     }
 }
 
 .footerright {
-    float: right;
+    padding-left: 20px;
 	padding-right: 40px;
     text-align: right;
 
     @media @mobile {
         width: 100%;
         text-align: center !important;
-		padding-right: 0;
+		padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -194,6 +198,72 @@ body.edit .widget.extendednavigation {
 .bk-footer h4 {
     color: @color__navigation--text;
     padding-bottom: 1em;
+}
+
+h5,
+.contentgroup__h5 {
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size;
+	line-height: @font__h4--line-height;
+	letter-spacing: @font__h4--letter-spacing;
+	color: @color__h4--text;
+
+	.make-font-a-little-smaller(@font__h4--font-size, 0.9);
+	.make-font-smaller(@font__h4--font-size);
+	.make-font-a-lot-smaller(@font__h4--font-size);
+	
+	.make-line-height-a-little-smaller(@font__h4--line-height, 0.9);
+	.make-line-height-smaller(@font__h4--line-height);
+	.make-line-height-a-lot-smaller(@font__h4--line-height);
+}
+
+h6,
+.contentgroup__h6 {
+	padding-bottom: 0.2em;
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size*0.8;
+	line-height: @font__h4--line-height*0.8;
+	color: @color__h4--text;
+
+	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
+	.make-font-smaller(@font__h4--font-size, 0.7);
+	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+	
+	.make-line-height-a-little-smaller(@font__h4--line-height, 0.7);
+	.make-line-height-smaller(@font__h4--line-height, 0.7);
+	.make-line-height-a-lot-smaller(@font__h4--line-height, 0.7, 0.6);
+}
+
+// Normal Text
+
+p, .paragraph, ul, ol, li,
+.contentgroup__body,
+.contentgroup__body span,
+.contentgroup__body small {
+	font-family: @font__p--font-family;
+	font-size: @font__p--font-size;
+	font-weight: @font__p--font-weight;
+	line-height: unit(@font__p--line-height*0.1, em);
+	letter-spacing: @font__p--letter-spacing;
+	color: @color__p--text;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
 }
 
 // CONTENT
@@ -259,6 +329,10 @@ span.expand.button.button--expand {
     background-color: @color__form--background;
 	border: 1px solid;
 	border-color: @message-color--standard;
+
+	.userregistration & {
+		display: none;
+	}
 
     // Heading 3, Paragraph
 

@@ -91,6 +91,10 @@
         @media @tablet {
             width: 100%;
         }
+        
+        .responsivecolumns & {
+            width: 100%;
+        }
     }
     
     &-image {
@@ -123,56 +127,6 @@
             font-style: italic;
             float: right;
             padding: 14px 0px;
-        }
-    }
-}
-
-// Post Content
-
-.blogpostlist__read-more {
-    font-family: @font__button--font-family;
-    font-size: 12px;
-    color: @color__button--text;
-    font-weight: @font__button--font-weight;
-    text-transform: uppercase;
-    padding: 10px;
-    letter-spacing: 0px;
-    background-color: @color__button--background;
-
-    .style--light & {
-        background-color: lighten(@color--accent, 30%);
-        color: @color--accent;
-    }
-
-    .style--accent & {
-        background-color: @color--dark;
-        color: @contrast--dark;
-    }
-
-    .style--dark & {
-        background-color: lighten(@color--accent, 30%);
-        color: @color--accent;
-    }
-
-    &:hover {
-        color: @color__button--text--hover;
-        background-color: @color__button--background--hover;
-        cursor: pointer;
-        .transition(all, 0.2s, ease);
-
-        .style--light & {
-            background-color: lighten(@color--accent, 20%);
-            color: @color--accent;
-        }
-
-        .style--accent & {
-            background-color: darken(@color--dark, 10%);
-            color: @contrast--dark;
-        }
-
-        .style--dark & {
-            background-color: lighten(@color--accent, 20%);
-            color: @color--accent;
         }
     }
 }
@@ -373,22 +327,8 @@ a.button.button--pagination.button--next {
     button.button.icon.icon--facebook,
     button.button.icon.icon--twitter,
     button.button.icon.icon--googleplus {
-        height: 35px;
-        display: inline-block;
-        background-color: @color__button--background;
-        color: @color__button--text;
-        font-size: 12px;
-        text-transform: uppercase;
-
         &:before {
             font-size: 16px !important;
-        }
-
-        &:hover {
-            background-color: @color__button--background--hover;
-            color: @color__button--text--hover;
-            .transition(all, 0.1s, ease);
-            outline: none;
         }
     }
 }
@@ -566,7 +506,7 @@ h2.ecomfeaturedproducts__listing-title {
 }
 
 .product-filters .input--search {
-    height: 50px;
+    height: 48px;
 }
 
 // Search Field
@@ -1040,17 +980,6 @@ a.ecomproductslist__title {
 
     button.button.icon.icon--add,
     a.button.icon.icon--basket {
-        padding: 12px 35px;
-        margin: 0 0 10px;
-        font-family: @font__button--font-family;
-        font-size: @font__button--font-size;
-        font-weight: @font__button--font-weight;
-        background-color: @color__button--background;
-        color: @color__button--text;
-        text-decoration: none;
-        text-transform: uppercase;
-        display: inline-block;
-        text-align: center;
         min-width: 200px;
   	  
 		@media @mobile {
@@ -1346,7 +1275,7 @@ a.ecomproduct__tag-link {
         a.summary-item-link {
             display: block;
             background: transparent;
-            text-align: left;
+            text-align: center;
             background-image: none !important;
 
             @media @mobile {
@@ -1356,8 +1285,9 @@ a.ecomproduct__tag-link {
         }
 
         img.image--thumb {
-            width: 100%;
+            max-width: 100%;
             margin: 0px auto;
+            max-height: 80px;
         }
     }
 
@@ -1521,6 +1451,7 @@ a.ecomproduct__tag-link {
                 line-height: 0;
                 vertical-align: middle;
                 color: transparent;
+                min-height: auto;
 
                 &:after {
                     font-family: "FontAwesome", sans-serif;
