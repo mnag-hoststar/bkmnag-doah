@@ -1,20 +1,21 @@
 {
-	"name":"Doah",
-	"thumbnail":"doah-thumbnail.png",
-	"screenshot":"doah-screenshot.jpg",
-	"templateType":"standard",
-	"pageTypes":["home", "gallery"],
+	"name": "Doah",
+	"thumbnail": "images/thumbnail.png",
+	"screenshot": "images/screenshot.jpg",
+	"templateType": "standard",
+	"pageTypes": ["home", "gallery"],
     "widgetVersion": 2,
     "versionTenCompatible": 1,
 	"tags": {
 	"en": ["minimal", "clean", "blog", "photography", "modern", "unique", "flexible", "open", "simple", "news", "sans-serif"]
 	},
 	"images": [
-		"images/feature-bg.jpg",
-        "images/logo.png",
         "images/gallery/gallery-image--1.jpg",
         "images/gallery/gallery-image--2.jpg",
-        "images/gallery/gallery-image--3.jpg"
+        "images/gallery/gallery-image--3.jpg",
+        "images/gallery/gallery-image--4.jpg",
+        "images/gallery/gallery-image--5.jpg",
+        "images/gallery/gallery-image--6.jpg"
 	],
 	"colorSwatches":
 	{
