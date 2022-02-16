@@ -142,6 +142,10 @@ a {
     color: @color__link--text;
     word-break: break-word;
 
+    .style--light & {
+		color: @color__link--text;
+    }
+
     .style--accent & {
         color: @contrast--accent;
     }
@@ -154,6 +158,10 @@ a {
         color: darken(@color__link--text, 5%);
         .transition(all, 0.1s, ease);
         text-decoration: none;
+
+        .style--light & {
+			color: darken(@color__link--text, 5%);
+        }
 
         .style--accent & {
             color: darken(@contrast--accent, 5%);
@@ -218,6 +226,10 @@ p, .paragraph, ul, ol, li,
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
 
+	.style--light & {
+		color: @color__p--text;
+	}
+
 	.style--accent & {
 		color: @contrast--accent;
 	}
@@ -254,6 +266,10 @@ p > a {
     padding-bottom: 7px;
     line-height: 20px;
 
+    .style--light & {
+		color: @color__p--text;
+    }
+
     .style--accent & {
         color: fade(@contrast--accent, 90%);
     }
@@ -271,6 +287,10 @@ p > a {
 	&, p, span, small, pre, code,
 	table, th, td {
 		color: @color__p--text;
+	
+		.style--light & {
+			color: @color__p--text;
+		}
 	
 		.style--accent & {
 			color: @contrast--accent;
@@ -294,6 +314,10 @@ pre, code {
 	overflow: auto;
 	font-family: monospace;
 
+	.style--light & {
+		background-color: darken(@color__container--background, 10%);
+	}
+
 	.style--accent & {
 		background-color: fade(@contrast--accent, 10%);
 	}
@@ -305,6 +329,10 @@ pre, code {
 
 code {
 	border-left: 1px solid @color__p--text;
+
+	.style--light & {
+		border-color: @color__p--text;
+	}
 
 	.style--accent & {
 		border-color: @contrast--accent;
@@ -326,6 +354,11 @@ blockquote {
     line-height: 1.6em;
     margin: 25px 0px;
     word-break: break-word;
+
+	.style--light & {
+		border-color: lighten(@color__h1--text, 30%);
+		color: @color__h1--text;
+	}
 
 	.style--accent & {
 		border-color: fade(@contrast--accent, 30%);
@@ -418,6 +451,10 @@ legend {
 table, th, td {
 	border: 1px solid fade(@color__h1--text, 30%);
 
+    .style--light & {
+        border-color: fade(@color__h1--text, 30%);
+    }
+
     .style--accent & {
         border-color: fade(@contrast--accent, 30%);
     }
@@ -437,6 +474,11 @@ table {
 	margin: 0;
 	hyphens: auto;
 	color: @color__p--text;
+
+	.style--light & {
+		border-top-color: @color__p--text;
+		color: @color__p--text;
+	}
 
 	.style--accent & {
 		border-top-color: @contrast--accent;
@@ -467,6 +509,11 @@ th {
 	letter-spacing: @font__p--letter-spacing;
 	color: @color__h4--text;
 
+	.style--light & {
+		border-bottom-color: @color__p--text;
+		color: @color__h4--text;
+	}
+
 	.style--accent & {
 		border-bottom-color: @contrast--accent;
 		color: @contrast--accent;
@@ -494,6 +541,10 @@ td {
 	font-size: @font__p--font-size;
 	line-height: @font__p--line-height;
 	letter-spacing: @font__p--letter-spacing;
+
+	.style--light & {
+		border-bottom-color: fade(@color__p--text, 60%);
+	}
 
 	.style--accent & {
 		border-bottom-color: fade(@contrast--accent, 60%);
@@ -530,6 +581,10 @@ td {
 			padding: 0 0.5em 1em;
 			border-bottom: 1px solid fade(@color__p--text, 60%);
 		
+			.style--light & {
+				border-bottom-color: fade(@color__p--text, 60%);
+			}
+		
 			.style--accent & {
 				border-bottom-color: fade(@contrast--accent, 60%);
 			}
@@ -542,6 +597,10 @@ td {
 		.responsivecolumns & {
 			padding: 0 0.5em 1em;
 			border-bottom: 1px solid fade(@color__p--text, 60%);
+		
+			.style--light & {
+				border-bottom-color: fade(@color__p--text, 60%);
+			}
 		
 			.style--accent & {
 				border-bottom-color: fade(@contrast--accent, 60%);
@@ -556,6 +615,10 @@ td {
 
 tr:last-child td {
 	border-bottom: 1px solid @color__p--text;
+
+	.style--light & {
+		border-bottom-color: @color__p--text;
+	}
 
 	.style--accent & {
 		border-bottom-color: @contrast--accent;
@@ -577,6 +640,10 @@ tr:last-child td {
 		@media @mobile {
 			border-bottom: 1px solid @color__p--text;
 		
+			.style--light & {
+				border-bottom-color: @color__p--text;
+			}
+		
 			.style--accent & {
 				border-bottom-color: @contrast--accent;
 			}
@@ -588,6 +655,10 @@ tr:last-child td {
 
 		.responsivecolumns & {
 			border-bottom: 1px solid @color__p--text;
+		
+			.style--light & {
+				border-bottom-color: @color__p--text;
+			}
 		
 			.style--accent & {
 				border-bottom-color: @contrast--accent;
