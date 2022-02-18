@@ -13,7 +13,9 @@
 .flex-item.company {
     flex-direction: column!important;
     z-index: 100;
-    margin-right: 50px;
+    margin-right: 30px;
+    min-width: 150px;
+
     @media @tablet {
         margin: 0;
 		width: 100%;
@@ -148,6 +150,7 @@
 
                 .item-name {
                     padding: 0 0.6em;
+                    word-break: break-word;
                 
                     @media @tablet {
                         width: 100%;
@@ -1593,11 +1596,11 @@ select {
     }
 
     .style--accent & {
-        color: fade(@contrast--accent, 90%);
+        color: @color__p--text;
     }
 
     .style--dark & {
-        color: fade(@contrast--dark, 90%);
+        color: @color__p--text;
     }
 }
 
@@ -1611,7 +1614,6 @@ select,
 .signupform__input,
 .blogsearch__input,
 input#search-term {
-    background-color: transparent;
     border: none;
     height: 3rem;
     font-size: @font__p--font-size;
@@ -1620,53 +1622,46 @@ input#search-term {
     box-shadow: none;
 	.border-radius(0);
 	.appearance(none);
-    background-color: fade(@color__form--background, 80%) !important;
+    background-color: fade(@color__form--background, 20%);
     border: 1px solid fade(@color__form--border, 30%);
     border-bottom: 1px solid @color__form--border;
-    color: @color__p--text !important;
+    color: @color__p--text;
 
     .style--light & {
-        background-color: fade(@color__form--background, 80%) !important;
         border-color: fade(@color__form--border, 30%);
         border-bottom: 1px solid @color__form--border;
-        color: @color__p--text !important;
     }
 
     .style--accent & {
-        background-color: fade(@color--accent, 20%) !important;
-        border-color: fade(@contrast--accent, 30%);
-        border-bottom: 1px solid @contrast--accent;
-        color: fade(@contrast--accent, 90%) !important;
+        border-color: fade(@color--dark, 30%);
+        border-bottom: 1px solid @color--dark;
     }
 
     .style--dark & {
-        background-color: fade(@color--dark, 20%) !important;
         border-color: fade(@color--accent, 30%);
         border-bottom: 1px solid @color--accent;
-        color: fade(@contrast--dark, 90%) !important;
     }
 
+    &:hover,
     &:focus {
-        border: 1px solid fade(@color__form--border, 30%);
+        background-color: fade(@color__form--background, 40%);
+        box-shadow: none;
+        border: 1px solid fade(@color__form--border, 40%);
         border-bottom: 1px solid @color__form--border;
-        background-color: fade(@color__form--background, 80%) !important;
 
         .style--light & {
-            border-color: fade(@color__form--border, 30%);
+            border-color: fade(@color__form--border, 40%);
             border-bottom: 1px solid @color__form--border;
-            background-color: fade(@color__form--background, 80%) !important;
         }
-
+    
         .style--accent & {
-            border-color: fade(@contrast--accent, 30%);
-            border-bottom: 1px solid @contrast--accent;
-            background-color: fade(@color--accent, 20%) !important;
+            border-color: fade(@color--dark, 40%);
+            border-bottom: 1px solid @color--dark;
         }
-
+    
         .style--dark & {
-            border-color: fade(@color--accent, 30%);
+            border-color: fade(@color--accent, 40%);
             border-bottom: 1px solid @color--accent;
-            background-color: fade(@color--dark, 20%) !important;
         }
     }
 }
@@ -1686,44 +1681,23 @@ input.js-email.email {
     width: 100%;
 }
 
-[placeholder] {
-    color: transparent;
-    transition: 240ms;
-
-    .form-group.focused & {
-        color: @color__p--text;
-    
-        .style--light & {
-            color: @color__p--text;
-        }
-    
-        .style--accent & {
-            color: fade(@contrast--accent, 90%);
-        }
-    
-        .style--dark & {
-            color: fade(@contrast--dark, 90%);
-        }
-    }
-}
-
 ::-moz-placeholder {
     color: transparent;
     transition: 240ms;
 
     .form-group.focused & {
-        color: @color__p--text;
+        color: fade(@color__p--text, 60%);
     
         .style--light & {
-            color: @color__p--text;
+            color: fade(@color__p--text, 60%);
         }
     
         .style--accent & {
-            color: fade(@contrast--accent, 90%);
+            color: fade(@color__p--text, 60%);
         }
     
         .style--dark & {
-            color: fade(@contrast--dark, 90%);
+            color: fade(@color__p--text, 60%);
         }
     }
 }
@@ -1733,18 +1707,18 @@ input.js-email.email {
     transition: 240ms;
 
     .form-group.focused & {
-        color: @color__p--text;
+        color: fade(@color__p--text, 60%);
     
         .style--light & {
-            color: @color__p--text;
+            color: fade(@color__p--text, 60%);
         }
     
         .style--accent & {
-            color: fade(@contrast--accent, 90%);
+            color: fade(@color__p--text, 60%);
         }
     
         .style--dark & {
-            color: fade(@contrast--dark, 90%);
+            color: fade(@color__p--text, 60%);
         }
     }
 }
@@ -1783,11 +1757,11 @@ input.js-email.email {
     }
 
     .style--accent & {
-        color: fade(@contrast--accent, 90%);
+        color: @color__p--text;
     }
 
     .style--dark & {
-        color: fade(@contrast--dark, 90%);
+        color: @color__p--text;
     }
 }
 
@@ -1824,12 +1798,11 @@ select {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-    border: none;
     border-radius: 0;
     width: 100%;
     position: relative;
     cursor: pointer;
-    background-color: fade(@color__form--background, 60%) !important;
+    background-color: fade(@color__form--background, 40%);
     border: none;
     border: 1px solid @color__form--border;
     outline: none;
@@ -1846,117 +1819,35 @@ select {
     text-overflow: ellipsis;
     
     .style--light & {
-        background-color: fade(@color__form--background, 60%) !important;
         border-color: @color__form--border;
     }
 
     .style--accent & {
-        background-color: fade(@color--accent, 40%) !important;
-        border-color: fade(@contrast--accent, 30%);
+        border-color: @color--dark;
     }
 
     .style--dark & {
-        background-color: fade(@color--dark, 40%) !important;
-        border-color: fade(@color--accent, 30%);
+        border-color: @color--accent;
     }
 
-    &.selected {
-        color: @color__p--text !important;
-    
-        .style--light & {
-            color: @color__p--text !important;
-        }
-    
-        .style--accent & {
-            color: @contrast--accent;
-        }
-    
-        .style--dark & {
-            color: @contrast--dark;
-        }
-    }
-    
-    &:hover {
-        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-        background-color: fade(@color__form--background, 80%) !important;
-    
-        .style--light & {
-            background-color: fade(@color__form--background, 80%) !important;
-        }
-    
-        .style--accent & {
-            background-color: fade(@color--accent, 40%) !important;
-        }
-    
-        .style--dark & {
-            background-color: fade(@color--dark, 40%) !important;
-        }
-    }
-    
-    &:selected {
-        color: @color__h4--text;
-    
-        .style--light & {
-            color: @color__h4--text;
-        }
-    
-        .style--accent & {
-            color: @contrast--accent;
-        }
-    
-        .style--dark & {
-            color: @color--accent;
-        }
-    }
-    
+    &.selected,
+    &:selected,
+    &:hover,
     &:focus {
-        background-color: fade(@color__form--background, 80%) !important;
-        color: @color__h4--text;
+        background-color: fade(@color__form--background, 60%);
+        border: 1px solid @color__form--border;
     
         .style--light & {
-            background-color: fade(@color__form--background, 80%) !important;
-            color: @color__h4--text;
+            border-color: @color__form--border;
         }
     
         .style--accent & {
-            background-color: fade(@color--accent, 40%) !important;
-            color: @color--accent;
+            border-color: @color--dark;
         }
     
         .style--dark & {
-            background-color: fade(@color--dark, 40%) !important;
-            color: @color--accent;
+            border-color: @color--accent;
         }
-    
-        > label {
-            background-color: fade(@color__form--background, 80%) !important;
-            color: @color__h4--text;
-        
-            .style--light & {
-                background-color: fade(@color__form--background, 80%) !important;
-                color: @color__h4--text;
-            }
-        
-            .style--accent & {
-                background-color: fade(@color--accent, 40%) !important;
-                color: @color--accent;
-            }
-        
-            .style--dark & {
-                background-color: fade(@color--dark, 40%) !important;
-                color: @color--accent;
-            }
-        }
-    }
-    
-    > ul {
-        background-color: @color__form--background;
-        margin: 0;
-        min-width: 100px;
-        max-height: 650px;
-        overflow-y: auto;
-        position: absolute;
-        z-index: 999;
     }
     
     span {
