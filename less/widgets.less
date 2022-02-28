@@ -1109,13 +1109,12 @@ h3.feature__strapline {
             position: absolute;
             line-height: 1em;
             font-size: 1em;
-            color: @color__slideshow-title--text;
+            color: @color__slideshow-title--text !important;
             margin-top: -32px;
             padding: 0;
 
             &:hover {
-                background-color: darken(@color__slideshow-caption--background,5%);
-                color: darken(@color__slideshow-title--text, 5%);
+                background-color: darken(@color__slideshow-caption--background, 5%);
             }
 
             @media @mobile {
@@ -1608,6 +1607,7 @@ input,
 input[type=search],
 input[type=text],
 input[type=email],
+input[type="password"],
 textarea,
 select,
 .contactform__input,
