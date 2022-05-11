@@ -3,6 +3,54 @@
 //  These changes allow rows to work with
 //  existing templates in BK10
 
+// BASEKIT ELEMENTS
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay button.top-level-overlay__arrangement-button--up,
+.row-overlay__arrangement-button--up,
+.top-level-overlay button.top-level-overlay__arrangement-button--down,
+.row-overlay__arrangement-button--down, .row-overlay__edit-button {
+	background: transparent !important;
+
+	&:before,
+	&:after {
+		content: none;
+	}
+}
+
+.row-overlay__edit-button {
+	background: #fff !important;
+
+	&:before,
+	&:after {
+		content: none;
+	}
+}
+
+.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
+.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
+	left: auto !important;
+    top: auto !important;
+
+	&:before,
+	&:after {
+		content: none;
+	}
+}
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay .top-level-overlay__arrangement-button-group,
+.row-overlay__arrangement-button-group, .row-overlay__edit-button,
+.row-overlay__edit-button {
+    min-height: 32px !important;
+}
+
+.is-dropdown-open .row-overlay__edit-button, .is-setting-open .row-overlay__edit-button {
+    min-height: 40px !important;
+}
+
 // Template styling resets
 
 #migrated {

@@ -47,42 +47,6 @@
 @import "@{templateLocal}/less/widgets.less";
 @import "@{templateLocal}/less/plugins.less";
 
-// BASEKIT ELEMENTS
-
-.top-level-overlay button.top-level-overlay__delete-button,
-.row-overlay__delete-button,
-.top-level-overlay button.top-level-overlay__arrangement-button--up,
-.row-overlay__arrangement-button--up,
-.top-level-overlay button.top-level-overlay__arrangement-button--down,
-.row-overlay__arrangement-button--down, .row-overlay__edit-button {
-	background: transparent !important;
-
-	&:before,
-	&:after {
-		content: none;
-	}
-}
-
-.row-overlay__edit-button {
-	background: #fff !important;
-
-	&:before,
-	&:after {
-		content: none;
-	}
-}
-
-.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
-.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
-	left: auto !important;
-    top: auto !important;
-
-	&:before,
-	&:after {
-		content: none;
-	}
-}
-
 // MAIN
 
 body {
@@ -322,15 +286,16 @@ p > a {
 pre, code {
 	display: block;
 	margin: 1em 0;
-	padding: 0.5em 1em;
+	padding: 1em;
 	border: none;
 	.border-radius(0);
-	background-color: darken(@color__container--background, 10%);
+	background-color: lighten(@color__h1--text, 30%);
 	overflow: auto;
 	font-family: monospace;
+	font-size: 1em;
 
 	.style--light & {
-		background-color: darken(@color__container--background, 10%);
+		background-color: lighten(@color__h1--text, 30%);
 	}
 
 	.style--accent & {
@@ -343,10 +308,10 @@ pre, code {
 }
 
 code {
-	border-left: 1px solid @color__p--text;
+	border-left: 1px solid @color__h1--text;
 
 	.style--light & {
-		border-color: @color__p--text;
+		border-color: @color__h1--text;
 	}
 
 	.style--accent & {

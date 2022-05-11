@@ -1116,22 +1116,6 @@ h3.feature__strapline {
             &:hover {
                 background-color: darken(@color__slideshow-caption--background, 5%);
             }
-
-            @media @mobile {
-                width: 32px;
-                height: 32px;
-                position: absolute;
-                font-size: 12px !important;
-                margin-top: -16px;
-            }
-
-            .responsivecolumns & {
-                width: 32px;
-                height: 32px;
-                position: absolute;
-                font-size: 12px !important;
-                margin-top: -16px;
-            }
         }
 
         .previous-button {
@@ -1143,21 +1127,23 @@ h3.feature__strapline {
                 left: 10px;
 
                 @media @mobile {
-                    left: 8px;
+                    left: 50%;
                     position: absolute;
                     bottom: auto;
                     font-size: 12px !important;
                     top: 50%;
                     margin-top: -5px;
+                    margin-left: -3px;
                 }
 
                 .responsivecolumns & {
-                    left: 8px;
+                    left: 50%;
                     position: absolute;
                     bottom: auto;
                     font-size: 12px !important;
                     top: 50%;
                     margin-top: -5px;
+                    margin-left: -3px;
                 }
             }
         }
@@ -1171,21 +1157,23 @@ h3.feature__strapline {
 
             &.icon--next:after {
                 @media @mobile {
-                    left: 8px;
+                    left: 50%;
                     position: absolute;
                     bottom: auto;
                     font-size: 12px !important;
                     top: 50%;
                     margin-top: -5px;
+                    margin-left: -3px;
                 }
 
                 .responsivecolumns & {
-                    left: 8px;
+                    left: 50%;
                     position: absolute;
                     bottom: auto;
                     font-size: 12px !important;
                     top: 50%;
                     margin-top: -5px;
+                    margin-left: -3px;
                 }
             }
         }
@@ -1330,13 +1318,13 @@ button.ecombasket-remove-button.js-remove,
     font-weight: @font__button--font-weight;
     line-height: @font__button--line-height;
     position: relative;
-    padding: 1.1em 3em;
+    padding: 1.2em 3em;
 	.transition(all, 0.3s, ease);
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
     text-align: center;
-    min-height: 48px;
+    min-height: 50px;
 
     .style--light & {
         background-color: @color__button--background;
@@ -1616,7 +1604,8 @@ select,
 .blogsearch__input,
 input#search-term {
     border: none;
-    height: 3rem;
+    min-height: 3rem;
+    height: auto !important;
     font-size: @font__p--font-size;
     font-family: @font__p--font-family;
     padding: 0 10px;
@@ -1627,6 +1616,7 @@ input#search-term {
     border: 1px solid fade(@color__form--border, 30%);
     border-bottom: 1px solid @color__form--border;
     color: @color__p--text;
+    height: auto !important;
 
     .style--light & {
         border-color: fade(@color__form--border, 30%);
@@ -1675,7 +1665,7 @@ input[type=email],
 .signupform__input,
 .blogsearch__input {
     width: 100%;
-    min-height: 38px;
+    min-height: 50px;
 }
 
 input.js-email.email {
@@ -1952,7 +1942,7 @@ select {
 			height: 20px;
 			margin-top: -9px;
 			background-color: @bg-color;
-			border: 2px solid @color__h1--text;
+			border: 1px solid @color__h1--text;
             min-width: 20px !important;
             border-radius: 0;
 
@@ -2253,7 +2243,8 @@ a.social-link {
     }
     
     .avatar-image {
-        max-width: 62px;
+        width: 48px;
+        height: 48px;
         float: left;
         margin-right: 0;
     }
