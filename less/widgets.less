@@ -1312,7 +1312,7 @@ button.ecombasket-remove-button.js-remove,
 .contentgroup__link {
     background-color: @color__button--background;
     display: inline-block;
-    height: auto !important;
+    height: auto;
     color: @color__button--text;
     font-family: @font__button--font-family;
     font-weight: @font__button--font-weight;
@@ -1575,24 +1575,6 @@ label.active {
 // Input
 
 input,
-select {
-    align-self: flex-end;
-    color: @color__p--text;
-
-    .style--light & {
-        color: @color__p--text;
-    }
-
-    .style--accent & {
-        color: @color__p--text;
-    }
-
-    .style--dark & {
-        color: @color__p--text;
-    }
-}
-
-input,
 input[type=search],
 input[type=text],
 input[type=email],
@@ -1612,30 +1594,35 @@ input#search-term {
     box-shadow: none;
 	.border-radius(0);
 	.appearance(none);
-    background-color: fade(@color__form--background, 20%);
+    background-color: fade(@color__form--background, 90%);
     border: 1px solid fade(@color__form--border, 30%);
     border-bottom: 1px solid @color__form--border;
     color: @color__p--text;
-    height: auto !important;
 
     .style--light & {
         border-color: fade(@color__form--border, 30%);
+        border: 1px solid fade(@color__form--border, 30%);
         border-bottom: 1px solid @color__form--border;
+        color: @color__p--text;
     }
 
     .style--accent & {
         border-color: fade(@color--dark, 30%);
+        border: 1px solid fade(@color--dark, 30%);
         border-bottom: 1px solid @color--dark;
+        color: @color__p--text;
     }
 
     .style--dark & {
         border-color: fade(@color--accent, 30%);
+        border: 1px solid @color--accent;
         border-bottom: 1px solid @color--accent;
+        color: @color__p--text;
     }
 
     &:hover,
     &:focus {
-        background-color: fade(@color__form--background, 40%);
+        background-color: @color__form--background;
         box-shadow: none;
         border: 1px solid fade(@color__form--border, 40%);
         border-bottom: 1px solid @color__form--border;
