@@ -1585,7 +1585,6 @@ select,
 .signupform__input,
 .blogsearch__input,
 input#search-term {
-    border: none;
     min-height: 3rem;
     height: auto !important;
     font-size: @font__p--font-size;
@@ -1771,16 +1770,10 @@ textarea {
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    border-radius: 0;
-    width: 100%;
     position: relative;
+    appearance: none;
+    width: 100%;
     cursor: pointer;
-    background-color: fade(@color__form--background, 40%);
     border: none;
     border: 1px solid @color__form--border;
     outline: none;
