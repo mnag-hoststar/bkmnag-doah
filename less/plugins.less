@@ -408,6 +408,7 @@ h2.ecomfeaturedproducts__listing-title {
     .form-body {
         display: flex;
         align-items: flex-end;
+        gap: 10px;
 
         @media @mobile {
             display: block;
@@ -419,55 +420,29 @@ h2.ecomfeaturedproducts__listing-title {
 
         .form-group {
             margin: 0;
+            margin-bottom: 10px;
+            .box-sizing--border-box();
 
-            &:first-child {
-                width: 100%/3 * 2;
-                padding-right: 10px;
-                .box-sizing--border-box();
-
-                @media @mobile {
-                    width: 100%;
-                    padding-right: 0;
-                }
-
-                .responsivecolumns & {
-                    width: 100%;
-                    padding-right: 0;
-                }
+            @media @tablet {
+                padding-right: 0;
             }
 
-            &:last-child {
-                width: 100%/3;
-                padding-left: 10px;
-                .box-sizing--border-box();
+            @media @mobile {
+                width: 100%;
+            }
 
-                @media @mobile {
-                    width: 100%;
-                    padding-left: 0;
-                }
+            .responsivecolumns & {
+                width: 100%;
+            }
 
-                .responsivecolumns & {
-                    width: 100%;
-                    padding-left: 0;
-                }
+            &:first-child {
+                flex-grow: 1;
             }
 
             .input--search,
             .button--submit {
                 width: 100%;
-            }
-
-            .button--submit {
-                padding-left: 0;
-                padding-right: 0;
-
-                @media @mobile {
-                    margin-top: 15px;
-                }
-
-                .responsivecolumns & {
-                    margin-top: 15px;
-                }
+                word-break: initial;
             }
         }
     }
@@ -669,16 +644,6 @@ a.ecomproductslist__title {
     background-color: @color__button--background;
     color: @color__button--text;
     text-transform: uppercase;
-    border-bottom: 1px solid @color__button--text;
-
-    &:hover {
-        box-shadow: 0 1.5px 0 @color__button--text;
-        background-color: @color__button--background--hover;
-        color: @color__button--text--hover;
-        border-bottom: 1px solid @color__button--text--hover;
-        background-color: transparent;
-        .transition(all, 0.1s, ease);
-    }
 }
 
 .ecomproductslist__pagination-item {
