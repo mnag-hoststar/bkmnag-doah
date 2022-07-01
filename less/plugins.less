@@ -737,6 +737,61 @@ a.ecomproductslist__title {
     }
 }
 
+// Pagination
+
+.listing-pagination {
+    .pagination-list {
+        margin-left: 0;
+
+        .pagination-item {
+            margin: 0.25em;
+            padding: 0;
+
+            .responsivecolumns & {
+                margin: 0.25em 0.1em;
+            }
+
+            @media @mobile {
+                margin: 0.25em 0.1em;
+            }
+
+            &, &:hover {
+                border: none;
+                background: none;
+            }
+
+            a.button {
+                padding: 0;
+                width: 32px;
+                height: 32px;
+                min-height: 32px;
+                letter-spacing: 0;
+                line-height: 30px;
+                font-size: 14px;
+                border: none;
+                background-color: @color__button--background;
+                color: @color__button--text;
+                
+                &:hover {
+                    border-color: none;
+                    background-color: @color__button--background--hover;
+                    color: @color__button--text--hover;
+                }
+
+                &:before,
+                &:after {
+                    content: none;
+                }
+            }
+
+            &.current a.button {
+                background-color: @color__button--background--hover;
+                color: @color__button--text--hover;
+            }
+        }
+    }
+}
+
 // Single Item
 
 .ecomproduct__product-title {
