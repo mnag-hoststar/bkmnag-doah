@@ -11,12 +11,15 @@
 }
 
 .mixin__category-tags-link {
+    display: inline-block;
     margin: 0;
     font-family: @font__button--font-family;
     text-transform: uppercase;
     color: @color__link--text;
     .box-sizing--border-box();
     font-weight: 400;
+    line-height: 1.4em;
+    word-break: break-word;
 
     &:before,
     &:after {
@@ -83,7 +86,7 @@
         vertical-align: top;
         width: 50%;
         margin-bottom: 30px;
-        padding: 15px;
+        padding: 10px;
         .box-sizing--border-box();
         font-size: @font__p--font-size;
         
@@ -227,7 +230,7 @@ a.button.button--pagination.button--next {
         position: relative;
         border-right: 1px solid @color__h1--text;
     
-        @media @mobile {
+        @media @tablet {
             border-right: none;
         }
 
@@ -243,12 +246,12 @@ a.button.button--pagination.button--next {
             .box-sizing--border-box();
             width: 120px;
     
-            @media @mobile {
+            @media @tablet {
                 display: block;
                 width: 100%;
                 position: relative;
                 min-height: 34px;
-                padding: 0 20px;
+                padding: 0;
                 border-left: none;
                 border-right: none;
                 border-bottom: 1px solid @color__h1--text;
@@ -260,19 +263,14 @@ a.button.button--pagination.button--next {
         display: table;
         margin-left: 120px;
     
-        @media @mobile {
+        @media @tablet {
             width: 100%;
             margin: 20px 0 20px;
-            border-left: 1px solid @color__h1--text;
         }
     
         div {
             &:last-child {
                 border-right: none;
-    
-                @media @mobile {
-                    border-right: 1px solid @color__h1--text;
-                }
             }
         }
     }
@@ -282,6 +280,14 @@ a.button.button--pagination.button--next {
         display: table-cell;
         border-right: 1px solid @color__h1--text;
         padding: 0 20px;
+    
+        @media @tablet {
+            display: block;
+            border-right: none;
+            border-bottom: 1px solid @color__h1--text;
+            padding: 0 0 20px;
+            margin-bottom: 20px;
+        }
     }
 }
 
