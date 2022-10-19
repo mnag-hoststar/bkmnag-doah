@@ -891,9 +891,17 @@ h3.feature__strapline {
         @media @mobile {
             width: 100%
         }
+
+        .responsivecolumns [class*="columns-three"] & {
+            width: 50%;
     
-        .responsivecolumns & {
-            width: 100%
+            @media @tablet {
+                width: 100%;
+            }
+        }
+
+        .responsivecolumns [class*="columns-four"] & {
+            width: 100%;
         }
     
         @media @mobile-small-to-mobile {
@@ -2507,7 +2515,7 @@ h3.description.companydescription__description {
     }
     
     .review-text {
-        padding-bottom:15px;
+        padding-bottom: 15px;
     }
     
     .review-footer {
